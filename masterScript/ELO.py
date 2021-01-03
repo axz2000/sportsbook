@@ -217,19 +217,19 @@ def fetchName():
   Today = navigate.findAll('tbody')
   teams, prob = [], []
   for i in Today:
-  	print(i.find('div').text)
+  	#print(i.find('div').text)
   	if (i.find('div').text == str(date.today().strftime("%-m/%-d"))): #this is to be changed
   	  #(date.today()).strftime("%m/%d"))
   	  home = i.findAll('td', class_ = "team")[0]['data-str']
   	  away = i.findAll('td', class_ = "team")[1]['data-str']
   	  teams += [home, 'Draw ' + str(home)+ ' v ' +str(away),away]
   	  prob +=[float(j.text[:-1])/100 for j in i.findAll('td', class_="prob")]
-  print(teams)
+  #print(teams)
   indexed = []
   for i in range(int(len(teams)/3)):
   	indexed += [i]*3
   epl = pd.DataFrame({'ID':teams, 'Probabilities':prob, 'gameNum':indexed })
-  print(epl)
+  #print(epl)
   return epl
 
 def oddstoPayout(odds,dollarsIn):
@@ -282,7 +282,7 @@ def run():
 	if gameToday():
 		return picks()
 	else:
-		return ('No ELO games today.')
+		return 'No ELO games today.'
 
 #print(run())
 	

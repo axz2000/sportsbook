@@ -65,7 +65,7 @@ def parse_data(jsonData):
         			temp_df = reduce(lambda left,right: pd.merge(left,right, left_index=True, right_index=True), [alpha_df, beta_df, theta_df])
         			results_df = results_df.append(temp_df, sort=True).reset_index(drop=True)
 
-    return results_df #time right for <7 on prev day
+    return results_df
 
 def fullSet(eventID):
   return requests.get('https://sportsbook.fanduel.com//cache/psevent/UK/1/false/'+ str(eventID) + '.json').json()
@@ -162,7 +162,7 @@ def fetchName():
     'upgrade-insecure-requests': '1',
     'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'})
   page_content = BeautifulSoup(page_response.content, "html.parser")
-  Today = page_content.findAll('div', class_="day")[3] #this is a big issue but easily fixed !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  Today = page_content.findAll('div', class_="day")[0] #this is a big issue but easily fixed !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   teamsToday = [i.text for i in Today.findAll('td', class_ = "td text team")]
   
   probabilitiesToday = [float(i.text[:-1])/100 for i in Today.findAll('td', class_="td number chance")]
@@ -170,7 +170,7 @@ def fetchName():
   for i in range(int(len(teamsToday)/2)):
   	indexed += [i]*2
   nfl = pd.DataFrame({'ID':teamsToday, 'Probabilities':probabilitiesToday, 'gameNum':indexed })
-  return nfl
+  return nfl #this has a massive issue with timing so please fix
 
 def oddstoPayout(odds,dollarsIn):
   if odds<0:
@@ -203,7 +203,6 @@ def gainsLosses(allocation,successes, df, portfolio):
 def picks():
 	result = fetch().round(decimals=2)
 	print(result.to_markdown())
-	result.to_csv(os.getcwd() + '/Data/DailyNFL.csv')
 	resulting = result[['Bet State Chosen', 'Kelly Criterion Suggestion','Payouts (per Dollar)']]
 	resulting['League'] = ['NFL']*len(resulting['Bet State Chosen'])
 	resulting['Date'] = [str(date.today())]*len(resulting['Bet State Chosen'])

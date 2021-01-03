@@ -110,7 +110,7 @@ def getOdds(listing):
   		if i['name'] == 'Moneyline':
   			for i in i['selections']:
   				betName+=[[i['name'], 1+(i['currentpriceup']/i['currentpricedown'])]] #, i['currenthandicap']
-  				print(betName)
+  				#print(betName)
   		bets += [betName]
   return bets
 
@@ -173,7 +173,7 @@ def fetch():
   		counter = counter+1
   	elif counter%3 == 1:
   		indexed = probabilities.gameNum.values[counter]
-  		print(df.HomeTeamandOdds.values[indexed][-1])
+  		#print(df.HomeTeamandOdds.values[indexed][-1])
   		valued = df.DrawOdds.values[i][-1]
   		array+= [valued]
   		counter = counter+1

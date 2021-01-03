@@ -1,4 +1,4 @@
-import ELO, EPL, NBA, FPL, GPL, NFL
+import ELO, EPL, NBA, FPL, GPL, NFL, KHL
 
 def getPicks():
 	NBA.run()
@@ -7,6 +7,8 @@ def getPicks():
 	NFL.run()
 	GPL.run()
 	FPL.run()
+	KHL.run()
+	#not sure why this runs KHL twice
 	return 'Picks Completed'
 	
 print('All bets are moneyline bets.')
