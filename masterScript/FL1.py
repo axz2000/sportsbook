@@ -174,7 +174,7 @@ def fetch():
   		counter = counter+1
   	elif counter%3 == 1:
   		indexed = probabilities.gameNum.values[counter]
-  		print(df.HomeTeamandOdds.values[indexed][-1])
+  		#print(df.HomeTeamandOdds.values[indexed][-1])
   		valued = df.DrawOdds.values[i][-1]
   		array+= [valued]
   		counter = counter+1
@@ -210,18 +210,18 @@ def fetchName():
   Today = navigate.findAll('tbody')
   teams, prob = [], []
   for i in Today:
-  	if (i.find('div').text == str(date.today().strftime("%m/%d"))):#this could fail in the beginning of january
+  	if (i.find('div').text == str(date.today().strftime("%-m/%-d"))):#this could fail in the beginning of january
   	  #(date.today()).strftime("%m/%d"))
   	  home = i.findAll('td', class_ = "team")[0]['data-str']
   	  away = i.findAll('td', class_ = "team")[1]['data-str']
   	  teams += [home, 'Draw ' +str(home)+ ' v ' +str(away),away]
   	  prob +=[float(j.text[:-1])/100 for j in i.findAll('td', class_="prob")]
-  print(teams)
+  #print(teams)
   indexed = []
   for i in range(int(len(teams)/3)):
   	indexed += [i]*3
   epl = pd.DataFrame({'ID':teams, 'Probabilities':prob, 'gameNum':indexed })
-  print(epl)
+  #print(epl)
   return epl
 
 def oddstoPayout(odds,dollarsIn):
@@ -256,10 +256,10 @@ def picks(): #this needs some work/checking
 	result = fetch().round(decimals=2)
 	print(result.to_markdown())
 	resulting = result[['Bet State Chosen', 'Kelly Criterion Suggestion','Payouts (per Dollar)']]
-	resulting['League'] = ['EPL']*len(resulting['Bet State Chosen'])
+	resulting['League'] = ['FL1']*len(resulting['Bet State Chosen'])
 	resulting['Date'] = [str(date.today())]*len(resulting['Bet State Chosen'])
 	resulting.to_csv(os.getcwd() + '/masterDaily.csv', mode='a', header=False)
-	return 'FPL Done'
+	return 'FL1 Done'
 
 '''
 To do:

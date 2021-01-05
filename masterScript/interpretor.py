@@ -2,7 +2,7 @@ import iterations
 
 def dailyReturn():
 	iterations.run()
-	return 'Picks Completed'
+	return 'Update finished'
 	
 	
 

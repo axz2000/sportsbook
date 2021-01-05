@@ -73,13 +73,13 @@ def dailyReturn():
 		portfolioAmt = port.Portfolio.values[-1]
 		array = [int(item) for item in input("Enter the list items : ").split()] #this shhould come from gamBet
 		today = str(date.today() - timedelta(1)) #works until 00:00 same day
-		portfolioTrack = pd.read_csv(os.getcwd() + '/Daily.csv')
+		portfolioTrack = pd.read_csv(os.getcwd() + '/masterDaily.csv')
 		portfolioTracker = portfolioTrack[portfolioTrack.Date == today]
 		#print(len(portfolioTracker))
 		portfolioTracker["Success"] = array
 		#print(portfolioTracker)
 		portfolioTracker.to_csv(os.getcwd() + '/masterDaily.csv', mode = 'a', index = False, header = False)
-		portfolioTracked = pd.read_csv(os.getcwd() + '/Daily.csv')
+		portfolioTracked = pd.read_csv(os.getcwd() + '/masterDaily.csv')
 		#print(portfolioTracked)
 		portfolioTracked = portfolioTracked.drop_duplicates(subset=['Bet State Chosen', 'League'], keep='last')
 		portfolioTracked = portfolioTracked.sort_values(['Date', 'League'])
@@ -100,7 +100,7 @@ def dailyReturn():
 		print('With a total portfiolio of now ',returns[0].round(2), ' we bet ', returns[1].round(2), ' which became ',returns[2].round(2), ' for an ROE of ', ((change[0]-1)*100).round(2), '%')
 		
 		resulting = pd.DataFrame({'Day':[port.Day.values[-1]+1],'Portfolio':updates, 'Change':change})
-		resulting.to_csv(os.getcwd() + '/PortfolioCodex.csv', mode='a', header=False, index = False)
+		resulting.to_csv(os.getcwd() + '/masterPortfolio.csv', mode='a', header=False, index = False)
 		return 'Done'
 	
 	
@@ -120,7 +120,7 @@ Notes:
 #Make a time function
 
 def run():
-	return dailyReturn())
+	return (dailyReturn())
 
 
 	
