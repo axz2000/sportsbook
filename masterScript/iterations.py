@@ -40,7 +40,7 @@ def powerLaw(portfolioAmt,df):
   #spread = df['Probability Spread'].values
   allocation1 = [np.minimum((portfolioAmt*i)*(i/np.sum(kelly)), 0.3*portfolioAmt) for i in kelly] #RISK TOLERANCE ESTABLISHED HERE 
   df['Allocation Dollars'] = allocation1
-  print('Total Allocated', np.sum(allocation1).round(decimals=2), 'out of', portfolioAmt)
+  #print('Total Allocated', np.sum(allocation1).round(decimals=2), 'out of', portfolioAmt)
   df['Allocation Percentage'] = [(i/portfolioAmt) for i in allocation1]
   return df
 
@@ -50,25 +50,9 @@ def gainsLosses(allocation,successes, df, portfolio):
   now = np.sum(np.dot([allocation[i]*payouts[i] for i in range(len(payouts))], successes))
   return [portfolio+(now-prev), prev, now]
 
+		
 def dailyReturn():
-	#this is the data input
-	if (input("Are you here to look? ") == 'yes'):
-		port = pd.read_csv(os.getcwd() + '/masterPortfolio.csv')
-		portfolioAmt = port.Portfolio.values[-2]
-		portfolioTracked = pd.read_csv(os.getcwd() + '/masterDaily.csv')
-		today = str(date.today() - timedelta(1))
-		portfolioTracking = portfolioTracked[portfolioTracked.Date == today]
-		bet = powerLaw(portfolioAmt, portfolioTracking)
-		bet.to_csv(os.getcwd() + '/masterDailyRecap.csv')
-		returns = gainsLosses(bet['Allocation Dollars'].values,bet['Success'].values, portfolioTracking, portfolioAmt)
-		print(portfolioAmt)
-		updates = [returns[0]]
-		change = [returns[2]/returns[1]]
-		print('With a total portfiolio of now ',returns[0].round(2), ' we bet ', returns[1].round(2), ' which became ',returns[2].round(2), ' for an ROE of ', ((change[0]-1)*100).round(2), '%')
-		return 'Done'
-	
-	else: #something seems fishy
-		#scrape gambet here, if you can get it in NYC that is
+	if (input("Are you here to update? ").lower() == 'yes'):
 		port = pd.read_csv(os.getcwd() + '/masterPortfolio.csv')
 		portfolioAmt = port.Portfolio.values[-1]
 		array = [int(item) for item in input("Enter the list items : ").split()] #this shhould come from gamBet
@@ -101,6 +85,27 @@ def dailyReturn():
 		
 		resulting = pd.DataFrame({'Day':[port.Day.values[-1]+1],'Portfolio':updates, 'Change':change})
 		resulting.to_csv(os.getcwd() + '/masterPortfolio.csv', mode='a', header=False, index = False)
+		return 'Done'
+	
+	else: 
+		port = pd.read_csv(os.getcwd() + '/masterPortfolio.csv')
+		portfolioAmt = port.Portfolio.values[-2]
+		portfolioTracked = pd.read_csv(os.getcwd() + '/masterDaily.csv')
+		today = str(date.today() - timedelta(1))
+		portfolioTracking = portfolioTracked[portfolioTracked.Date == today]
+		bet = powerLaw(portfolioAmt, portfolioTracking)
+		bet.to_csv(os.getcwd() + '/masterDailyRecap.csv')
+		
+		tomorrow = str(date.today())
+		portfolioTrackingTom = portfolioTracked[portfolioTracked.Date == tomorrow]
+		bettor = powerLaw(portfolioAmt, portfolioTrackingTom)
+		bettor.to_csv(os.getcwd() + '/masterUpcoming.csv')
+		
+		returns = gainsLosses(bet['Allocation Dollars'].values,bet['Success'].values, portfolioTracking, portfolioAmt)
+		print(portfolioAmt, ' portfolio amount of the day.')
+		updates = [returns[0]]
+		change = [returns[2]/returns[1]]
+		print('With a total portfiolio of now ',returns[0].round(2), ' we bet ', returns[1].round(2), ' which became ',returns[2].round(2), ' for an ROE of ', ((change[0]-1)*100).round(2), '%')
 		return 'Done'
 	
 	
