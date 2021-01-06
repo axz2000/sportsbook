@@ -52,7 +52,7 @@ def gainsLosses(allocation,successes, df, portfolio):
 
 		
 def dailyReturn():
-	if (False):
+	if (input("Are you here to update? ").lower() == 'yes'):
 		port = pd.read_csv(os.getcwd() + '/masterPortfolio.csv')
 		portfolioAmt = port.Portfolio.values[-1]
 		array = [int(item) for item in input("Enter the list items : ").split()] #this shhould come from gamBet
