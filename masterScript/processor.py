@@ -1,4 +1,4 @@
-import ELO, EPL, NBA, FL1, GPL, NFL, FL2, KHL
+import ELO, EPL, NBA, FL1, GPL, NFL, FL2, KHL, TSL, ISA, LLA
 
 def getPicks():
 	NBA.run()
@@ -8,6 +8,9 @@ def getPicks():
 	GPL.run()
 	FL1.run()
 	FL2.run()
+	TSL.run()
+	ISA.run()
+	LLA.run()
 	return 'Picks Completed'
 	
 print('All bets are moneyline bets.')
