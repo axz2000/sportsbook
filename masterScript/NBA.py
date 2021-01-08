@@ -166,9 +166,9 @@ def fetchName():
     'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'})
   page_content = BeautifulSoup(page_response.content, "html.parser")
   if datetime.today().hour >=3:
-  	Today = page_content.findAll('section', class_="day")[0]
+  	Today = page_content.findAll('section', class_="day")[1] #not sure what the issue is here
   else: 
-  	Today = page_content.findAll('section', class_="day")[1]
+  	Today = page_content.findAll('section', class_="day")[2] #not sure what the issue is here
   #print(Today)
   teams = [i['data-team'] for i in Today.findAll('tr', class_ = "tr team")]
   teamsToday = []
