@@ -168,11 +168,10 @@ def fetchName():
   if datetime.today().hour >=3:
   	Today = page_content.findAll('section', class_="day")[1] #not sure what the issue is here
   else: 
-  	Today = page_content.findAll('section', class_="day")[2] #not sure what the issue is here
+  	Today = page_content.findAll('section', class_="day")[1] #not sure what the issue is here
   #print(Today)
   teams = [i['data-team'] for i in Today.findAll('tr', class_ = "tr team")]
   teamsToday = []
-  #print(teams)
   for j in teams:
   	try:
   		teamsToday += [Today.find('td', class_ = "td text team " + str(j)).text]
@@ -184,6 +183,15 @@ def fetchName():
   for i in range(int(len(teamsToday)/2)):
   	indexed += [i]*2
   nba = pd.DataFrame({'ID':teamsToday, 'Probabilities':probabilitiesToday, 'gameNum':indexed })
+  nba = nba[nba.ID != 'Grizzlies']
+  nba = nba[nba.ID != 'Nets']
+  print(nba)
+  indexeder =[]
+  for i in range(int(len(nba.ID)/2)):
+  	indexeder += [i]*2
+  print(nba)
+  nba['gameNum'] = indexeder
+  print(nba)
   return nba
 
 def oddstoPayout(odds,dollarsIn):
