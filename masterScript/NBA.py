@@ -177,7 +177,7 @@ def fetchName():
   		teamsToday += [Today.find('td', class_ = "td text team " + str(j)).text]
   	except:
   		teamsToday += ['None']
-  #print(teamsToday)
+  print(teamsToday)
   probabilitiesToday = [float(i.text[:-1])/100 for i in Today.findAll('td', class_="td number chance")]
   indexed = []
   for i in range(int(len(teamsToday)/2)):
