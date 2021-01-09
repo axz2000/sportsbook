@@ -1,7 +1,7 @@
-import ELO, EPL, NBA, FL1, GPL, NFL, FL2, TSL, ISA, LLA
+import ELO, EPL, FL1, GPL, NFL, FL2, TSL, ISA, LLA
 
 def getPicks():
-	NBA.run()
+	#NBA.run()
 	ELO.run()
 	EPL.run()
 	NFL.run()
