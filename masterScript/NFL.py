@@ -121,8 +121,9 @@ def fetch():
   for i in np.unique(NFL.EventID.values): 
     listing.append((fullSet(i)))
   df = (pd.DataFrame(getOdds(listing)))
-  df.columns = ['GameName', 'Type', 'HomeTeamandOdds', 'AwayTeamandOdds']
+  df.columns = ['GameName', 'Type', 'AwayTeamandOdds', 'HomeTeamandOdds']
   df = df[df.Type=='Moneyline']
+  #print(df)
   probabilities = fetchName()
   array ,counter = [], 0
   for i in probabilities.Probabilities.values:
@@ -164,12 +165,13 @@ def fetchName():
   page_content = BeautifulSoup(page_response.content, "html.parser")
   Today = page_content.findAll('div', class_="day")[1] #this is a big issue but easily fixed !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   teamsToday = [i.text for i in Today.findAll('td', class_ = "td text team")]
-  
+  #print(teamsToday)
   probabilitiesToday = [float(i.text[:-1])/100 for i in Today.findAll('td', class_="td number chance")]
   indexed = []
   for i in range(int(len(teamsToday)/2)):
   	indexed += [i]*2
   nfl = pd.DataFrame({'ID':teamsToday, 'Probabilities':probabilitiesToday, 'gameNum':indexed })
+  #print(nfl)
   return nfl #this has a massive issue with timing so please fix
 
 def oddstoPayout(odds,dollarsIn):
