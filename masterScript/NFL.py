@@ -121,10 +121,11 @@ def fetch():
   for i in np.unique(NFL.EventID.values): 
     listing.append((fullSet(i)))
   df = (pd.DataFrame(getOdds(listing)))
-  df.columns = ['GameName', 'Type', 'AwayTeamandOdds', 'HomeTeamandOdds']
+  df.columns = ['GameName', 'Type', 'HomeTeamandOdds','AwayTeamandOdds']
   df = df[df.Type=='Moneyline']
-  #print(df)
+  print(df)
   probabilities = fetchName()
+  probabilities['gameNum'] = [1,1,0,0,2,2]
   array ,counter = [], 0
   for i in probabilities.Probabilities.values:
   	#print(counter)
@@ -142,11 +143,11 @@ def fetch():
   EV = []
   for i in range(len(array)):
   	EV += [probabilities.Probabilities.values[i]*array[i]]
-  #print(array, probabilities.ID.values,probabilities )
+  print(array, probabilities.ID.values,probabilities )
   Result = pd.DataFrame({'Team':probabilities.ID.values, 'Probability': probabilities.Probabilities.values, 'Odds':array, 'EV':EV})
   Bet = Result[Result.EV >1]
   kelly = [Kelly(Bet.Odds.values[i], Bet.Probability.values[i]) for i in range(len(Bet.Probability.values))]
-  #print(len(Bet.Team.values), len(kelly),  len(Bet.Odds.values))
+  print(len(Bet.Team.values), len(kelly),  len(Bet.Odds.values))
   Betting = pd.DataFrame({'Bet State Chosen':Bet.Team.values, 'Kelly Criterion Suggestion': kelly, 'Payouts (per Dollar)':Bet.Odds.values})
   #Betting.columns = ['Bet State Chosen', 'Kelly Criterion Suggestion', 'Probability Spread','Payouts (per Dollar)']
   return Betting
