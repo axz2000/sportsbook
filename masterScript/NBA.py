@@ -16,6 +16,8 @@ import os
 import tabulate
 import time
 
+def tryMatch(i,j):
+	return fuzz.token_sort_ratio(str(i), str(j))
 
 def matching(arrayStrOne,arrayStrTwo):
 	matches = []
@@ -113,38 +115,80 @@ def fetch():
   	jsonData_fanduel_nba = requests.get('https://sportsbook.fanduel.com/cache/psmg/UK/64165.3.json').json() #gives the game id
   except:
   	print('Not a problem, the XHR has been changed for the NBA, go ahead and fix that then run again')
-  nba = parse_data(jsonData_fanduel_nba)
-  NBA = pd.DataFrame(nba)[['eventname','tsstart','idfoevent.markets']]
-  NBA.columns = ['Teams','Date','EventID']
+  epl = parse_data(jsonData_fanduel_nba)
+  #print(epl)
+  EPL = pd.DataFrame(epl)[['eventname','tsstart','idfoevent.markets']]
+  EPL.columns = ['Teams','Date','EventID']
   listing = []
-  for i in np.unique(NBA.EventID.values):
-    listing+=[(fullSet(i))]
+  for i in np.unique(EPL.EventID.values): 
+    listing.append((fullSet(i)))
   df = (pd.DataFrame(getOdds(listing)))
   df.columns = ['GameName', 'Type', 'HomeTeamandOdds', 'AwayTeamandOdds']
-  #print(df)
+  df = df[df.Type=='Moneyline']
+  print(df.sort_values(['GameName']))
   probabilities = fetchName()
+  print(probabilities)
+  print(df)
+  
+  #check if all of them are there
+  valued = []
+  
+  #print(probabilities.gameNum.values)
+  for i in np.unique(probabilities.gameNum.values):
+  	newdf = probabilities[probabilities.gameNum == i]
+  	valued += [newdf.ID.values[1][:]]
+  	print(valued)
+  sorting = np.sort(valued)
+  indices, counterArray, soughtGameArray = [], [], []
+  counter = 0
+  gamed = []
+  
+  #print((len(df.GameName.values), len(sorting)))
+  for i in (df.GameName.values):
+  	i = i.split(' ')[-1]
+  	temp = []
+  	for j in np.unique(sorting):
+  		print(i,j)
+  		temp += [tryMatch(i,j)]
+  	#print(temp)
+  	sought = (sorting[temp.index(np.max(temp))])
+  	soughtgameNum = probabilities[probabilities.ID == sought].gameNum.values[0]
+  	counterArray += [counter]
+  	soughtGameArray += [soughtgameNum]
+  	counter += 1
+  	
+  fixed = pd.DataFrame({'sought':soughtGameArray, 'linked':counterArray}).sort_values(['sought'])
+  print(fixed, "is this fixed?")
+  linker = []
+  
+  for i in fixed.linked.values:
+  	linker += [i]
+  	linker += [i]
+  print(len(probabilities['gameNum']), len(linker))
+  probabilities['gameNum'] = linker
+  print(probabilities)
+  
   array ,counter = [], 0
-  #print(probabilities)
-  df=df[df.Type=='Moneyline']
-  #print(df)
-  for i in probabilities.Probabilities.values:
-  	#print(counter)
+  for i in probabilities.gameNum.values:
+  	print(counter)
   	if counter%2 == 0:
   		indexed = probabilities.gameNum.values[counter]
-  		#print(indexed, 'index')
-  		valued = df.HomeTeamandOdds.values[indexed][-1]
+  		print(df.HomeTeamandOdds.values[indexed][-1])
+  		valued = df.HomeTeamandOdds.values[i][-1]
   		array+= [valued]
   		counter = counter+1
   	else:
   		indexed = probabilities.gameNum.values[counter]
-  		valued = df.AwayTeamandOdds.values[indexed][-1]
-  		array += [valued]
+  		print(df.HomeTeamandOdds.values[indexed][-1])
+  		valued = df.AwayTeamandOdds.values[i][-1]
+  		array+= [valued]
   		counter = counter+1
   EV = []
   for i in range(len(array)):
   	EV += [probabilities.Probabilities.values[i]*array[i]]
-  #print(array, probabilities.ID.values,probabilities )
+  print(array, probabilities.ID.values,probabilities )
   Result = pd.DataFrame({'Team':probabilities.ID.values, 'Probability': probabilities.Probabilities.values, 'Odds':array, 'EV':EV})
+  print(Result)
   Bet = Result[Result.EV >1]
   kelly = [Kelly(Bet.Odds.values[i], Bet.Probability.values[i]) for i in range(len(Bet.Probability.values))]
   #print(len(Bet.Team.values), len(kelly),  len(Bet.Odds.values))
@@ -183,7 +227,7 @@ def fetchName():
   for i in range(int(len(teamsToday)/2)):
   	indexed += [i]*2
   nba = pd.DataFrame({'ID':teamsToday, 'Probabilities':probabilitiesToday, 'gameNum':indexed })
-  nba = nba[nba.ID != '76ers']
+  nba = nba[nba.ID != '76ers'] #filter teams not playing here!!!!!!!!!!!
   nba = nba[nba.ID != 'Heat']
   indexer = []
   for i in range(int(len(nba.ID)/2)):
