@@ -132,7 +132,7 @@ def fetch():
   df = df[df.Type=='Moneyline']
   #print(df.sort_values(['GameName']))
   probabilities = fetchName()
-  #print(probabilities)
+  print(probabilities)
   
   valued = []
   for i in np.unique(probabilities.gameNum.values):
