@@ -1,4 +1,4 @@
-import ELO, EPL, FL1, GPL, FL2, TSL, ISA, LLA, NBA, KHL, NPL
+import ELO, EPL, FL1, GPL, FL2, TSL, ISA, LLA, NBA, NPL
 #NFL
 def getPicks():
 	NBA.run()
