@@ -275,7 +275,7 @@ def run():
 	if gameToday():
 		return picks()
 	else:
-		return ('No EPL games today.')
+		return ('No NPL games today.')
 
 
 

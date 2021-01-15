@@ -1,7 +1,7 @@
-import NPL
+import PPL
 
 def getPicks():
-	NPL.run()
+	print(PPL.run())
 	return 'Picks Completed'
 	
 print('All bets are moneyline bets.')

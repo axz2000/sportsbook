@@ -262,6 +262,7 @@ def gainsLosses(allocation,successes, df, portfolio):
 
 def picks(): #this needs some work/checking
 	result = fetch().round(decimals=2)
+	print(result.to_markdown())
 	resulting = result[['Bet State Chosen', 'Kelly Criterion Suggestion','Payouts (per Dollar)']]
 	resulting['League'] = ['LLA']*len(resulting['Bet State Chosen'])
 	resulting['Date'] = [str(date.today())]*len(resulting['Bet State Chosen'])
