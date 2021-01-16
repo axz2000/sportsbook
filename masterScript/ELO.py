@@ -129,7 +129,7 @@ def fetch():
   df = (pd.DataFrame(getOdds(listing)))
   df.columns = ['GameName', 'Type', 'HomeTeamandOdds', 'DrawOdds', 'AwayTeamandOdds']
   df = df[df.Type=='Moneyline']
-  #print(df.sort_values(['GameName']))
+  #df = df[df.GameName != 'Shrewsbury v Lincoln']
   probabilities = fetchName()
   #print(probabilities)
   
