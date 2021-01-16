@@ -8,8 +8,6 @@
 199,Trail Blazers,0.023,NBA,1.52
 200,Wolves,0.017,EPL,1.74
 201,Brighton,0.003,EPL,3.4
-202,Fulham,0.0,EPL,6.0
-203,Southampton,0.0,EPL,4.6
 204,Werder Bremen,0.005,GPL,2.2
 205,Wolfsburg,0.002,GPL,3.5
 206,1. FC Köln,0.003,GPL,3.2
@@ -17,20 +15,10 @@
 208,Troyes,0.008,FL2,1.87
 209,Valenciennes,0.003,FL2,3.0
 210,Amiens,0.011,FL2,2.1
-211,Nancy,0.001,FL2,3.5
-212,Caen,0.001,FL2,3.5
-213,Draw Clermont v Dunkerque,0.001,FL2,4.0
 214,Chambly,0.004,FL2,2.35
 215,Bologna,0.003,ISA,2.35
-216,Spezia,0.001,ISA,4.1
 217,Sampdoria,0.002,ISA,3.0
-218,Emmen,0.001,NPL,5.5
-219,Draw Emmen v Vitesse,0.001,NPL,4.3
-220,Draw Utrecht v Heracles,0.001,NPL,4.0
-221,Draw AZ Alkmaar v ADO Den Haag,0.0,NPL,9.0
-222,Paços Ferreira,0.001,PPL,4.3
 223,Tondela,0.003,PPL,3.1
-224,Rams          ,0.001,NFL,3.5
 225,Bills          ,0.018,NFL,1.68
 226,Sunderland,0.011,ELO,1.8
 227,Hull City,0.017,ELO,2.0
@@ -38,8 +26,6 @@
 229,Doncaster,0.01,ELO,2.25
 230,Charlton Athletic,0.003,ELO,2.4
 231,Peterborough,0.007,ELO,2.05
-232,Draw Stanley v Gillingham,0.001,ELO,3.5
-233,Gillingham,0.001,ELO,4.2
 234,Wigan,0.002,ELO,3.1
 235,Portsmouth,0.003,ELO,2.35
 236,Ipswich Town,0.007,ELO,2.25

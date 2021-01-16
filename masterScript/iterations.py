@@ -101,6 +101,7 @@ def dailyReturn():
 		bettor = powerLaw(portfolioAmt, portfolioTrackingTom).round(3)
 		bettor.to_csv(os.getcwd() + '/masterUpcoming.csv')
 		bettors = bettor[['Bet State Chosen', 'Allocation Percentage', 'League', 'Payouts (per Dollar)']]
+		bettors = bettors[bettors['Allocation Percentage'] > 0.001]
 		bettors.to_csv(os.getcwd() + '/masterPush.csv')
 		
 		returns = gainsLosses(bet['Allocation Dollars'].values,bet['Success'].values, portfolioTracking, portfolioAmt)
