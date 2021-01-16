@@ -100,6 +100,8 @@ def dailyReturn():
 		portfolioTrackingTom = portfolioTracked[portfolioTracked.Date == tomorrow]
 		bettor = powerLaw(portfolioAmt, portfolioTrackingTom).round(2)
 		bettor.to_csv(os.getcwd() + '/masterUpcoming.csv')
+		bettors = bettor[['Bet State Chosen', 'Allocation Dollars', 'League', 'Payouts (per Dollar)']]
+		bettors.to_csv(os.getcwd() + '/masterPush.csv')
 		
 		returns = gainsLosses(bet['Allocation Dollars'].values,bet['Success'].values, portfolioTracking, portfolioAmt)
 		print(portfolioAmt, ' portfolio amount of the day.')
