@@ -165,7 +165,7 @@ def fetchName():
     'upgrade-insecure-requests': '1',
     'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'})
   page_content = BeautifulSoup(page_response.content, "html.parser")
-  Today = page_content.findAll('div', class_="day")[0] #this is a big issue but easily fixed !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  Today = page_content.findAll('div', class_="day")[1] #this is a big issue but easily fixed !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   teamsToday = [i.text for i in Today.findAll('td', class_ = "td text team")]
   #print(teamsToday)
   probabilitiesToday = [float(i.text[:-1])/100 for i in Today.findAll('td', class_="td number chance")]

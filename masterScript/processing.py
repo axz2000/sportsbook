@@ -1,7 +1,7 @@
-import TSL
+import NFL
 
 def getPicks():
-	print(TSL.run())
+	print(NFL.run())
 	return 'Picks Completed'
 	
 print('All bets are moneyline bets.')
