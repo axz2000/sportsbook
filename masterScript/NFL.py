@@ -19,6 +19,9 @@ import warnings
 
 warnings.filterwarnings("ignore") 
 
+def tryMatch(i,j):
+	return fuzz.token_sort_ratio(str(i), str(j))
+	
 def matching(arrayStrOne,arrayStrTwo):
 	matches = []
 	for i in arrayStrOne:
@@ -114,41 +117,83 @@ def fetch():
   	jsonData_fanduel_nfl = requests.get('https://sportsbook.fanduel.com/cache/psmg/UK/62006.3.json').json() #gives the game id
   except:
   	print('Not a problem, the XHR has been changed for the NFL, go ahead and fix that then run again')
-  nfl = parse_data(jsonData_fanduel_nfl)
-  NFL = pd.DataFrame(nfl)[['eventname','tsstart','idfoevent.markets']]
-  NFL.columns = ['Teams','Date','EventID']
+  epl = parse_data(jsonData_fanduel_nfl)
+  #print(epl)
+  EPL = pd.DataFrame(epl)[['eventname','tsstart','idfoevent.markets']]
+  EPL.columns = ['Teams','Date','EventID']
   listing = []
-  for i in np.unique(NFL.EventID.values): 
+  for i in np.unique(EPL.EventID.values): 
     listing.append((fullSet(i)))
   df = (pd.DataFrame(getOdds(listing)))
-  df.columns = ['GameName', 'Type', 'HomeTeamandOdds','AwayTeamandOdds']
+  df.columns = ['GameName', 'Type', 'HomeTeamandOdds', 'AwayTeamandOdds']
   df = df[df.Type=='Moneyline']
-  print(df)
+  print(df.sort_values(['GameName']))
   probabilities = fetchName()
   print(probabilities)
-  probabilities['gameNum'] = [0,0,1,1] #edit this
+  print(df)
+  
+  #check if all of them are there
+  valued = []
+  
+  #print(probabilities.gameNum.values)
+  for i in np.unique(probabilities.gameNum.values):
+  	newdf = probabilities[probabilities.gameNum == i]
+  	valued += [newdf.ID.values[1][:]]
+  	print(valued)
+  sorting = np.sort(valued)
+  indices, counterArray, soughtGameArray = [], [], []
+  counter = 0
+  gamed = []
+  
+  #print((len(df.GameName.values), len(sorting)))
+  for i in (df.GameName.values):
+  	i = i.split(' ')[-1]
+  	temp = []
+  	for j in np.unique(sorting):
+  		print(i,j)
+  		temp += [tryMatch(i,j)]
+  	#print(temp)
+  	sought = (sorting[temp.index(np.max(temp))])
+  	soughtgameNum = probabilities[probabilities.ID == sought].gameNum.values[0]
+  	counterArray += [counter]
+  	soughtGameArray += [soughtgameNum]
+  	counter += 1
+  	
+  fixed = pd.DataFrame({'sought':soughtGameArray, 'linked':counterArray}).sort_values(['sought'])
+  print(fixed, "is this fixed?")
+  linker = []
+  
+  for i in fixed.linked.values:
+  	linker += [i]
+  	linker += [i]
+  print(len(probabilities['gameNum']), len(linker))
+  probabilities['gameNum'] = linker
+  print(probabilities)
+  
   array ,counter = [], 0
-  for i in probabilities.Probabilities.values:
-  	#print(counter)
+  for i in probabilities.gameNum.values:
+  	print(counter)
   	if counter%2 == 0:
   		indexed = probabilities.gameNum.values[counter]
-  		#print(df.HomeTeamandOdds.values[indexed][-1])
-  		valued = df.HomeTeamandOdds.values[indexed][-1]
+  		print(df.HomeTeamandOdds.values[indexed][-1])
+  		valued = df.HomeTeamandOdds.values[i][-1]
   		array+= [valued]
   		counter = counter+1
   	else:
   		indexed = probabilities.gameNum.values[counter]
-  		valued = df.AwayTeamandOdds.values[indexed][-1]
-  		array += [valued]
+  		print(df.HomeTeamandOdds.values[indexed][-1])
+  		valued = df.AwayTeamandOdds.values[i][-1]
+  		array+= [valued]
   		counter = counter+1
   EV = []
   for i in range(len(array)):
   	EV += [probabilities.Probabilities.values[i]*array[i]]
   print(array, probabilities.ID.values,probabilities )
   Result = pd.DataFrame({'Team':probabilities.ID.values, 'Probability': probabilities.Probabilities.values, 'Odds':array, 'EV':EV})
+  print(Result)
   Bet = Result[Result.EV >1]
   kelly = [Kelly(Bet.Odds.values[i], Bet.Probability.values[i]) for i in range(len(Bet.Probability.values))]
-  print(len(Bet.Team.values), len(kelly),  len(Bet.Odds.values))
+  #print(len(Bet.Team.values), len(kelly),  len(Bet.Odds.values))
   Betting = pd.DataFrame({'Bet State Chosen':Bet.Team.values, 'Kelly Criterion Suggestion': kelly, 'Payouts (per Dollar)':Bet.Odds.values})
   #Betting.columns = ['Bet State Chosen', 'Kelly Criterion Suggestion', 'Probability Spread','Payouts (per Dollar)']
   return Betting
