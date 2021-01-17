@@ -93,14 +93,17 @@ def dailyReturn():
 		portfolioTracked = pd.read_csv(os.getcwd() + '/masterDaily.csv')
 		today = str(date.today() - timedelta(1))
 		portfolioTracking = portfolioTracked[portfolioTracked.Date == today]
-		bet = powerLaw(portfolioAmt, portfolioTracking).round(2)
+		bet = powerLaw(portfolioAmt, portfolioTracking).round(3)
 		bet.to_csv(os.getcwd() + '/masterDailyRecap.csv')
 		
 		tomorrow = str(date.today())
 		portfolioTrackingTom = portfolioTracked[portfolioTracked.Date == tomorrow]
-		bettor = powerLaw(portfolioAmt, portfolioTrackingTom).round(3)
+		bettor = powerLaw(portfolioAmt, portfolioTrackingTom).round(5)
 		bettor.to_csv(os.getcwd() + '/masterUpcoming.csv')
 		bettors = bettor[['Bet State Chosen', 'Allocation Percentage', 'League', 'Payouts (per Dollar)', 'Date']]
+		bettors['Allocation Percentage'] = [i*100 for i in bettors['Allocation Percentage']]
+		bettors = bettors.round(4)
+		#bettors['American Odds'] = 
 		bettors = bettors[bettors['Allocation Percentage'] > 0.001]
 		bettors.to_csv(os.getcwd() + '/masterPush.csv')
 		
