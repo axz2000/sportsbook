@@ -1,6 +1,13 @@
 ,Bet State Chosen,Allocation Percentage,League,Payouts (per Dollar),Date,American Odds
-221,Draw Arsenal v Newcastle,0.636,EPL,4.6,2021-01-18,+359
-222,Newcastle,0.208,EPL,8.0,2021-01-18,+700
-223,Kasımpaşa,15.909,TSL,1.8,2021-01-18,-125
-224,Cagliari,0.208,ISA,5.7,2021-01-18,+470
-225,Portimonense,9.468,PPL,2.3,2021-01-18,+129
+221,Draw Arsenal v Newcastle,0.11,EPL,4.6,2021-01-18,+359
+222,Newcastle,0.036,EPL,8.0,2021-01-18,+700
+223,Kasımpaşa,2.759,TSL,1.8,2021-01-18,-125
+224,Cagliari,0.036,ISA,5.7,2021-01-18,+470
+225,Portimonense,1.642,PPL,2.3,2021-01-18,+129
+226,Knicks,1.523,NBA,1.98,2021-01-18,-102
+227,Hawks,10.11,NBA,1.32,2021-01-18,-312
+228,Heat,10.414,NBA,1.42,2021-01-18,-238
+229,Trail Blazers,4.36,NBA,1.57,2021-01-18,-175
+230,Raptors,4.36,NBA,2.1,2021-01-18,+110
+231,Nets,4.561,NBA,1.86,2021-01-18,-116
+232,Lakers,12.002,NBA,1.27,2021-01-18,-370

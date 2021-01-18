@@ -131,7 +131,7 @@ def fetch():
   
   #check if all of them are there
   valued = []
-  #print(probabilities.gameNum.values)
+  print(probabilities.gameNum.values)
   for i in np.unique(probabilities.gameNum.values):
   	newdf = probabilities[probabilities.gameNum == i]
   	valued += [newdf.ID.values[1][:]]
@@ -141,28 +141,30 @@ def fetch():
   counter = 0
   gamed = []
   
-  #print((len(df.GameName.values), len(sorting)))
+  print((len(df.GameName.values), len(sorting)))
   for i in (df.GameName.values):
+  	i = i.split(' ')[-1]
   	temp = []
   	for j in np.unique(sorting):
   		temp += [tryMatch(i,j)]
-  	#print(temp)
+  	print(temp)
   	sought = (sorting[temp.index(np.max(temp))])
+  	print(i, sought)
   	soughtgameNum = probabilities[probabilities.ID == sought].gameNum.values[0]
   	counterArray += [counter]
   	soughtGameArray += [soughtgameNum]
   	counter += 1
   	
   fixed = pd.DataFrame({'sought':soughtGameArray, 'linked':counterArray}).sort_values(['sought'])
-  #print(fixed)
+  print(fixed)
   linker = []
   
   for i in fixed.linked.values:
   	linker += [i]
   	linker += [i]
-  #print(len(probabilities['gameNum']), len(linker))
+  print(len(probabilities['gameNum']), len(linker))
   probabilities['gameNum'] = linker
-  #print(probabilities)
+  print(probabilities)
   
   
   array ,counter = [], 0
@@ -191,8 +193,6 @@ def fetch():
   #print(len(Bet.Team.values), len(kelly),  len(Bet.Odds.values))
   Betting = pd.DataFrame({'Bet State Chosen':Bet.Team.values, 'Kelly Criterion Suggestion': kelly, 'Payouts (per Dollar)':Bet.Odds.values})
   #Betting.columns = ['Bet State Chosen', 'Kelly Criterion Suggestion', 'Probability Spread','Payouts (per Dollar)']
-  Betting = Betting[Betting['Bet State Chosen'] != 'Heat']
-  Betting = Betting[Betting['Bet State Chosen'] != 'Lakers']
   return Betting
   
 def fetchName(): 
