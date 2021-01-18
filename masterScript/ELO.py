@@ -265,7 +265,7 @@ def picks(): #this needs some work/checking
 	print(result.to_markdown())
 	resulting = result[['Bet State Chosen', 'Kelly Criterion Suggestion','Payouts (per Dollar)']]
 	resulting['League'] = ['ELO']*len(resulting['Bet State Chosen'])
-	resulting['Date'] = [str(datetime.now().strftime("%d/%m/%Y %H:%M:%S"))]*len(resulting['Bet State Chosen'])
+	resulting['Date'] = [str(date.today())]*len(resulting['Bet State Chosen'])
 	resulting.to_csv(os.getcwd() + '/masterDaily.csv', mode='a', header=False)
 	return 'ELO Done'
 	

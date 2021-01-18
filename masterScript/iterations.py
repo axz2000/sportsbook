@@ -112,6 +112,7 @@ def dailyReturn():
 		bettors['Allocation Percentage'] = [i*100 for i in bettors['Allocation Percentage']]
 		bettors = bettors.round(4)
 		bettors['American Odds'] = [reverseOdds(i) for i in bettors['Payouts (per Dollar)']]
+		bettors['Update Time (EST)'] = [str(datetime.now().strftime("%H:%M:%S")) for i in range(len(bettors))]
 		bettors = bettors[bettors['Allocation Percentage'] > 0.001]
 		bettors.to_csv(os.getcwd() + '/masterPush.csv')
 		
