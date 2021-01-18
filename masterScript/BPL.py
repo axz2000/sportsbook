@@ -111,13 +111,13 @@ def searchingForGame(jsonData):
 	return today == gameday
 
 def gameToday():
-	jsonData_fanduel_epl = requests.get('https://sportsbook.fanduel.com/cache/psmg/UK/55825.3.json').json()
+	jsonData_fanduel_epl = requests.get('https://sportsbook.fanduel.com/cache/psmg/UK/63885.3.json').json()
 	boolean = searchingForGame(jsonData_fanduel_epl)
 	return boolean
 
 def fetch():
   try:
-  	jsonData_fanduel_epl = requests.get('https://sportsbook.fanduel.com/cache/psmg/UK/55825.3.json').json() #gives the game id
+  	jsonData_fanduel_epl = requests.get('https://sportsbook.fanduel.com/cache/psmg/UK/63885.3.json').json() #gives the game id
   except:
   	print('Not a problem, the XHR has been changed for the EPL, go ahead and fix that then run again')
   epl = parse_data(jsonData_fanduel_epl)
@@ -196,7 +196,7 @@ def fetch():
   return Betting
   
 def fetchName(): 
-  url = 'https://projects.fivethirtyeight.com/soccer-predictions/ligue-2/'
+  url = 'https://projects.fivethirtyeight.com/soccer-predictions/brasileirao/'
   #print('hello')
   page_response = requests.get(url, timeout=10, headers = {
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
@@ -256,10 +256,10 @@ def picks(): #this needs some work/checking
 	result = fetch().round(decimals=2)
 	print(result.to_markdown())
 	resulting = result[['Bet State Chosen', 'Kelly Criterion Suggestion','Payouts (per Dollar)']]
-	resulting['League'] = ['FL2']*len(resulting['Bet State Chosen'])
-	resulting['Date'] = [str(date.today())]*len(resulting['Bet State Chosen'])
+	resulting['League'] = ['BPL']*len(resulting['Bet State Chosen'])
+	resulting['Date'] = [str(datetime.now().strftime("%d/%m/%Y %H:%M:%S"))]*len(resulting['Bet State Chosen'])
 	resulting.to_csv(os.getcwd() + '/masterDaily.csv', mode='a', header=False)
-	return 'FL2 Done'
+	return 'BPL Done'
 
 '''
 To do:
@@ -275,6 +275,6 @@ def run():
 	if gameToday():
 		return picks()
 	else:
-		return ('No FL2 games today.')
+		return ('No BPL games today.')
 
 #print(run())

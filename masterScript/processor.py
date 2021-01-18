@@ -1,4 +1,4 @@
-import ELO, EPL, FL1, GPL, FL2, TSL, ISA, LLA, NBA, NPL, PPL, NFL
+import ELO, EPL, FL1, GPL, TSL, ISA, LLA, NBA, NPL, PPL, NFL, BPL
 
 #KHL
 
@@ -8,7 +8,7 @@ def getPicks():
 	print(EPL.run())
 	print(GPL.run())
 	print(FL1.run())
-	print(FL2.run())
+	print(BPL.run())
 	print(TSL.run())
 	print(ISA.run())
 	print(LLA.run())
