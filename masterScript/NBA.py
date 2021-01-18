@@ -143,7 +143,7 @@ def fetch():
   
   print((len(df.GameName.values), len(sorting)))
   for i in (df.GameName.values):
-  	i = i.split(' ')[-1]
+  	i = i.split(' ')[-2:]
   	temp = []
   	for j in np.unique(sorting):
   		temp += [tryMatch(i,j)]
