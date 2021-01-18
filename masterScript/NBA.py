@@ -191,6 +191,8 @@ def fetch():
   #print(len(Bet.Team.values), len(kelly),  len(Bet.Odds.values))
   Betting = pd.DataFrame({'Bet State Chosen':Bet.Team.values, 'Kelly Criterion Suggestion': kelly, 'Payouts (per Dollar)':Bet.Odds.values})
   #Betting.columns = ['Bet State Chosen', 'Kelly Criterion Suggestion', 'Probability Spread','Payouts (per Dollar)']
+  Betting = Betting[Betting['Bet State Chosen'] != 'Heat']
+  Betting = Betting[Betting['Bet State Chosen'] != 'Lakers']
   return Betting
   
 def fetchName(): 
