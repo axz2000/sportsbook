@@ -127,12 +127,10 @@ def fetch():
   df = df[df.Type=='Moneyline']
   print(df.sort_values(['GameName']))
   probabilities = fetchName()
-  print(probabilities)
-  print(df)
+  
   
   #check if all of them are there
   valued = []
-  
   #print(probabilities.gameNum.values)
   for i in np.unique(probabilities.gameNum.values):
   	newdf = probabilities[probabilities.gameNum == i]
@@ -145,10 +143,8 @@ def fetch():
   
   #print((len(df.GameName.values), len(sorting)))
   for i in (df.GameName.values):
-  	i = i.split(' ')[-1]
   	temp = []
   	for j in np.unique(sorting):
-  		print(i,j)
   		temp += [tryMatch(i,j)]
   	#print(temp)
   	sought = (sorting[temp.index(np.max(temp))])
@@ -158,15 +154,16 @@ def fetch():
   	counter += 1
   	
   fixed = pd.DataFrame({'sought':soughtGameArray, 'linked':counterArray}).sort_values(['sought'])
-  print(fixed, "is this fixed?")
+  #print(fixed)
   linker = []
   
   for i in fixed.linked.values:
   	linker += [i]
   	linker += [i]
-  print(len(probabilities['gameNum']), len(linker))
+  #print(len(probabilities['gameNum']), len(linker))
   probabilities['gameNum'] = linker
-  print(probabilities)
+  #print(probabilities)
+  
   
   array ,counter = [], 0
   for i in probabilities.gameNum.values:
@@ -227,8 +224,8 @@ def fetchName():
   for i in range(int(len(teamsToday)/2)):
   	indexed += [i]*2
   nba = pd.DataFrame({'ID':teamsToday, 'Probabilities':probabilitiesToday, 'gameNum':indexed })
-  '''nba = nba[nba.ID != 'Pistons']
-  nba = nba[nba.ID != 'Heat']'''
+  nba = nba[nba.ID != 'Suns']
+  nba = nba[nba.ID != 'Grizzlies']
   indexer = []
   for i in range(int(len(nba.ID)/2)):
   	indexer += [i]*2
