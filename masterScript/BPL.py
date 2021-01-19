@@ -197,7 +197,7 @@ def fetch():
   
 def fetchName(): 
   url = 'https://projects.fivethirtyeight.com/soccer-predictions/brasileirao/'
-  #print('hello')
+  print('hello')
   page_response = requests.get(url, timeout=10, headers = {
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
     'accept-encoding': 'gzip, deflate, br',
@@ -208,6 +208,7 @@ def fetchName():
   page_content = BeautifulSoup(page_response.content, "html.parser")
   navigate = page_content.findAll('div', class_="games-container upcoming")[0]
   Today = navigate.findAll('tbody')
+  print(Today)
   teams, prob = [], []
   for i in Today:
   	if (i.find('div').text == str(date.today().strftime("%-m/%-d"))):#this could fail in the beginning of january
@@ -216,7 +217,7 @@ def fetchName():
   	  away = i.findAll('td', class_ = "team")[1]['data-str']
   	  teams += [home, 'Draw ' +str(home)+ ' v ' +str(away),away]
   	  prob +=[float(j.text[:-1])/100 for j in i.findAll('td', class_="prob")]
-  #print(teams)
+  print(teams)
   indexed = []
   for i in range(int(len(teams)/3)):
   	indexed += [i]*3

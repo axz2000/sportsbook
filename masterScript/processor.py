@@ -8,7 +8,7 @@ def getPicks():
 	print(EPL.run())
 	print(GPL.run())
 	print(FL1.run())
-	print(BPL.run())
+	print(BPL.run()) #needs a no games function
 	print(TSL.run())
 	print(ISA.run())
 	print(LLA.run())
