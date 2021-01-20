@@ -130,9 +130,11 @@ def fetch():
   df = (pd.DataFrame(getOdds(listing)))
   df.columns = ['GameName', 'Type', 'HomeTeamandOdds', 'DrawOdds', 'AwayTeamandOdds']
   df = df[df.Type=='Moneyline']
-  #print(df.sort_values(['GameName']))
+  df = df[df.GameName != 'Cruzeiro MG v Operario PR']
+  df = df[df.GameName != 'Nautico PE v Oeste']
+  print(len(df.sort_values(['GameName'])))
   probabilities = fetchName()
-  print(probabilities)
+  print(len(probabilities))
   
   valued = []
   for i in np.unique(probabilities.gameNum.values):
@@ -197,7 +199,7 @@ def fetch():
   
 def fetchName(): 
   url = 'https://projects.fivethirtyeight.com/soccer-predictions/brasileirao/'
-  print('hello')
+  #print('hello')
   page_response = requests.get(url, timeout=10, headers = {
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
     'accept-encoding': 'gzip, deflate, br',
@@ -208,7 +210,7 @@ def fetchName():
   page_content = BeautifulSoup(page_response.content, "html.parser")
   navigate = page_content.findAll('div', class_="games-container upcoming")[0]
   Today = navigate.findAll('tbody')
-  print(Today)
+  #print(Today)
   teams, prob = [], []
   for i in Today:
   	if (i.find('div').text == str(date.today().strftime("%-m/%-d"))):#this could fail in the beginning of january
@@ -222,7 +224,6 @@ def fetchName():
   for i in range(int(len(teams)/3)):
   	indexed += [i]*3
   epl = pd.DataFrame({'ID':teams, 'Probabilities':prob, 'gameNum':indexed })
-  print(epl)
   return epl
 
 def oddstoPayout(odds,dollarsIn):

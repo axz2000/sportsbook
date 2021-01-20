@@ -143,13 +143,14 @@ def fetch():
   
   print((len(df.GameName.values), len(sorting)))
   for i in (df.GameName.values):
-  	i = i.split(' ')[-2:]
+  	i = i.split(' ')[-1]
   	temp = []
   	for j in np.unique(sorting):
+  		print(i,j)
   		temp += [tryMatch(i,j)]
   	print(temp)
   	sought = (sorting[temp.index(np.max(temp))])
-  	print(i, sought)
+  	print(i, sought, "this")
   	soughtgameNum = probabilities[probabilities.ID == sought].gameNum.values[0]
   	counterArray += [counter]
   	soughtGameArray += [soughtgameNum]
@@ -226,8 +227,6 @@ def fetchName():
   for i in range(int(len(teamsToday)/2)):
   	indexed += [i]*2
   nba = pd.DataFrame({'ID':teamsToday, 'Probabilities':probabilitiesToday, 'gameNum':indexed })
-  nba = nba[nba.ID != 'Suns']
-  nba = nba[nba.ID != 'Grizzlies']
   indexer = []
   for i in range(int(len(nba.ID)/2)):
   	indexer += [i]*2
