@@ -108,7 +108,7 @@ def dailyReturn():
 		portfolioTrackingTom = portfolioTracked[portfolioTracked.Date == tomorrow]
 		bettor = powerLaw(portfolioAmt, portfolioTrackingTom).round(5)
 		bettor.to_csv(os.getcwd() + '/masterUpcoming.csv')
-		bettors = bettor[['Bet State Chosen', 'Allocation Percentage', 'League', 'Payouts (per Dollar)', 'Date']]
+		bettors = bettor[['Bet State Chosen', 'Kelly Criterion Suggestion', 'Allocation Percentage', 'League', 'Payouts (per Dollar)', 'Date']]
 		bettors['Allocation Percentage'] = [i*100 for i in bettors['Allocation Percentage']]
 		bettors = bettors.round(4)
 		bettors['American Odds'] = [reverseOdds(i) for i in bettors['Payouts (per Dollar)']]
