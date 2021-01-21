@@ -121,7 +121,7 @@ def fetch():
   except:
   	print('Not a problem, the XHR has been changed for the EPL, go ahead and fix that then run again')
   epl = parse_data(jsonData_fanduel_epl)
-  #print(epl)
+  print(epl)
   EPL = pd.DataFrame(epl)[['eventname','tsstart','idfoevent.markets']]
   EPL.columns = ['Teams','Date','EventID']
   listing = []
@@ -130,8 +130,7 @@ def fetch():
   df = (pd.DataFrame(getOdds(listing)))
   df.columns = ['GameName', 'Type', 'HomeTeamandOdds', 'DrawOdds', 'AwayTeamandOdds']
   df = df[df.Type=='Moneyline']
-  df = df[df.GameName != 'Cruzeiro MG v Operario PR']
-  df = df[df.GameName != 'Nautico PE v Oeste']
+  df = df[df.GameName != 'Chapecoense v Ponte Preta']
   print(len(df.sort_values(['GameName'])))
   probabilities = fetchName()
   print(len(probabilities))

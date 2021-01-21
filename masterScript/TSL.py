@@ -129,9 +129,10 @@ def fetch():
   df = (pd.DataFrame(getOdds(listing)))
   df.columns = ['GameName', 'Type', 'HomeTeamandOdds', 'DrawOdds', 'AwayTeamandOdds']
   df = df[df.Type=='Moneyline']
+  print(df)
   #df = df[df.GameName != '']
   probabilities = fetchName()
-  #print(probabilities)
+  print(probabilities)
   
   #check if all of them are there
   valued = []
@@ -224,15 +225,16 @@ def fetchName():
   	  away = i.findAll('td', class_ = "team")[1]['data-str']
   	  teams += [home, 'Draw ' + str(home)+ ' v ' +str(away),away]
   	  prob +=[float(j.text[:-1])/100 for j in i.findAll('td', class_="prob")]
-  #print(teams)
+  print(teams)
   indexed = []
   for i in range(int(len(teams)/3)):
   	indexed += [i]*3
   epl = pd.DataFrame({'ID':teams, 'Probabilities':prob, 'gameNum':indexed })
-  '''epl = epl[epl.ID != 'Başakşehir']
+  epl = epl[epl.ID != 'Fenerbahçe']
   epl = epl[epl.ID != 'Sivasspor']
-  epl = epl[epl.ID != 'Draw Başakşehir v Sivasspor']'''
+  epl = epl[epl.ID != 'Draw Sivasspor v Fenerbahçe']
   indexer = []
+  print(epl, len(epl))
   for i in range(int(len(epl.ID)/3)):
   	indexer += [i]*3
   epl['gameNum'] = indexer
