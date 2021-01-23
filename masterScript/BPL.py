@@ -129,8 +129,10 @@ def fetch():
     listing.append((fullSet(i)))
   df = (pd.DataFrame(getOdds(listing)))
   df.columns = ['GameName', 'Type', 'HomeTeamandOdds', 'DrawOdds', 'AwayTeamandOdds']
+  df = df[df.GameName != 'Avai v Guarani']
+  df = df[df.GameName != 'Confianca v America MG']
   df = df[df.Type=='Moneyline']
-  print(len(df.sort_values(['GameName'])))
+  print((df.sort_values(['GameName'])))
   probabilities = fetchName()
   print(len(probabilities))
   

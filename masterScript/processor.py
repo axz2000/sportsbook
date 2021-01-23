@@ -3,12 +3,12 @@ import ELO, EPL, FL1, GPL, TSL, ISA, LLA, NBA, NPL, PPL, NFL, BPL
 #KHL
 
 def getPicks():
-	'''print(NBA.run())
+	print(NBA.run())
 	print(ELO.run())
 	print(EPL.run())
 	print(GPL.run())
 	print(FL1.run())
-	print(BPL.run()) # needs no game function'''
+	print(BPL.run()) # needs no game function
 	print(TSL.run())
 	print(ISA.run())
 	print(LLA.run())
