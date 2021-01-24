@@ -104,7 +104,7 @@ def searchingForGame(jsonData):
 	alpha = jsonData['events'][0]
 	gameday = alpha['tsstart'][:10]
 	today = str(date.today())
-	print(today, gameday)
+	#print(today, gameday)
 	return today == gameday
 
 def gameToday():
@@ -128,10 +128,10 @@ def fetch():
   df = (pd.DataFrame(getOdds(listing)))
   df.columns = ['GameName', 'Type', 'HomeTeamandOdds', 'AwayTeamandOdds']
   df = df[df.Type=='Moneyline']
-  print(df.sort_values(['GameName']))
+  #print(df.sort_values(['GameName']))
   probabilities = fetchName()
-  print(probabilities)
-  print(df)
+  #print(probabilities)
+  #print(df)
   
   #check if all of them are there
   valued = []
@@ -140,7 +140,7 @@ def fetch():
   for i in np.unique(probabilities.gameNum.values):
   	newdf = probabilities[probabilities.gameNum == i]
   	valued += [newdf.ID.values[1][:]]
-  	print(valued)
+  	#print(valued)
   sorting = np.sort(valued)
   indices, counterArray, soughtGameArray = [], [], []
   counter = 0
@@ -167,31 +167,31 @@ def fetch():
   for i in fixed.linked.values:
   	linker += [i]
   	linker += [i]
-  print(len(probabilities['gameNum']), len(linker))
+  #print(len(probabilities['gameNum']), len(linker))
   probabilities['gameNum'] = linker
-  print(probabilities)
+  #print(probabilities)
   
   array ,counter = [], 0
   for i in probabilities.gameNum.values:
-  	print(counter)
+  	#print(counter)
   	if counter%2 == 0:
   		indexed = probabilities.gameNum.values[counter]
-  		print(df.HomeTeamandOdds.values[indexed][-1])
+  		#print(df.HomeTeamandOdds.values[indexed][-1])
   		valued = df.HomeTeamandOdds.values[i][-1]
   		array+= [valued]
   		counter = counter+1
   	else:
   		indexed = probabilities.gameNum.values[counter]
-  		print(df.HomeTeamandOdds.values[indexed][-1])
+  		#print(df.HomeTeamandOdds.values[indexed][-1])
   		valued = df.AwayTeamandOdds.values[i][-1]
   		array+= [valued]
   		counter = counter+1
   EV = []
   for i in range(len(array)):
   	EV += [probabilities.Probabilities.values[i]*array[i]]
-  print(array, probabilities.ID.values,probabilities )
+  #print(array, probabilities.ID.values,probabilities )
   Result = pd.DataFrame({'Team':probabilities.ID.values, 'Probability': probabilities.Probabilities.values, 'Odds':array, 'EV':EV})
-  print(Result)
+  #print(Result)
   Bet = Result[Result.EV >1]
   kelly = [Kelly(Bet.Odds.values[i], Bet.Probability.values[i]) for i in range(len(Bet.Probability.values))]
   #print(len(Bet.Team.values), len(kelly),  len(Bet.Odds.values))
@@ -202,7 +202,7 @@ def fetch():
 def fetchName(): 
   jsonData_fanduel_nfl = requests.get('https://sportsbook.fanduel.com/cache/psmg/UK/62006.3.json').json() #gives the game id
   url = 'https://projects.fivethirtyeight.com/2020-nfl-predictions/games/?ex_cid=rrpromo'
-  print('hello')
+  #print('hello')
   page_response = requests.get(url, timeout=10, headers = {
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
     'accept-encoding': 'gzip, deflate, br',
@@ -213,7 +213,7 @@ def fetchName():
   page_content = BeautifulSoup(page_response.content, "html.parser")
   Today = page_content.findAll('div', class_="day")[0] #this is a big issue but easily fixed !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   teamsToday = [i.text for i in Today.findAll('td', class_ = "td text team")]
-  print(teamsToday)
+  #print(teamsToday)
   probabilitiesToday = [float(i.text[:-1])/100 for i in Today.findAll('td', class_="td number chance")]
   indexed = []
   for i in range(int(len(teamsToday)/2)):

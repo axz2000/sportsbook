@@ -64,10 +64,13 @@ def dailyReturn():
 		port = pd.read_csv(os.getcwd() + '/masterPortfolio.csv')
 		portfolioAmt = port.Portfolio.values[-1]
 		array = [int(item) for item in input("Enter the list items : ").split()] #this shhould come from gamBet
-		today = str(date.today() - timedelta(1)) #works until 00:00 same day
+		today = str(date.today()) #works until 00:00 same day
+		print(today)
 		portfolioTrack = pd.read_csv(os.getcwd() + '/masterDaily.csv')
 		portfolioTracker = portfolioTrack[portfolioTrack.Date == today]
-		#print(len(portfolioTracker))
+		print(len(portfolioTracker))
+		print(portfolioTrack)
+		print(len(array))
 		portfolioTracker["Success"] = array
 		#print(portfolioTracker)
 		portfolioTracker.to_csv(os.getcwd() + '/masterDaily.csv', mode = 'a', index = False, header = False)
@@ -81,10 +84,12 @@ def dailyReturn():
 		port = pd.read_csv(os.getcwd() + '/masterPortfolio.csv')
 		portfolioAmt = port.Portfolio.values[-1]
 		portfolioTracked = pd.read_csv(os.getcwd() + '/masterDaily.csv')
-		today = str(date.today() - timedelta(1))
+		today = str(date.today())
 		portfolioTracking = portfolioTracked[portfolioTracked.Date == today]
 		bet = powerLaw(portfolioAmt, portfolioTracking)
 		bet.to_csv(os.getcwd() + '/masterDailyRecap.csv')
+		bet.reset_index()
+		bet.to_csv(os.getcwd() + '/historicalBetLedger.csv', mode='a', header=False, index = False)
 		returns = gainsLosses(bet['Allocation Dollars'].values,bet['Success'].values, portfolioTracking, portfolioAmt)
 		print(portfolioAmt)
 		updates = [returns[0]]
