@@ -64,7 +64,7 @@ def dailyReturn():
 		port = pd.read_csv(os.getcwd() + '/masterPortfolio.csv')
 		portfolioAmt = port.Portfolio.values[-1]
 		array = [int(item) for item in input("Enter the list items : ").split()] #this shhould come from gamBet
-		today = str(date.today()) #works until 00:00 same day
+		today = str(date.today() - timedelta(1)) #works until 00:00 same day
 		print(today)
 		portfolioTrack = pd.read_csv(os.getcwd() + '/masterDaily.csv')
 		portfolioTracker = portfolioTrack[portfolioTrack.Date == today]
@@ -84,7 +84,7 @@ def dailyReturn():
 		port = pd.read_csv(os.getcwd() + '/masterPortfolio.csv')
 		portfolioAmt = port.Portfolio.values[-1]
 		portfolioTracked = pd.read_csv(os.getcwd() + '/masterDaily.csv')
-		today = str(date.today())
+		today = str(date.today()-timedelta(1))
 		portfolioTracking = portfolioTracked[portfolioTracked.Date == today]
 		bet = powerLaw(portfolioAmt, portfolioTracking)
 		bet.to_csv(os.getcwd() + '/masterDailyRecap.csv')

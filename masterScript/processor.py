@@ -13,7 +13,7 @@ def getPicks():
 	print(LLA.run())
 	print(NPL.run())
 	print(PPL.run())
-	print(NFL.run())
+	#print(NFL.run())
 	print(BPL.run())
 	return 'Picks Completed'
 	
