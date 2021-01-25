@@ -230,9 +230,6 @@ def fetchName():
   for i in range(int(len(teams)/3)):
   	indexed += [i]*3
   epl = pd.DataFrame({'ID':teams, 'Probabilities':prob, 'gameNum':indexed })
-  epl = epl[epl.ID != 'Fenerbahçe']
-  epl = epl[epl.ID != 'Sivasspor']
-  epl = epl[epl.ID != 'Draw Sivasspor v Fenerbahçe']
   indexer = []
   print(epl, len(epl))
   for i in range(int(len(epl.ID)/3)):
