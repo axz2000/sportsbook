@@ -278,8 +278,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Kasımpaşa,0.18,2.9,TSL,2021-01-25,1.0
 1.0,Fenerbahçe,0.58,1.32,TSL,2021-01-25,1.0
 2.0,Draw Alanyaspor v Ankaragücü,0.07,4.5,TSL,2021-01-25,0.0
-0,Hawks,0.64,1.83,NBA,2021-01-26
-1,Rockets,0.92,1.83,NBA,2021-01-26
 0,Hull City,0.41,1.91,ELO,2021-01-26
 1,Gillingham,0.21,3.0,ELO,2021-01-26
 2,Portsmouth,0.28,2.1,ELO,2021-01-26
@@ -299,3 +297,5 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0,Palmeiras,0.42,2.2,BPL,2021-01-26
 1,Draw Atlético Mineiro v Santos,0.07,5.5,BPL,2021-01-26
 2,Santos,0.09,9.0,BPL,2021-01-26
+0,Hawks,0.63,1.68,NBA,2021-01-26
+1,Rockets,0.92,1.83,NBA,2021-01-26
