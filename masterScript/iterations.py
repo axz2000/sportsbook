@@ -16,6 +16,7 @@ import os
 import tabulate
 import time
 import warnings
+import re
 
 warnings.filterwarnings("ignore") 
 
@@ -87,8 +88,10 @@ def dailyReturn():
 		today = str(date.today()-timedelta(1))
 		portfolioTracking = portfolioTracked[portfolioTracked.Date == today]
 		bet = powerLaw(portfolioAmt, portfolioTracking)
+		parlay = bet
+		parlay['Bet State Chosen'] = [re.sub(r'\W+', '', i) for i in parlay['Bet State Chosen'].values]
+		parlay.to_csv(os.getcwd() + '/parlayTable.csv')
 		bet.to_csv(os.getcwd() + '/masterDailyRecap.csv')
-		bet.reset_index()
 		bet.to_csv(os.getcwd() + '/historicalBetLedger.csv', mode='a', header=False, index = False)
 		returns = gainsLosses(bet['Allocation Dollars'].values,bet['Success'].values, portfolioTracking, portfolioAmt)
 		print(portfolioAmt)
@@ -107,6 +110,9 @@ def dailyReturn():
 		today = str(date.today() - timedelta(1))
 		portfolioTracking = portfolioTracked[portfolioTracked.Date == today]
 		bet = powerLaw(portfolioAmt, portfolioTracking).round(3)
+		parlay = bet
+		parlay['Bet State Chosen'] = [re.sub(r'\W+', '', i) for i in parlay['Bet State Chosen'].values]
+		parlay.to_csv(os.getcwd() + '/parlayTable.csv')
 		bet.to_csv(os.getcwd() + '/masterDailyRecap.csv')
 		
 		tomorrow = str(date.today())
