@@ -110,9 +110,6 @@ def dailyReturn():
 		today = str(date.today() - timedelta(1))
 		portfolioTracking = portfolioTracked[portfolioTracked.Date == today]
 		bet = powerLaw(portfolioAmt, portfolioTracking).round(3)
-		parlay = bet
-		parlay['Bet State Chosen'] = [re.sub(r'\W+', '', i) for i in parlay['Bet State Chosen'].values]
-		parlay.to_csv(os.getcwd() + '/parlayTable.csv')
 		bet.to_csv(os.getcwd() + '/masterDailyRecap.csv')
 		
 		tomorrow = str(date.today())
@@ -126,6 +123,9 @@ def dailyReturn():
 		bettors['Update Time (EST)'] = [str(datetime.now().strftime("%H:%M:%S")) for i in range(len(bettors))]
 		bettors = bettors[bettors['Allocation Percentage'] > 0.001]
 		bettors.to_csv(os.getcwd() + '/masterPush.csv')
+		parlay = bettors
+		parlay['Bet State Chosen'] = [re.sub(r'\W+', '', i) for i in parlay['Bet State Chosen'].values]
+		parlay.to_csv(os.getcwd() + '/parlayTable.csv')
 		
 		returns = gainsLosses(bet['Allocation Dollars'].values,bet['Success'].values, portfolioTracking, portfolioAmt)
 		print(portfolioAmt, ' portfolio amount of the day.')
