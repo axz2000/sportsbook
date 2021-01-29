@@ -473,10 +473,10 @@ def gainsLosses(allocation,successes, df, portfolio):
 def picks(): #this needs some work/checking
 	result = fetch().round(decimals=2)
 	resulting = result[['Bet State Chosen', 'Kelly Criterion Suggestion','Payouts (per Dollar)']]
-	resulting['League'] = ['ELO']*len(resulting['Bet State Chosen'])
+	resulting['League'] = ['KHL']*len(resulting['Bet State Chosen'])
 	resulting['Date'] = [str(date.today())]*len(resulting['Bet State Chosen'])
 	resulting.to_csv(os.getcwd() + '/masterDaily.csv', mode='a', header=False)
-	return 'ELO Done'
+	return 'KHL Done'
 
 def searchingForGame(jsonData):
 	results_df = pd.DataFrame()
