@@ -430,6 +430,7 @@ def picks(teamID = teamID):
 	#print(GoalsLookup)
 	oddsDataFrame = fetch(GoalsLookup)
 	Daily = dailyBetParse(oddsDataFrame,GoalsLookup)
+	print(Daily)
 	result = Daily.round(decimals=2)
 	results = result[result['Bet Type'] == 'ML']
 	print(results.to_markdown())
