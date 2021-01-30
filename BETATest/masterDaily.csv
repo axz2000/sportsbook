@@ -291,3 +291,46 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 7.0,Timberwolves,0.17,3.65,NBA,2021-01-29,0.0
 8.0,Spurs,0.2,2.46,NBA,2021-01-29,1.0
 9.0,Jazz,0.51,1.57,NBA,2021-01-29,1.0
+3,hc barys,0.32,2.08,KHL,2021-01-30
+4,red star kunlun,0.22,5.2,KHL,2021-01-30
+5,metallurg magnitogorsk,0.54,1.82,KHL,2021-01-30
+0,Pelicans,0.36,1.93,NBA,2021-01-30
+1,Hornets,0.12,3.45,NBA,2021-01-30
+2,Bulls,0.33,1.77,NBA,2021-01-30
+3,Heat,0.53,1.47,NBA,2021-01-30
+4,Celtics,0.33,2.04,NBA,2021-01-30
+5,Grizzlies,0.17,2.46,NBA,2021-01-30
+6,Mavericks,0.35,1.72,NBA,2021-01-30
+0,Hull City,0.62,1.37,ELO,2021-01-30
+1,Stanley,0.22,3.6,ELO,2021-01-30
+2,Ipswich Town,0.23,3.1,ELO,2021-01-30
+3,Wigan,0.19,3.5,ELO,2021-01-30
+4,Rochdale,0.2,3.6,ELO,2021-01-30
+5,Lincoln City,0.16,3.0,ELO,2021-01-30
+6,Peterborough,0.36,3.9,ELO,2021-01-30
+7,Oxford United,0.28,3.3,ELO,2021-01-30
+8,MK Dons,0.23,2.5,ELO,2021-01-30
+9,Portsmouth,0.25,2.8,ELO,2021-01-30
+0,Newcastle,0.04,6.0,EPL,2021-01-30
+1,Man. City,0.81,1.12,EPL,2021-01-30
+2,Crystal Palace,0.15,3.0,EPL,2021-01-30
+3,Fulham,0.2,2.3,EPL,2021-01-30
+4,Arsenal,0.14,2.85,EPL,2021-01-30
+0,Werder Bremen,0.29,1.95,GPL,2021-01-30
+1,Dortmund,0.68,1.25,GPL,2021-01-30
+2,Eintracht,0.36,1.77,GPL,2021-01-30
+3,Draw RB Leipzig v Leverkusen,0.08,3.8,GPL,2021-01-30
+4,Leverkusen,0.09,3.8,GPL,2021-01-30
+0,Montpellier,0.13,2.9,FL1,2021-01-30
+0,AC Milan,0.3,1.83,ISA,2021-01-30
+1,Sampdoria,0.03,7.0,ISA,2021-01-30
+0,Eibar,0.08,4.2,LLA,2021-01-30
+1,Elche,0.07,5.8,LLA,2021-01-30
+2,Villarreal,0.2,2.35,LLA,2021-01-30
+0,Heracles,0.19,2.35,NPL,2021-01-30
+1,Draw Heracles v Groningen,0.11,3.2,NPL,2021-01-30
+2,Fortuna Sittard,0.27,1.95,NPL,2021-01-30
+3,Draw Vitesse v RKC,0.07,5.1,NPL,2021-01-30
+0,Nacional,0.2,2.8,PPL,2021-01-30
+1,Tondela,0.17,2.5,PPL,2021-01-30
+2,Portimonense,0.24,2.2,PPL,2021-01-30

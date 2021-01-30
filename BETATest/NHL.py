@@ -64,6 +64,7 @@ def build(oddsDataFrame,GoalsLookup):
         betting += [betFunction(game, betName,i, GoalsLookup)]
   df = pd.DataFrame(betting).dropna()
   df = df.reset_index()
+  print(df)
   df.columns = ['Bet Number','Game','Team','DecimalOdds','Type']
   return df
 
@@ -75,7 +76,7 @@ def fetch(LU):
   listing = []
   for i in np.unique(NHL.EventID.values): #pulls all odds for the specified game
     listing.append((fullSet(i)))
-  #print(pd.DataFrame(getOdds(listing))[[1]])
+  print(pd.DataFrame(getOdds(listing))[[1]])
   return build(pd.DataFrame(getOdds(listing)),LU)
 
 def Poisson(mu,discreteStep):
@@ -427,7 +428,7 @@ def picks(): #this needs some work/checking
 def picks(teamID = teamID):
 	print('Just wait a moment while we retreive todays teams, odds, and historical data.')
 	GoalsLookup = pd.merge(teamID, teamLookBackGoals(teamID,21),on='ID')
-	#print(GoalsLookup)
+	print(GoalsLookup)
 	oddsDataFrame = fetch(GoalsLookup)
 	Daily = dailyBetParse(oddsDataFrame,GoalsLookup)
 	print(Daily)
