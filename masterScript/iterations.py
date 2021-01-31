@@ -106,13 +106,12 @@ def dailyReturn():
 	
 	else: 
 		port = pd.read_csv(os.getcwd() + '/masterPortfolio.csv')
-		portfolioAmt = port.Portfolio.values[-2]
+		portfolioAmt = port.Portfolio.values[-1] #CHECK THIS
 		portfolioTracked = pd.read_csv(os.getcwd() + '/masterDaily.csv')
 		today = str(date.today() - timedelta(1))
 		portfolioTracking = portfolioTracked[portfolioTracked.Date == today]
 		bet = powerLaw(portfolioAmt, portfolioTracking).round(3)
 		bet.to_csv(os.getcwd() + '/masterDailyRecap.csv')
-		
 		tomorrow = str(date.today())
 		portfolioTrackingTom = portfolioTracked[portfolioTracked.Date == tomorrow]
 		bettor = powerLaw(portfolioAmt, portfolioTrackingTom).round(5)
