@@ -150,6 +150,7 @@ def fetch():
   	for j in np.unique(sorting):
   		temp += [tryMatch(i,j)]
   	sought = (sorting[temp.index(np.max(temp))])
+  	print(i, sought, "this")
   	soughtgameNum = probabilities[probabilities.ID == sought].gameNum.values[0]
   	counterArray += [counter]
   	soughtGameArray += [soughtgameNum]
@@ -169,7 +170,7 @@ def fetch():
   	#print(counter)
   	if counter%3 == 0:
   		indexed = probabilities.gameNum.values[counter]
-  		#print(df.HomeTeamandOdds.values[indexed][-1])
+  		#xprint(df.HomeTeamandOdds.values[indexed][-1])
   		valued = df.HomeTeamandOdds.values[i][-1]
   		array+= [valued]
   		counter = counter+1
@@ -209,7 +210,7 @@ def fetchName():
   page_content = BeautifulSoup(page_response.content, "html.parser")
   navigate = page_content.findAll('div', class_="games-container upcoming")[0]
   Today = navigate.findAll('tbody')
-  #print(Today)
+  print(Today)
   teams, prob = [], []
   for i in Today:
   	if (i.find('div').text == str(date.today().strftime("%-m/%-d"))):#this could fail in the beginning of january
