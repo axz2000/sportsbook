@@ -305,37 +305,16 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0,Knicks,0.15,3.9,NBA,2021-01-31
 1,Nuggets,0.43,1.85,NBA,2021-01-31
 2,Wizards,0.16,4.3,NBA,2021-01-31
-3,Raptors,0.57,1.43,NBA,2021-01-31
-4,Timberwolves,0.39,2.36,NBA,2021-01-31
-0,Draw Chelsea v Burnley,0.06,5.2,EPL,2021-01-31
-1,Leicester,0.44,1.8,EPL,2021-01-31
-0,Wolfsburg,0.3,1.83,GPL,2021-01-31
-0,St Étienne,0.12,3.2,FL1,2021-01-31
-1,Lorient,0.01,14.0,FL1,2021-01-31
-2,Draw Lorient v PSG,0.05,8.5,FL1,2021-01-31
-3,Metz,0.1,3.5,FL1,2021-01-31
-4,Nîmes,0.06,5.7,FL1,2021-01-31
-5,Draw Lille v Dijon FCO,0.07,4.9,FL1,2021-01-31
-6,Monaco,0.32,1.8,FL1,2021-01-31
-0,Ankaragücü,0.13,2.9,TSL,2021-01-31
-1,Göztepe,0.2,2.5,TSL,2021-01-31
-2,Beşiktaş,0.39,1.8,TSL,2021-01-31
+3,Timberwolves,0.39,2.36,NBA,2021-01-31
+0,Leicester,0.44,1.8,EPL,2021-01-31
+0,Lorient,0.01,14.0,FL1,2021-01-31
+1,Draw Lorient v PSG,0.05,8.5,FL1,2021-01-31
+2,Nîmes,0.06,5.7,FL1,2021-01-31
+3,Draw Lille v Dijon FCO,0.07,4.9,FL1,2021-01-31
 0,Spezia,0.18,4.1,ISA,2021-01-31
 1,Cagliari,0.15,3.1,ISA,2021-01-31
-2,Atalanta,0.37,1.77,ISA,2021-01-31
-3,Crotone,0.16,2.85,ISA,2021-01-31
-4,Roma,0.44,1.67,ISA,2021-01-31
-0,Alavés,0.07,4.1,LLA,2021-01-31
-1,Cádiz,0.03,8.0,LLA,2021-01-31
-2,Barcelona,0.71,1.4,LLA,2021-01-31
-0,Willem II,0.33,1.95,NPL,2021-01-31
-1,AZ Alkmaar,0.08,3.8,NPL,2021-01-31
-2,ADO Den Haag,0.14,4.8,NPL,2021-01-31
-3,Draw ADO Den Haag v Sparta,0.08,3.9,NPL,2021-01-31
-0,Bahía,0.1,3.3,BPL,2021-01-31
-1,Atlético,0.1,3.7,BPL,2021-01-31
-2,Atlético Mineiro,0.39,2.05,BPL,2021-01-31
-3,Draw Internacional v Bragantino,0.06,4.5,BPL,2021-01-31
-4,Bragantino,0.04,6.5,BPL,2021-01-31
-5,Atlético-PR,0.1,3.7,BPL,2021-01-31
-6,Goiás,0.06,4.9,BPL,2021-01-31
+0,Cádiz,0.03,8.0,LLA,2021-01-31
+1,Barcelona,0.71,1.4,LLA,2021-01-31
+0,ADO Den Haag,0.14,4.8,NPL,2021-01-31
+0,Atlético Mineiro,0.39,2.05,BPL,2021-01-31
+1,Bragantino,0.04,6.5,BPL,2021-01-31
