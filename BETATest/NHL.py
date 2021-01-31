@@ -22,6 +22,21 @@ abbrevArray, IDArray , Name= [basicTeams.json().get("teams")[i].get("abbreviatio
 teamID = pd.DataFrame({'ID':IDArray, 'Abbr':abbrevArray, 'Name':Name})
 
 #_____________________________________________FUNCTIONS_____________________________________________________
+def fullSet(eventID):
+  return requests.get('https://sportsbook.fanduel.com//cache/psevent/UK/1/false/'+ str(eventID) + '.json').json()
+
+def searchingForGame(jsonData):
+	results_df = pd.DataFrame()
+	alpha = jsonData['events'][0]
+	gameday = alpha['tsstart'][:10]
+	today = str(date.today())
+	#print(today, gameday)
+	return today == gameday
+  
+def gameToday():
+	jsonData_fanduel_epl = requests.get('https://sportsbook.fanduel.com/cache/psmg/UK/49694.3.json').json()
+	boolean = searchingForGame(jsonData_fanduel_epl)
+	return boolean
 
 #gets the addresses for the various json files
 def parse_data(jsonData):
@@ -47,14 +62,15 @@ def fullSet(eventID):
 def getOdds(listing):
   bets = []
   for game in listing:
-    for i in game['eventmarketgroups'][0]['markets']:
-      betName = [game['externaldescription'], i['name']]
-      for i in i['selections']:
-        betName+=[[i['name'], (i['currentpriceup']/i['currentpricedown'])]]
-      bets += [betName]
+  	for i in game['eventmarketgroups'][0]['markets']:
+  		betName = [game['externaldescription'], i['name']]
+  		if i['name'] == 'Money Line':
+  			for i in i['selections']:
+  				betName+=[[i['name'], 1+(i['currentpriceup']/i['currentpricedown'])]] #, i['currenthandicap']
+  		bets += [betName]
   return bets
 
-def build(oddsDataFrame,GoalsLookup):
+def build(oddsDataFrame,dataInput): #NEEDS WORK !!!!!!!
   betting = []
   for i in range(len(oddsDataFrame.iloc[:,0].values)):
     betName = oddsDataFrame.iloc[:,1].values[i]
@@ -64,20 +80,90 @@ def build(oddsDataFrame,GoalsLookup):
         betting += [betFunction(game, betName,i, GoalsLookup)]
   df = pd.DataFrame(betting).dropna()
   df = df.reset_index()
-  print(df)
-  df.columns = ['Bet Number','Game','Team','DecimalOdds','Type']
+  df.columns = ['Bet Number','Game','Team','Payout','Type']
   return df
 
-def fetch(LU):
-  jsonData_fanduel_nhl = requests.get('https://sportsbook.fanduel.com/cache/psmg/UK/56572.3.json').json() #gives the game id
-  nhl = parse_data(jsonData_fanduel_nhl)
-  NHL = pd.DataFrame(nhl)[['eventname','tsstart','idfoevent.markets']]
-  NHL.columns = ['Teams','Date','EventID']
+def fetch():
+  try:
+  	jsonData_fanduel_epl = requests.get('https://sportsbook.fanduel.com/cache/psmg/UK/56572.3.json').json() #gives the game id
+  except:
+  	print('Not a problem, the XHR has been changed for the EPL, go ahead and fix that then run again')
+  epl = parse_data(jsonData_fanduel_epl)
+  print(epl)
+  EPL = pd.DataFrame(epl)[['eventname','tsstart','idfoevent.markets']]
+  EPL.columns = ['Teams','Date','EventID']
   listing = []
-  for i in np.unique(NHL.EventID.values): #pulls all odds for the specified game
+  for i in np.unique(EPL.EventID.values): 
     listing.append((fullSet(i)))
-  print(pd.DataFrame(getOdds(listing))[[1]])
-  return build(pd.DataFrame(getOdds(listing)),LU)
+  df = (pd.DataFrame(getOdds(listing)))
+  print(df)
+  df.columns = ['GameName', 'Type', 'HomeTeamandOdds', 'AwayTeamandOdds']
+  df = df[df.Type=='Money Line']
+  #df = df[df.GameName != 'Shrewsbury v Lincoln']
+  probabilities = fetchName()
+  print(probabilities)
+  
+  #check if all of them are there
+  valued = []
+  #print(probabilities.gameNum.values)
+  for i in np.unique(probabilities.gameNum.values):
+  	newdf = probabilities[probabilities.gameNum == i]
+  	valued += [newdf.ID.values[1][:]]
+  	print(valued)
+  sorting = np.sort(valued)
+  indices, counterArray, soughtGameArray = [], [], []
+  counter = 0
+  gamed = []
+  
+  #print((len(df.GameName.values), len(sorting)))
+  for i in (df.GameName.values):
+  	temp = []
+  	for j in np.unique(sorting):
+  		temp += [tryMatch(i,j)]
+  	#print(temp)
+  	sought = (sorting[temp.index(np.max(temp))])
+  	soughtgameNum = probabilities[probabilities.ID == sought].gameNum.values[0]
+  	counterArray += [counter]
+  	soughtGameArray += [soughtgameNum]
+  	counter += 1
+  	
+  fixed = pd.DataFrame({'sought':soughtGameArray, 'linked':counterArray}).sort_values(['sought'])
+  #print(fixed)
+  linker = []
+  
+  for i in fixed.linked.values:
+  	linker += [i]
+  	linker += [i]
+  #print(len(probabilities['gameNum']), len(linker))
+  probabilities['gameNum'] = linker
+  #print(probabilities)
+  
+  array ,counter = [], 0
+  for i in probabilities.gameNum.values:
+  	#print(counter)
+  	if counter%2 == 0:
+  		indexed = probabilities.gameNum.values[counter]
+  		#print(df.HomeTeamandOdds.values[indexed][-1])
+  		valued = df.HomeTeamandOdds.values[i][-1]
+  		array+= [valued]
+  		counter = counter+1
+  	else:
+  		indexed = probabilities.gameNum.values[counter]
+  		valued = df.AwayTeamandOdds.values[i][-1]
+  		array += [valued]
+  		counter = counter+1
+  EV = []
+  for i in range(len(array)):
+  	EV += [probabilities.Probabilities.values[i]*array[i]]
+  #print(array, probabilities.ID.values,probabilities )
+  Result = pd.DataFrame({'Team':probabilities.ID.values, 'Probability': probabilities.Probabilities.values, 'Odds':array, 'EV':EV})
+  print(Result)
+  Bet = Result[Result.EV >1]
+  kelly = [Kelly(Bet.Odds.values[i], Bet.Probability.values[i]) for i in range(len(Bet.Probability.values))]
+  #print(len(Bet.Team.values), len(kelly),  len(Bet.Odds.values))
+  Betting = pd.DataFrame({'Bet State Chosen':Bet.Team.values, 'Kelly Criterion Suggestion': kelly, 'Payouts (per Dollar)':Bet.Odds.values})
+  #Betting.columns = ['Bet State Chosen', 'Kelly Criterion Suggestion', 'Probability Spread','Payouts (per Dollar)']
+  return Betting
 
 def Poisson(mu,discreteStep):
   poiArray = [poisson(mu).pmf(x) for x in range(discreteStep)]
@@ -183,97 +269,41 @@ def teamLookBackGoals(lookupTable,lookbackDays):
   Today.columns = ['ID','avGoals','Goal LookBack']
   return Today
 
-#Visualizations per game if desired
-def visualizeMatrix(Matrix):
-  Home = [i for i in range(8)]*8#change this to discrete step
-  Away=[]
-  for i in range(8):
-    Away += [i]*8
-  probability = Matrix.ravel()
-  source = pd.DataFrame({'HomeGoals':Home, 'AwayGoals':Away,'Probability':probability})
-  base = alt.Chart(source).mark_rect().encode(
-    x='HomeGoals:O',
-    y=alt.Y('AwayGoals:O',
-        sort=alt.EncodingSortField('AwayGoals', order='descending')),
-    color='Probability:Q'
-  ).configure_scale(
-    bandPaddingInner=0.1
-  ).properties(
-    width=400,
-    height=400
-  )
-  
-  return base
-
-def visualizeExpectations(Matrix,Payouts):
-  Home = [i for i in range(8)]*8 #change this to discrete step
-  Away=[]
-  for i in range(8):
-    Away += [i]*8
-  probability = Matrix.ravel()
-  source = pd.DataFrame({'HomeGoals':Home, 'AwayGoals':Away,'Probability':probability})
-  return alt.Chart(source).mark_rect().encode(
-    x='HomeGoals:O',
-    y=alt.Y('AwayGoals:O',
-        sort=alt.EncodingSortField('AwayGoals', order='descending')),
-    color='Probability:Q'
-  ).configure_scale(
-    bandPaddingInner=0.1
-  ).properties(
-    width=400,
-    height=400
-  )
-  
-#odds to game transformation
-def identify(i,teamID= teamID):
-  if i!= 'Tie':
-    return teamID[teamID.Name == i].Abbr.values[0]
-  else:
-    return 'Tie'
-
-def betFunction(game, betName,parameterArray, GoalsLookup):
-  #this is basically a massive switch case
-  if betName == '60 Minute Line':
-    gameName, Team, oddsDec = game, parameterArray[0], parameterArray[1]
-    return [gameName, identify(Team), oddsDec, '60E']
-  elif betName == 'Money Line':
-    gameName, Team, oddsDec = game, parameterArray[0], parameterArray[1]
-    return [gameName, identify(Team), oddsDec, 'ML']
-  elif betName == 'Both Teams to Score':
-    gameName, Result, oddsDec = game, parameterArray[0], parameterArray[1]
-    #print('BTTS param array', parameterArray[0], parameterArray[1])
-    return [gameName, Result, oddsDec, 'BTTS']
-  else:
-    return [np.NaN, np.NaN, np.NaN, np.NaN]
-
-def getavGoals(GoalsLookup, TeamName):
-	if TeamName != 'Tie':
-		return (GoalsLookup[GoalsLookup.Abbr == TeamName][['avGoals']].values[0])[0]
-	else: 
-		return None
-
-def winner60(matrix, homeaway):
-  if homeaway == "home":
-    return np.sum(np.triu(matrix,1))
-  elif homeaway == "away":
-    return np.sum(np.tril(matrix,-1))
-  else:
-    return np.sum(np.diagonal(matrix))
-
-def betDecisionAfter60(avGoalsHome,avGoalsAway,odds,bet):
-  matrix = poissonMatrix(avGoalsHome,avGoalsAway)
-  payouts = [bet+i for i in odds] #look on fanduel you will see it needs to be additive not multiplicative - this is somewhere in the odds pulling but its not an issue
-  probs = [winner60(matrix,i) for i in ['home','tie','away']]
-  kelly = [Kelly(payouts[i],probs[i]) for i in range(len(probs))]
-  decisions = [payouts[i]*probs[i] for i in range(len(payouts))]
-  placed = []
-  for i in decisions:
-  	if i>1.0:
-  		placed += [decisions.index(i),kelly[decisions.index(i)],(probs[decisions.index(i)]-1/payouts[decisions.index(i)]),payouts[decisions.index(i)]]
-  	else:
-  		continue
-  return placed
-
+def betSwitchImplement(types, dfbig):
+	if types == '60E':
+		yayray = []
+		for i in range(int(len(dfbig.Teams.values)/3)):
+			df = dfbig[int(i*3):int(i*3+3)]
+			#print(betDecisionAfter60(df.Goals.values[0],df.Goals.values[2],df.Odds.values,bet=1))
+			try:
+				#print(betDecisionAfter60(df.Goals.values[0],df.Goals.values[2],df.Odds.values,bet=1))	
+				yields = betDecisionAfter60(df.Goals.values[0],df.Goals.values[2],df.Odds.values,bet=1)
+				yayray.append([types, df.Teams.values[yields[0]], yields[1],yields[2],yields[3]])
+			except:
+				#print(yields)
+				yayray.append([types,np.NaN,np.NaN,np.NaN,np.NaN])
+		#print(yayray)
+		return yayray
+		
+	elif types =='ML':
+		yayray = []
+		for i in range(int(len(dfbig.Teams.values)/2)):
+			df = dfbig[int(i*2):int(i*2+2)]
+			try:
+				yields = betDecisionMoneylineOT(df.Goals.values[0],df.Goals.values[1],df.Odds.values,bet=1)
+				yayray.append([types, df.Teams.values[yields[0]], yields[1],yields[2],yields[3]])
+			except:
+				#print(yields)
+				yayray.append([types,np.NaN,np.NaN,np.NaN,np.NaN])
+		#print(yayray)
+		return yayray
+	elif types =='BTTS':
+		try:
+			yields = betDecisionBothScore(df.Goals.values[0],df.Goals.values[1],df.Odds.values,bet=1)
+			return [types, df.Result.values[yields[0]], yields[1],yields[2],yields[3]]
+		except:
+			return [types, np.NaN,np.NaN,np.NaN,np.NaN]
+			
 def winnerOneOT(matrix,homeoraway,avGoalsHome,avGoalsAway):
   if homeoraway == 'home':
     reg = np.sum(np.triu(matrix,1).ravel())
@@ -298,91 +328,29 @@ def betDecisionMoneylineOT(avGoalsHome,avGoalsAway,odds,bet):
   	else:
   		continue
   return placed
-  
-def bothScore(matrix,homeoraway,avGoalsHome,avGoalsAway):
-  if homeoraway == 'Yes':
-  	reg = 1 - (np.sum(matrix[0,1:]) + np.sum(matrix[1:,0]) + matrix[0,0])
-  	return reg
-  if homeoraway == 'No':
-    reg = (np.sum(matrix[0,1:]) + np.sum(matrix[1:,0]) + matrix[0,0])
-    return reg 
-     
-def betDecisionBothScore(avGoalsHome,avGoalsAway,odds,bet):
-  matrix = poissonMatrix(avGoalsHome,avGoalsAway)
-  payouts = [bet+i for i in odds] #look on fanduel you will see it needs to be additive not multiplicative - this is somewhere in the odds pulling but its not an issue
-  probs = [bothScore(matrix,i,avGoalsHome,avGoalsAway) for i in ['Yes','No']]
-  kelly = [Kelly(payouts[i],probs[i]) for i in range(len(probs))]
-  decisions = [payouts[i]*probs[i] for i in range(len(payouts))]
-  #print(probs, payouts, decisions)
-  placed = []
-  for i in decisions:
-  	if i>1.0:
-  		placed += [[decisions.index(i),kelly[decisions.index(i)],(probs[decisions.index(i)]-1/payouts[decisions.index(i)]),payouts[decisions.index(i)]]]
-  	else:
-  		continue
-  #print(placed) you need to figure out hwo to show both
-  return placed
 
-def betSwitchImplement(types, df):
-	if types == '60E':
-		try:	
-			yields = betDecisionAfter60(df.Goals.values[0],df.Goals.values[2],df.Odds.values,bet=1)
-			return [types, df.Teams.values[yields[0]], yields[1],yields[2],yields[3]]
-		except:
-			#print(yields)
-			return [types,np.NaN,np.NaN,np.NaN,]
-	elif types =='ML':
-		try:
-			yields = betDecisionMoneylineOT(df.Goals.values[0],df.Goals.values[1],df.Odds.values,bet=1)
-			return [types, df.Teams.values[yields[0]], yields[1],yields[2],yields[3]]
-		except:
-			return [types, np.NaN,np.NaN,np.NaN,np.NaN]
-	elif types =='BTTS':
-		try:
-			yields = betDecisionBothScore(df.Goals.values[0],df.Goals.values[1],df.Odds.values,bet=1)
-			return [types, df.Result.values[yields[0]], yields[1],yields[2],yields[3]]
-		except:
-			return [types, np.NaN,np.NaN,np.NaN,np.NaN]
-
-def identifyName(temp,toggle):
-	if toggle == 'away':
-		return temp.Game.values[0].split('At')[0][0:-1]
-	elif toggle == 'home':
-		return temp.Game.values[0].split('At')[1][1:]
 
 def placeBet(temp, GoalsLookup):
-	if temp.Type.values[0] =='BTTS':
-		types = temp.Type.values[0]
-		Result = temp.Team.values
-		Odds = temp.DecimalOdds.values
-		Teams = [identifyName(temp,'away'), identifyName(temp,'home')]
-		avGoals = [getavGoals(GoalsLookup, identify(i)) for i in Teams]
-		goalDf = pd.DataFrame({'Result':Result, 'Goals':avGoals, 'Odds':Odds})
-		bets = betSwitchImplement(types, goalDf)
-		return bets
-		
-	else:
 		types = temp.Type.values[0]
 		Teams = temp.Team.values
 		Odds = temp.DecimalOdds.values
 		avGoals = [getavGoals(GoalsLookup, i) for i in Teams]
 		goalDf = pd.DataFrame({'Teams':Teams, 'Goals':avGoals, 'Odds':Odds})
 		bets = betSwitchImplement(types, goalDf)
+		print(bets)
 		return bets
 
-def dailyBetParse(oddsDataFrame,LU):
-	try:
-		placedBet = []
-		for i in np.unique(oddsDataFrame.Type.values):
-			temp = oddsDataFrame[oddsDataFrame.Type == i]
-			placedBet += [placeBet(temp,LU)]
-			#print(placedBet)
-		BetFrame = pd.DataFrame(placedBet)
-		BetFrame = BetFrame.dropna()
-		BetFrame.columns = ['Bet Type','Bet State Chosen', 'Kelly Criterion Suggestion', 'Probability Spread','Payouts (per Dollar)']
-		return BetFrame
-	except:
-		return 'No Bets Worthwhile Today'
+def dailyBetParse(oddsDataFrame,GoalsLookup):
+	placedBet = []
+	for i in np.unique(oddsDataFrame.Type.values):
+		temp = oddsDataFrame[oddsDataFrame.Type == i]
+		here = placeBet(temp,GoalsLookup)
+		for i in here:
+			placedBet += [i]
+	BetFrame = pd.DataFrame(placedBet)
+	BetFrame = BetFrame.dropna()
+	BetFrame.columns = ['Bet Type','Bet State Chosen', 'Kelly Criterion Suggestion', 'Probability Spread','Payouts (per Dollar)']
+	return BetFrame
 		
 def gameToday():
 	jsonData_fanduel_epl = requests.get('https://sportsbook.fanduel.com/cache/psmg/UK/56572.3.json').json()
@@ -447,7 +415,7 @@ def run():
 	else:
 		return ('No NHL games today.')
 
-print(run())
+print(fetch())
 
 #make an odds tracker, how to identify the peak?
 
