@@ -267,7 +267,7 @@ def picks(): #this needs some work/checking
 	resulting['League'] = ['ISA']*len(resulting['Bet State Chosen'])
 	resulting['Date'] = [str(date.today())]*len(resulting['Bet State Chosen'])
 	resulting.to_csv(os.getcwd() + '/masterDaily.csv', mode='a', header=False)
-	return 'ELO Done'
+	return 'ISA Done'
 	
 '''
 To do:
