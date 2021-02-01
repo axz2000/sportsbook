@@ -106,7 +106,7 @@ def dailyReturn():
 	
 	else: 
 		port = pd.read_csv(os.getcwd() + '/masterPortfolio.csv')
-		portfolioAmt = port.Portfolio.values[-1] #CHECK THIS
+		portfolioAmt = port.Portfolio.values[-2] #CHECK THIS
 		portfolioTracked = pd.read_csv(os.getcwd() + '/masterDaily.csv')
 		today = str(date.today() - timedelta(1))
 		portfolioTracking = portfolioTracked[portfolioTracked.Date == today]
