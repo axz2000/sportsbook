@@ -84,7 +84,7 @@ def searchingForGame(jsonData):
 	return today == gameday
 
 def gameToday():
-	jsonData_fanduel_epl = requests.get('https://sportsbook.fanduel.com/cache/psmg/UK/49693.3.json').json()
+	jsonData_fanduel_epl = requests.get('https://sportsbook.fanduel.com/cache/psmg/UK/61028.3.json').json()
 	boolean = searchingForGame(jsonData_fanduel_epl)
 	return boolean
 
@@ -116,7 +116,7 @@ def getOdds(listing):
 
 def fetch():
   try:
-  	jsonData_fanduel_epl = requests.get('https://sportsbook.fanduel.com/cache/psmg/UK/49693.3.json').json() #gives the game id
+  	jsonData_fanduel_epl = requests.get('https://sportsbook.fanduel.com/cache/psmg/UK/61028.3.json').json() #gives the game id
   except:
   	print('Not a problem, the XHR has been changed for the EPL, go ahead and fix that then run again')
   epl = parse_data(jsonData_fanduel_epl)
@@ -203,7 +203,7 @@ def fetch():
   return Betting
   
 def fetchName(): 
-  url = 'https://projects.fivethirtyeight.com/soccer-predictions/championship/'
+  url = 'https://projects.fivethirtyeight.com/soccer-predictions/champions-league/'
   #print('hello')
   page_response = requests.get(url, timeout=10, headers = {
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
@@ -267,7 +267,7 @@ def picks(): #this needs some work/checking
 	resulting['League'] = ['ELO']*len(resulting['Bet State Chosen'])
 	resulting['Date'] = [str(date.today())]*len(resulting['Bet State Chosen'])
 	resulting.to_csv(os.getcwd() + '/masterDaily.csv', mode='a', header=False)
-	return 'ECL Done'
+	return 'CL Done'
 	
 '''
 To do:
@@ -283,7 +283,7 @@ def run():
 	if gameToday():
 		return picks()
 	else:
-		return 'No ECL games today.'
+		return 'No CL games today.'
 
 #print(run())
 	
