@@ -1,4 +1,4 @@
-import ELO, EPL, FL1, GPL, TSL, ISA, LLA, NBA, NPL, PPL, NFL, BPL, ECL, MLM, UCL
+import ELO, EPL, FL1, GPL, TSL, ISA, LLA, NBA, NPL, PPL, NFL, BPL, ECL, MLM, UCL, DSL
 
 #KHL when do we bring this back?
 
@@ -18,6 +18,7 @@ def getPicks():
 	print(ECL.run())
 	print(MLM.run())
 	print(UCL.run())
+	print(DSL.run())
 	return 'Picks Completed'
 	
 print('All bets are moneyline bets.')
