@@ -129,7 +129,7 @@ def fetch():
   df = (pd.DataFrame(getOdds(listing)))
   df.columns = ['GameName', 'Type', 'HomeTeamandOdds', 'DrawOdds', 'AwayTeamandOdds']
   df = df[df.Type=='Moneyline']
-  #df = df[df.GameName != 'Shrewsbury v Lincoln']
+  df = df[df.GameName != 'Rotherham v Derby County']
   probabilities = fetchName()
   #print(probabilities)
   
@@ -229,7 +229,6 @@ def fetchName():
   for i in range(int(len(teams)/3)):
   	indexed += [i]*3
   epl = pd.DataFrame({'ID':teams, 'Probabilities':prob, 'gameNum':indexed })
-  #print(epl)
   return epl
 
 def oddstoPayout(odds,dollarsIn):
