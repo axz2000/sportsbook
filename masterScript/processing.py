@@ -1,7 +1,7 @@
-import ECL
+import NBA
 
 def getPicks():
-	print(ECL.run())
+	print(NBA.run())
 	return 'Picks Completed'
 	
 print('All bets are moneyline bets.')
