@@ -131,7 +131,7 @@ def fetch():
   df = df[df.Type=='Moneyline']
   #df = df[df.GameName != 'Shrewsbury v Lincoln']
   probabilities = fetchName()
-  print(probabilities)
+  #print(probabilities)
   
   #check if all of them are there
   valued = []
@@ -229,7 +229,7 @@ def fetchName():
   for i in range(int(len(teams)/3)):
   	indexed += [i]*3
   epl = pd.DataFrame({'ID':teams, 'Probabilities':prob, 'gameNum':indexed })
-  print(epl)
+  #print(epl)
   return epl
 
 def oddstoPayout(odds,dollarsIn):

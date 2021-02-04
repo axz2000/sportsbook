@@ -125,52 +125,51 @@ def fetch():
   df = (pd.DataFrame(getOdds(listing)))
   df.columns = ['GameName', 'Type', 'HomeTeamandOdds', 'AwayTeamandOdds']
   df = df[df.Type=='Moneyline']
-  print(df.sort_values(['GameName']))
+  #print(df.sort_values(['GameName']))
   probabilities = fetchName()
   
   
   #check if all of them are there
   valued = []
-  print(probabilities.gameNum.values)
+  #print(probabilities.gameNum.values)
   for i in np.unique(probabilities.gameNum.values):
   	newdf = probabilities[probabilities.gameNum == i]
   	valued += [newdf.ID.values[1][:]]
-  	print(valued)
   sorting = np.sort(valued)
   indices, counterArray, soughtGameArray = [], [], []
   counter = 0
   gamed = []
   
-  print((len(df.GameName.values), len(sorting)))
+  #print((len(df.GameName.values), len(sorting)))
   for i in (df.GameName.values):
   	i = i.split(' ')[-1]
   	temp = []
   	for j in np.unique(sorting):
   		print(i,j)
   		temp += [tryMatch(i,j)]
-  	print(temp)
+  	#print(temp)
   	sought = (sorting[temp.index(np.max(temp))])
-  	print(i, sought, "this")
+  	#print(i, sought, "this")
   	soughtgameNum = probabilities[probabilities.ID == sought].gameNum.values[0]
   	counterArray += [counter]
   	soughtGameArray += [soughtgameNum]
   	counter += 1
   	
   fixed = pd.DataFrame({'sought':soughtGameArray, 'linked':counterArray}).sort_values(['sought'])
-  print(fixed)
+  #print(fixed)
   linker = []
   
   for i in fixed.linked.values:
   	linker += [i]
   	linker += [i]
-  print(len(probabilities['gameNum']), len(linker))
+  #print(len(probabilities['gameNum']), len(linker))
   probabilities['gameNum'] = linker
-  print(probabilities)
+  #print(probabilities)
   
   
   array ,counter = [], 0
   for i in probabilities.gameNum.values:
-  	print(counter)
+  	#print(counter)
   	if counter%2 == 0:
   		indexed = probabilities.gameNum.values[counter]
   		print(df.HomeTeamandOdds.values[indexed][-1])
@@ -186,9 +185,9 @@ def fetch():
   EV = []
   for i in range(len(array)):
   	EV += [probabilities.Probabilities.values[i]*array[i]]
-  print(array, probabilities.ID.values,probabilities )
+  #print(array, probabilities.ID.values,probabilities )
   Result = pd.DataFrame({'Team':probabilities.ID.values, 'Probability': probabilities.Probabilities.values, 'Odds':array, 'EV':EV})
-  print(Result)
+  #print(Result)
   Bet = Result[Result.EV >1.07]
   kelly = [Kelly(Bet.Odds.values[i], Bet.Probability.values[i]) for i in range(len(Bet.Probability.values))]
   #print(len(Bet.Team.values), len(kelly),  len(Bet.Odds.values))
@@ -213,7 +212,7 @@ def fetchName():
   	Today = page_content.findAll('section', class_="day")[0] #not sure what the issue is here
   else: 
   	Today = page_content.findAll('section', class_="day")[1] #not sure what the issue is here
-  print(Today)
+  #print(Today)
   teams = [i['data-team'] for i in Today.findAll('tr', class_ = "tr team")]
   teamsToday = []
   for j in teams:
@@ -221,7 +220,7 @@ def fetchName():
   		teamsToday += [Today.find('td', class_ = "td text team " + str(j)).text]
   	except:
   		teamsToday += ['None']
-  print(teamsToday)
+  #print(teamsToday)
   probabilitiesToday = [float(i.text[:-1])/100 for i in Today.findAll('td', class_="td number chance")]
   indexed = []
   for i in range(int(len(teamsToday)/2)):
