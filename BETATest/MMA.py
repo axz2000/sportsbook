@@ -53,23 +53,23 @@ def to_dataframe(listing):
 
 def parse_data(jsonData):
     results_df = pd.DataFrame()
-    #print(jsonData)
+    print(jsonData)
     for alpha in jsonData['events']:
         gameday = (alpha['tsstart'][:10])
-        if (gameday == str(date.today())):
+        if (gameday == str(date.today()+ timedelta(2))):
         	print ('Gathering %s data: %s @ %s' %(alpha['sportname'],alpha['participantname_away'],alpha['participantname_home']))
         	alpha_df = json_normalize(alpha).drop('markets',axis=1)
         	for beta in alpha['markets']:
         		#print(beta['selections']) #merge "getOdds" with this parse
         		beta_df = json_normalize(beta).drop('selections',axis=1)
         		beta_df.columns = [str(col) + '.markets' for col in beta_df.columns]
+        		print(beta_df)
         		for theta in beta['selections']:
         			theta_df = json_normalize(theta)
         			theta_df.columns = [str(col) + '.selections' for col in theta_df.columns]
         		
         			temp_df = reduce(lambda left,right: pd.merge(left,right, left_index=True, right_index=True), [alpha_df, beta_df, theta_df])
         			results_df = results_df.append(temp_df, sort=True).reset_index(drop=True)
-
     return results_df #time right for <7 on prev day
 
 def fullSet(eventID):
@@ -79,8 +79,9 @@ def searchingForGame(jsonData):
 	results_df = pd.DataFrame()
 	alpha = jsonData['events'][0]
 	gameday = alpha['tsstart'][:10]
-	today = str(date.today())
-	#print(today, gameday)
+	print(gameday)
+	today = str(date.today()+ timedelta(2))
+	print(today, gameday)
 	return today == gameday
 
 def gameToday():
@@ -103,13 +104,14 @@ def build(oddsDataFrame,dataInput): #NEEDS WORK !!!!!!!
   
 def getOdds(listing):
   bets = []
-  #print(len(listing))
+  #print(len(listing), "HELLO")
   for game in listing:
   	for i in game['eventmarketgroups'][0]['markets']:
   		#print(i['name'])
   		betName = [game['externaldescription'], i['name']]
   		if i['name'] == 'Moneyline':
   			for i in i['selections']:
+  				#print([i['name'], 1+(i['currentpriceup']/i['currentpricedown'])])
   				betName+=[[i['name'], 1+(i['currentpriceup']/i['currentpricedown'])]] #, i['currenthandicap']
   		bets += [betName]
   return bets
@@ -120,20 +122,20 @@ def fetch():
   except:
   	print('Not a problem, the XHR has been changed for MMA, go ahead and fix that then run again')
   epl = parse_data(jsonData_fanduel_epl)
-  print(epl)
   EPL = pd.DataFrame(epl)[['eventname','tsstart','idfoevent.markets']]
   EPL.columns = ['Teams','Date','EventID']
   listing = []
   for i in np.unique(EPL.EventID.values): 
     listing.append((fullSet(i)))
   df = (pd.DataFrame(getOdds(listing)))
+  print(df)
   df.columns = ['GameName', 'Type', 'HomeTeamandOdds', 'AwayTeamandOdds']
   df = df[df.Type=='Moneyline']
   probabilities = fetchName()
   
   #check if all of them are there
   valued = []
-  #print(probabilities.gameNum.values)
+  print(probabilities.gameNum.values)
   for i in np.unique(probabilities.gameNum.values):
   	newdf = probabilities[probabilities.gameNum == i]
   	valued += [newdf.ID.values[1][:]]
@@ -148,7 +150,7 @@ def fetch():
   	temp = []
   	for j in np.unique(sorting):
   		temp += [tryMatch(i,j)]
-  	#print(temp)
+  	print(temp)
   	sought = (sorting[temp.index(np.max(temp))])
   	soughtgameNum = probabilities[probabilities.ID == sought].gameNum.values[0]
   	counterArray += [counter]
@@ -156,19 +158,19 @@ def fetch():
   	counter += 1
   	
   fixed = pd.DataFrame({'sought':soughtGameArray, 'linked':counterArray}).sort_values(['sought'])
-  #print(fixed)
+  print(fixed)
   linker = []
   
   for i in fixed.linked.values:
   	linker += [i]
   	linker += [i]
-  #print(len(probabilities['gameNum']), len(linker))
+  print(len(probabilities['gameNum']), len(linker))
   probabilities['gameNum'] = linker
-  #print(probabilities)
+  print(probabilities)
   
   array ,counter = [], 0
   for i in probabilities.gameNum.values:
-  	#print(counter)
+  	print(counter)
   	if counter%2 == 0:
   		indexed = probabilities.gameNum.values[counter]
   		#print(df.HomeTeamandOdds.values[indexed][-1])
@@ -205,11 +207,11 @@ def fetchName():
     'upgrade-insecure-requests': '1',
     'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'})
   page_content = BeautifulSoup(page_response.content, "html.parser")
-  navigate = page_content.findAll('div', class_="events-cat-event")[0]
+  navigate = page_content.findAll('div', class_="events-cat-event")
   extension = str(navigate).split("=")[2][1:-14]
   urlExtension = str('https://www.mmabot.com' + extension)
-  #print(urlExtension)
-  page_response_extended = requests.get(urlExtension, timeout=10, headers = {
+  print(urlExtension)
+  page_response_extended = requests.get(urlExtension, timeout=5, headers = {
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
     'accept-encoding': 'gzip, deflate, br',
     'accept-language': 'en-US,en;q=0.9,fr;q=0.8,ro;q=0.7,ru;q=0.6,la;q=0.5,pt;q=0.4,de;q=0.3',
@@ -217,7 +219,11 @@ def fetchName():
     'upgrade-insecure-requests': '1',
     'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'})
   fight_contents = BeautifulSoup(page_response_extended.content, "html.parser")
-  
+  print(len(fight_contents.findAll('div', class_ = 'fight')))
+  '''for i in fight_contents.findAll('div', class_ = 'fight'):
+  	print(i)
+  	#print(i.findAll('div', class_="prediction-bar-prob fighter1")[0].text.strip()[:-1])
+  	#print(i.findAll('div', class_="prediction-bar-prob fighter2")[0].text.strip()[:-1])
   if len(fight_contents.findAll('div', class_ = "prediction-bar-prob fighter1"))==0:
   	probFighter1 = float(fight_contents.findAll('div', class_ = "prediction-bar-prob fighter1 picked")[0].text.strip()[:-1])/100
   	probFighter2 = float(fight_contents.findAll('div', class_ = "prediction-bar-prob fighter2")[0].text.strip()[:-1])/100
@@ -230,12 +236,14 @@ def fetchName():
   	name1 = extension.split('-')[-6]
   	name2 = extension.split('-')[-4]
   
+  '''
   teamsToday = [name1, name2]
   probabilitiesToday = [probFighter1, probFighter2]
   indexed = []
   for i in range(int(len(teamsToday)/2)):
   	indexed += [i]*2
   mma = pd.DataFrame({'ID':teamsToday, 'Probabilities':probabilitiesToday, 'gameNum':indexed })
+  print(mma)
   return mma
 
 def oddstoPayout(odds,dollarsIn):
@@ -291,5 +299,5 @@ def run():
 	else:
 		return 'No MMA fights today.'
 
-print(picks())
+print(run())
 	

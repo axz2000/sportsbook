@@ -102,7 +102,7 @@ def searchingForGame(jsonData):
 	alpha = jsonData['events'][0]
 	gameday = alpha['tsstart'][:10]
 	today = str(date.today())
-	#print(today, gameday)
+	print(today, gameday)
 	return today == gameday
 
 def gameToday():
@@ -199,7 +199,7 @@ def fetchName():
 
   jsonData_fanduel_nba = requests.get('https://sportsbook.fanduel.com/cache/psmg/UK/64165.3.json').json() #gives the game id
   url = 'https://projects.fivethirtyeight.com/2021-nba-predictions/games/?ex_cid=rrpromo'
-  #print('hello')
+  print('hello')
   page_response = requests.get(url, timeout=10, headers = {
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
     'accept-encoding': 'gzip, deflate, br',
@@ -212,7 +212,7 @@ def fetchName():
   	Today = page_content.findAll('section', class_="day")[0] #not sure what the issue is here
   else: 
   	Today = page_content.findAll('section', class_="day")[1] #not sure what the issue is here
-  #print(Today)
+  print(Today)
   teams = [i['data-team'] for i in Today.findAll('tr', class_ = "tr team")]
   teamsToday = []
   for j in teams:
@@ -220,7 +220,7 @@ def fetchName():
   		teamsToday += [Today.find('td', class_ = "td text team " + str(j)).text]
   	except:
   		teamsToday += ['None']
-  #print(teamsToday)
+  print(teamsToday)
   probabilitiesToday = [float(i.text[:-1])/100 for i in Today.findAll('td', class_="td number chance")]
   indexed = []
   for i in range(int(len(teamsToday)/2)):
