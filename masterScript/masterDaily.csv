@@ -25,7 +25,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 10.0,hc traktor chelyabinsk,0.35,2.52,KHL,2020-12-28,0.0
 2.0,Draw Newcastle v Liverpool,0.06,6.0,EPL,2020-12-30,1.0
 11.0,hc dynamo moscow,0.46,1.56,KHL,2020-12-30,1.0
-0.0,Aston Villa,0.08,4.9,EPL,2021-01-01,0.0
 6.0,Burton Albion,0.09,3.5,ELO,2021-01-02,0.0
 2.0,West Brom,0.03,5.9,EPL,2021-01-02,0.0
 2.0,Draw Arminia v Gladbach,0.07,4.2,GPL,2021-01-02,0.0
@@ -54,7 +53,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 2.0,Draw Strasbourg v Nîmes,0.06,4.2,FL1,2021-01-06,0.0
 6.0,Draw Lyon v Lens,0.05,4.9,FL1,2021-01-06,0.0
 8.0,Draw Reims v Dijon FCO,0.09,3.5,FL1,2021-01-06,1.0
-1.0,Fiorentina,0.08,4.1,ISA,2021-01-06,0.0
 6.0,Draw Napoli v Spezia,0.04,7.0,ISA,2021-01-06,0.0
 9.0,Warriors,0.24,2.76,NBA,2021-01-06,0.0
 3.0,Antalyaspor,0.19,2.4,TSL,2021-01-06,1.0
@@ -63,7 +61,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 5.0,AC Ajaccio,0.07,3.9,FL2,2021-01-08,0.0
 6.0,ak bars kazan,0.55,1.38,KHL,2021-01-08,1.0
 3.0,Draw Dijon FCO v Marseille,0.09,3.5,FL1,2021-01-09,1.0
-0.0,Schalke 04,0.07,4.4,GPL,2021-01-09,1.0
 3.0,RB Leipzig,0.19,2.35,GPL,2021-01-09,0.0
 4.0,Draw Osasuna v Real Madrid,0.06,4.5,LLA,2021-01-09,1.0
 1.0,Seahawks          ,0.53,1.6,NFL,2021-01-09,0.0
@@ -76,7 +73,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 1.0,Ankaragücü,0.15,3.9,TSL,2021-01-10,0.0
 3.0,jokerit helsinki,0.46,1.91,KHL,2021-01-11,0.0
 4.0,lokomotiv yaroslavl,0.42,1.61,KHL,2021-01-11,0.0
-1.0,Huesca,0.15,2.9,LLA,2021-01-11,0.0
 1.0,Alanyaspor,0.42,1.61,TSL,2021-01-11,0.0
 1.0,Draw Burnley v Man. United,0.06,4.6,EPL,2021-01-12,0.0
 2.0,Everton,0.12,3.0,EPL,2021-01-12,1.0
@@ -142,7 +138,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Draw Guimarães v Nacional,0.08,4.0,PPL,2021-01-21,0.0
 0.0,Erzurumspor,0.06,4.5,TSL,2021-01-21,0.0
 0.0,Gladbach,0.11,3.2,GPL,2021-01-22,1.0
-0.0,Levante,0.24,2.05,LLA,2021-01-22,0.0
 2.0,Pacers,0.47,1.68,NBA,2021-01-22,1.0
 7.0,Kings,0.43,1.57,NBA,2021-01-22,1.0
 0.0,Willem II,0.23,2.35,NPL,2021-01-22,0.0
@@ -155,12 +150,10 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 2.0,SC Freiburg,0.21,2.65,GPL,2021-01-23,1.0
 4.0,Draw Mainz v RB Leipzig,0.07,4.9,GPL,2021-01-23,0.0
 5.0,FC Augsburg,0.11,3.6,GPL,2021-01-23,1.0
-0.0,Roma,0.49,1.45,ISA,2021-01-23,1.0
 1.0,Udinese,0.04,5.9,ISA,2021-01-23,0.0
 2.0,Atalanta,0.19,2.35,ISA,2021-01-23,1.0
 3.0,Crotone,0.06,5.4,ISA,2021-01-23,0.0
 0.0,Real Sociedad,0.35,1.8,LLA,2021-01-23,0.0
-1.0,Alavés,0.04,6.0,LLA,2021-01-23,0.0
 2.0,Draw Alavés v Real Madrid,0.07,4.4,LLA,2021-01-23,0.0
 0.0,Draw Başakşehir v Rizespor,0.06,4.9,TSL,2021-01-23,1.0
 2.0,Draw Santos v Goiás,0.06,4.2,BPL,2021-01-24,0.0
@@ -182,78 +175,58 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Draw Fortuna Sittard v Ajax,0.03,7.5,NPL,2021-01-24,0.0
 2.0,Draw Twente v VVV-Venlo,0.06,4.5,NPL,2021-01-24,0.0
 4.0,Feyenoord,0.23,2.3,NPL,2021-01-24,0.0
-0.0,Marítimo,0.16,2.8,PPL,2021-01-24,0.0
 2.0,Famalicão,0.19,3.1,PPL,2021-01-24,0.0
 0.0,Konyaspor,0.25,2.1,TSL,2021-01-24,0.0
 1.0,Denizlispor,0.14,2.9,TSL,2021-01-24,0.0
 2.0,Beşiktaş,0.55,1.36,TSL,2021-01-24,1.0
 3.0,GFK,0.35,2.45,TSL,2021-01-24,0.0
-2.0,Nets,0.63,1.3,NBA,2021-01-25,1.0
 0.0,Belenenses,0.21,2.2,PPL,2021-01-25,1.0
 1.0,Benfica,0.75,1.22,PPL,2021-01-25,0.0
-0.0,Kasımpaşa,0.18,2.9,TSL,2021-01-25,1.0
 1.0,Fenerbahçe,0.58,1.32,TSL,2021-01-25,1.0
 2.0,Draw Alanyaspor v Ankaragücü,0.07,4.5,TSL,2021-01-25,0.0
 1.0,Draw Atlético Mineiro v Santos,0.07,5.5,BPL,2021-01-26,0.0
-1.0,Gillingham,0.21,3.0,ELO,2021-01-26,1.0
-3.0,Wigan,0.19,3.8,ELO,2021-01-26,0.0
-4.0,Doncaster,0.44,1.83,ELO,2021-01-26,1.0
-5.0,Swindon Town,0.2,2.65,ELO,2021-01-26,0.0
 1.0,Southampton,0.13,3.5,EPL,2021-01-26,0.0
 0.0,Emmen,0.02,8.5,NPL,2021-01-26,0.0
 1.0,Draw Groningen v ADO Den Haag,0.09,4.4,NPL,2021-01-26,0.0
 0.0,Boavista,0.07,6.5,PPL,2021-01-26,0.0
 1.0,Draw Boavista v Sporting,0.08,4.0,PPL,2021-01-26,0.0
 0.0,Chelsea,0.45,1.59,EPL,2021-01-27,0.0
-1.0,Burnley,0.08,4.0,EPL,2021-01-27,1.0
 2.0,Brighton,0.24,2.05,EPL,2021-01-27,0.0
 4.0,Draw Man. United v Sheffield Utd,0.03,6.0,EPL,2021-01-27,0.0
-3.0,76ers,0.26,2.1,NBA,2021-01-27,1.0
 0.0,AZ Alkmaar,0.35,1.71,NPL,2021-01-27,0.0
 1.0,RKC,0.19,2.55,NPL,2021-01-27,0.0
 2.0,VVV-Venlo,0.09,5.9,NPL,2021-01-27,1.0
 3.0,Draw VVV-Venlo v Vitesse,0.09,4.6,NPL,2021-01-27,0.0
-4.0,Heerenveen,0.08,4.4,NPL,2021-01-27,1.0
 5.0,Draw Heerenveen v Feyenoord,0.07,4.1,NPL,2021-01-27,0.0
 0.0,Bahía,0.22,2.25,BPL,2021-01-28,1.0
-0.0,Rockets,0.47,1.63,NBA,2021-01-28,1.0
 2.0,Pistons,0.07,5.6,NBA,2021-01-28,1.0
 3.0,Suns,0.64,1.96,NBA,2021-01-28,1.0
 0.0,Sparta,0.21,2.25,NPL,2021-01-28,0.0
 0.0,Draw Lyon v Bordeaux,0.05,4.9,FL1,2021-01-29,0.0
-0.0,Mainz,0.08,4.5,GPL,2021-01-29,0.0
 0.0,Torino,0.15,2.7,ISA,2021-01-29,0.0
 0.0,Valladolid,0.2,2.35,LLA,2021-01-29,0.0
 4.0,Raptors,0.63,1.43,NBA,2021-01-29,0.0
 9.0,Jazz,0.51,1.57,NBA,2021-01-29,1.0
-0.0,Hull City,0.62,1.37,ELO,2021-01-30,1.0
-2.0,Ipswich Town,0.23,3.1,ELO,2021-01-30,0.0
-4.0,Rochdale,0.2,3.6,ELO,2021-01-30,1.0
 5.0,Lincoln City,0.16,3.0,ELO,2021-01-30,0.0
-6.0,Peterborough,0.36,3.9,ELO,2021-01-30,0.0
 7.0,Oxford United,0.28,3.3,ELO,2021-01-30,1.0
 8.0,MK Dons,0.23,2.5,ELO,2021-01-30,1.0
 1.0,Man. City,0.81,1.12,EPL,2021-01-30,1.0
 2.0,Crystal Palace,0.15,3.0,EPL,2021-01-30,1.0
-3.0,Fulham,0.2,2.3,EPL,2021-01-30,0.0
 4.0,Arsenal,0.14,2.85,EPL,2021-01-30,0.0
 0.0,Montpellier,0.13,2.9,FL1,2021-01-30,0.0
 0.0,Werder Bremen,0.29,1.95,GPL,2021-01-30,0.0
 1.0,Dortmund,0.68,1.25,GPL,2021-01-30,1.0
 2.0,Eintracht,0.36,1.77,GPL,2021-01-30,1.0
 3.0,Draw RB Leipzig v Leverkusen,0.08,3.8,GPL,2021-01-30,0.0
-4.0,Leverkusen,0.09,3.8,GPL,2021-01-30,0.0
 0.0,AC Milan,0.3,1.83,ISA,2021-01-30,1.0
 1.0,Sampdoria,0.03,7.0,ISA,2021-01-30,0.0
 0.0,Eibar,0.08,4.2,LLA,2021-01-30,0.0
-1.0,Elche,0.07,5.8,LLA,2021-01-30,0.0
 2.0,Villarreal,0.2,2.35,LLA,2021-01-30,0.0
 2.0,Bulls,0.33,1.77,NBA,2021-01-30,0.0
 3.0,Heat,0.53,1.47,NBA,2021-01-30,1.0
 4.0,Celtics,0.33,2.04,NBA,2021-01-30,0.0
 0.0,Heracles,0.19,2.35,NPL,2021-01-30,1.0
 1.0,Draw Heracles v Groningen,0.11,3.2,NPL,2021-01-30,0.0
-2.0,Fortuna Sittard,0.27,1.95,NPL,2021-01-30,1.0
 3.0,Draw Vitesse v RKC,0.07,5.1,NPL,2021-01-30,1.0
 0.0,Nacional,0.2,2.8,PPL,2021-01-30,1.0
 1.0,Tondela,0.17,2.5,PPL,2021-01-30,1.0
@@ -262,29 +235,23 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 1.0,Draw Lorient v PSG,0.05,8.5,FL1,2021-01-31,0.0
 2.0,Nîmes,0.06,5.7,FL1,2021-01-31,0.0
 3.0,Draw Lille v Dijon FCO,0.07,4.9,FL1,2021-01-31,0.0
-0.0,Spezia,0.18,4.1,ISA,2021-01-31,0.0
 1.0,Cagliari,0.15,3.1,ISA,2021-01-31,0.0
 0.0,Cádiz,0.03,8.0,LLA,2021-01-31,0.0
 1.0,Barcelona,0.71,1.4,LLA,2021-01-31,1.0
-0.0,Knicks,0.15,3.9,NBA,2021-01-31,0.0
 1.0,Nuggets,0.43,1.85,NBA,2021-01-31,1.0
 3.0,Timberwolves,0.39,2.36,NBA,2021-01-31,1.0
 0.0,ADO Den Haag,0.14,4.8,NPL,2021-01-31,0.0
 0.0,Sport Recife,0.04,6.5,BPL,2021-02-01,0.0
 0.0,Osasuna,0.1,4.3,LLA,2021-02-01,0.0
 0.0,San Luis,0.1,5.6,MLM,2021-02-01,0.0
-2.0,Pelicans,0.5,1.61,NBA,2021-02-01,0.0
 3.0,Spurs,0.41,1.68,NBA,2021-02-01,0.0
 0.0,Moreirense,0.09,5.9,PPL,2021-02-01,0.0
 1.0,Sporting,0.2,2.65,PPL,2021-02-01,1.0
 0.0,Palmeiras,0.47,1.62,BPL,2021-02-02,0.0
 0.0,Northampton,0.04,6.5,ELO,2021-02-02,0.0
 1.0,Shrewsbury,0.24,2.5,ELO,2021-02-02,0.0
-2.0,Portsmouth,0.23,2.5,ELO,2021-02-02,1.0
 0.0,Wycombe,0.18,3.1,ELO,2021-02-02,0.0
-0.0,Newcastle,0.19,2.85,EPL,2021-02-02,0.0
 0.0,Monterrey,0.32,2.05,MLM,2021-02-02,0.0
-0.0,Magic,0.24,2.8,NBA,2021-02-02,0.0
 1.0,Clippers,0.32,1.98,NBA,2021-02-02,0.0
 2.0,Wizards,0.43,1.83,NBA,2021-02-02,0.0
 0.0,Gil Vicente,0.17,3.1,PPL,2021-02-02,0.0
@@ -302,66 +269,73 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 2.0,Nantes,0.09,4.1,FL1,2021-02-03,0.0
 3.0,Dijon FCO,0.05,8.5,FL1,2021-02-03,0.0
 4.0,Draw Dijon FCO v Lyon,0.08,5.3,FL1,2021-02-03,0.0
-0.0,Hornets,0.26,3.7,NBA,2021-02-03,0.0
-2.0,Thunder,0.32,3.05,NBA,2021-02-03,1.0
-3.0,Cavaliers,0.15,4.3,NBA,2021-02-03,0.0
 0.0,Flamengo,0.72,1.31,BPL,2021-02-04,1.0
 1.0,Internacional,0.27,2.3,BPL,2021-02-04,0.0
 0.0,Nordsjælland,0.17,3.1,DSL,2021-02-04,0.0
 0.0,Tottenham,0.15,3.7,EPL,2021-02-04,0.0
-0.0,Mavericks,0.54,1.57,NBA,2021-02-04,0.0
-1.0,Hawks,0.2,3.6,NBA,2021-02-04,0.0
 2.0,Trail Blazers,0.11,4.3,NBA,2021-02-04,1.0
 3.0,Grizzlies,0.5,1.77,NBA,2021-02-04,0.0
 0.0,Farense,0.24,2.6,PPL,2021-02-04,0.0
 0.0,Trabzonspor,0.6,1.5,TSL,2021-02-04,1.0
-0,Magic,0.45,2.08,NBA,2021-02-05
-1,Cavaliers,0.11,6.3,NBA,2021-02-05
-2,Nets,0.52,1.51,NBA,2021-02-05
-3,Thunder,0.5,2.18,NBA,2021-02-05
-4,Hornets,0.18,3.6,NBA,2021-02-05
-0,Gillingham,0.12,3.6,ELO,2021-02-05
-0,Draw Hertha BSC v Bayern Munich,0.04,6.0,GPL,2021-02-05
-0,Fiorentina,0.04,6.5,ISA,2021-02-05
-0,Alavés,0.25,2.55,LLA,2021-02-05
-0,Fortuna Sittard,0.19,2.85,NPL,2021-02-05
-0,Marítimo,0.04,7.5,PPL,2021-02-05
-0,Portsmouth,0.46,1.74,ELO,2021-02-06
-1,Wigan,0.26,2.7,ELO,2021-02-06
-2,Ipswich Town,0.15,3.1,ELO,2021-02-06
-3,Doncaster,0.28,2.8,ELO,2021-02-06
-4,Swindon Town,0.15,3.2,ELO,2021-02-06
-5,Peterborough,0.38,2.1,ELO,2021-02-06
-6,Sunderland,0.24,2.4,ELO,2021-02-06
-7,Rochdale,0.19,4.1,ELO,2021-02-06
-8,Hull City,0.52,1.67,ELO,2021-02-06
-0,Aston Villa,0.17,2.75,EPL,2021-02-06
-1,Newcastle,0.18,3.1,EPL,2021-02-06
-2,Burnley,0.12,3.7,EPL,2021-02-06
-3,Fulham,0.1,3.7,EPL,2021-02-06
-0,Schalke 04,0.03,9.0,GPL,2021-02-06
-1,Draw Schalke 04 v RB Leipzig,0.05,5.5,GPL,2021-02-06
-2,Leverkusen,0.4,2.0,GPL,2021-02-06
-3,Mainz,0.18,3.3,GPL,2021-02-06
-0,Kasımpaşa,0.18,2.7,TSL,2021-02-06
-0,Spezia,0.1,4.4,ISA,2021-02-06
-1,Roma,0.09,4.6,ISA,2021-02-06
-0,Levante,0.27,2.15,LLA,2021-02-06
-1,Huesca,0.06,6.0,LLA,2021-02-06
-2,Draw Huesca v Real Madrid,0.07,4.5,LLA,2021-02-06
-3,Elche,0.06,7.0,LLA,2021-02-06
-4,Draw Elche v Villarreal,0.08,4.2,LLA,2021-02-06
-5,Sevilla,0.43,1.69,LLA,2021-02-06
-0,Heerenveen,0.14,3.5,NPL,2021-02-06
-0,Rotherham,0.14,3.1,ELO,2021-02-06
-1,QPR,0.15,2.9,ELO,2021-02-06
-2,Wycombe,0.13,3.9,ELO,2021-02-06
-0,Knicks,0.38,1.98,NBA,2021-02-06
-1,Magic,0.43,1.98,NBA,2021-02-06
-2,76ers,0.46,1.86,NBA,2021-02-06
-3,Cavaliers,0.07,5.1,NBA,2021-02-06
-4,Thunder,0.41,1.98,NBA,2021-02-06
-5,Rockets,0.41,1.83,NBA,2021-02-06
-6,Hawks,0.49,3.15,NBA,2021-02-06
-7,Mavericks,0.53,1.6,NBA,2021-02-06
-8,Pelicans,0.36,1.89,NBA,2021-02-06
+0.0,Gillingham,0.12,3.6,ELO,2021-02-05,
+0.0,Draw Hertha BSC v Bayern Munich,0.04,6.0,GPL,2021-02-05,
+0.0,Fiorentina,0.04,6.5,ISA,2021-02-05,
+0.0,Alavés,0.25,2.55,LLA,2021-02-05,
+2.0,Nets,0.52,1.51,NBA,2021-02-05,
+4.0,Hornets,0.18,3.6,NBA,2021-02-05,
+0.0,Fortuna Sittard,0.19,2.85,NPL,2021-02-05,
+0.0,Marítimo,0.04,7.5,PPL,2021-02-05,
+0.0,Rotherham,0.14,3.1,ECL,2021-02-06,1.0
+1.0,QPR,0.15,2.9,ECL,2021-02-06,1.0
+2.0,Wycombe,0.13,3.9,ECL,2021-02-06,0.0
+0.0,Portsmouth,0.46,1.74,ELO,2021-02-06,0.0
+1.0,Wigan,0.26,2.7,ELO,2021-02-06,0.0
+2.0,Ipswich Town,0.15,3.1,ELO,2021-02-06,1.0
+3.0,Doncaster,0.28,2.8,ELO,2021-02-06,1.0
+4.0,Swindon Town,0.15,3.2,ELO,2021-02-06,0.0
+5.0,Peterborough,0.38,2.1,ELO,2021-02-06,1.0
+7.0,Rochdale,0.19,4.1,ELO,2021-02-06,0.0
+8.0,Hull City,0.52,1.67,ELO,2021-02-06,0.0
+0.0,Aston Villa,0.17,2.75,EPL,2021-02-06,1.0
+1.0,Newcastle,0.18,3.1,EPL,2021-02-06,1.0
+2.0,Burnley,0.12,3.7,EPL,2021-02-06,0.0
+3.0,Fulham,0.1,3.7,EPL,2021-02-06,0.0
+0.0,Schalke 04,0.03,9.0,GPL,2021-02-06,0.0
+1.0,Draw Schalke 04 v RB Leipzig,0.05,5.5,GPL,2021-02-06,0.0
+2.0,Leverkusen,0.4,2.0,GPL,2021-02-06,1.0
+3.0,Mainz,0.18,3.3,GPL,2021-02-06,1.0
+0.0,Spezia,0.1,4.4,ISA,2021-02-06,1.0
+1.0,Roma,0.09,4.6,ISA,2021-02-06,0.0
+0.0,Levante,0.27,2.15,LLA,2021-02-06,0.0
+1.0,Huesca,0.06,6.0,LLA,2021-02-06,0.0
+2.0,Draw Huesca v Real Madrid,0.07,4.5,LLA,2021-02-06,0.0
+3.0,Elche,0.06,7.0,LLA,2021-02-06,0.0
+4.0,Draw Elche v Villarreal,0.08,4.2,LLA,2021-02-06,1.0
+5.0,Sevilla,0.43,1.69,LLA,2021-02-06,1.0
+0.0,Knicks,0.38,1.98,NBA,2021-02-06,1.0
+1.0,Magic,0.43,1.98,NBA,2021-02-06,0.0
+2.0,76ers,0.46,1.86,NBA,2021-02-06,1.0
+3.0,Cavaliers,0.07,5.1,NBA,2021-02-06,0.0
+4.0,Thunder,0.41,1.98,NBA,2021-02-06,1.0
+5.0,Rockets,0.41,1.83,NBA,2021-02-06,0.0
+6.0,Hawks,0.49,3.15,NBA,2021-02-06,1.0
+7.0,Mavericks,0.53,1.6,NBA,2021-02-06,1.0
+8.0,Pelicans,0.36,1.89,NBA,2021-02-06,1.0
+0.0,Heerenveen,0.14,3.5,NPL,2021-02-06,1.0
+0.0,Kasımpaşa,0.18,2.7,TSL,2021-02-06,0.0
+0,Knicks,0.26,2.94,NBA,2021-02-07
+1,Hornets,0.48,2.04,NBA,2021-02-07
+2,Clippers,0.73,1.3,NBA,2021-02-07
+0,Tottenham,0.55,1.48,EPL,2021-02-07
+0,Arminia,0.17,3.2,GPL,2021-02-07
+0,Dijon FCO,0.12,4.9,FL1,2021-02-07
+1,Nîmes,0.04,8.5,FL1,2021-02-07
+0,Ankaragücü,0.18,2.9,TSL,2021-02-07
+0,Benevento,0.17,2.95,ISA,2021-02-07
+1,Parma,0.13,3.2,ISA,2021-02-07
+0,Buccaneers          ,0.25,2.44,NFL,2021-02-07
+0,Nordsjælland,0.31,2.5,DSL,2021-02-07
+1,SønderjyskE,0.32,2.2,DSL,2021-02-07
+2,Horsens,0.04,6.5,DSL,2021-02-07
+3,AGF Aarhus,0.65,1.51,DSL,2021-02-07
+4,Brøndby,0.41,1.91,DSL,2021-02-07
