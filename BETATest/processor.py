@@ -3,7 +3,7 @@ import ELO, EPL, FL1, GPL, TSL, ISA, LLA, NBA, NPL, PPL, NFL, BPL, MLM, UCL, DSL
 #KHL when do we bring this back?
 
 def getPicks():
-	'''print(NBA.run())
+	print(NBA.run())
 	print(ELO.run())
 	print(EPL.run())
 	print(GPL.run())
@@ -13,7 +13,7 @@ def getPicks():
 	print(LLA.run())
 	print(NPL.run())
 	print(PPL.run())
-	print(NFL.run())'''
+	#print(NFL.run())
 	print(BPL.run())
 	print(UCL.run())
 	print(MLM.run())
