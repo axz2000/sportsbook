@@ -130,7 +130,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 2.0,Draw Alavés v Real Madrid,0.07,4.4,LLA,2021-01-23,0.0
 0.0,Draw Başakşehir v Rizespor,0.06,4.9,TSL,2021-01-23,1.0
 2.0,Draw Santos v Goiás,0.06,4.2,BPL,2021-01-24,0.0
-5.0,Fluminense,0.32,1.8,BPL,2021-01-24,1.0
 0.0,Bordeaux,0.18,2.45,FL1,2021-01-24,1.0
 4.0,Draw Dijon FCO v Strasbourg,0.09,3.5,FL1,2021-01-24,1.0
 5.0,Lille,0.17,2.75,FL1,2021-01-24,1.0
@@ -200,7 +199,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 7.0,vityaz podolsk,0.45,2.02,KHL,2021-01-31,0.0
 1.0,Cádiz,0.03,8.0,LLA,2021-01-31,0.0
 3.0,Raptors,0.57,1.43,NBA,2021-01-31,1.0
-4.0,Timberwolves,0.39,2.36,NBA,2021-01-31,1.0
 0.0,Willem II,0.33,1.95,NPL,2021-01-31,1.0
 1.0,AZ Alkmaar,0.08,3.8,NPL,2021-01-31,0.0
 2.0,ADO Den Haag,0.14,4.8,NPL,2021-01-31,0.0
@@ -221,7 +219,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 1.0,Rizespor,0.23,2.5,TSL,2021-02-02,0.0
 0.0,Santos,0.14,5.0,BPL,2021-02-03,0.0
 1.0,Atlético,0.13,5.5,BPL,2021-02-03,0.0
-2.0,Ceará,0.14,3.7,BPL,2021-02-03,0.0
 3.0,Goiás,0.1,6.5,BPL,2021-02-03,1.0
 0.0,Draw Burnley v Man. City,0.04,7.0,EPL,2021-02-03,0.0
 0.0,Draw Rennes v Lorient,0.08,4.0,FL1,2021-02-03,1.0
@@ -236,7 +233,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Sivasspor,0.32,1.8,TSL,2021-02-03,0.0
 1.0,Kayserispor,0.09,3.7,TSL,2021-02-03,0.0
 3.0,Konyaspor,0.35,1.71,TSL,2021-02-03,0.0
-1.0,Internacional,0.27,2.3,BPL,2021-02-04,0.0
 1.0,Draw Belenenses v Porto,0.05,4.6,PPL,2021-02-04,1.0
 0.0,Göztepe,0.23,2.1,TSL,2021-02-04,0.0
 1.0,Trabzonspor,0.6,1.5,TSL,2021-02-04,1.0
@@ -246,7 +242,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Fiorentina,0.04,6.5,ISA,2021-02-05,0.0
 0.0,Alavés,0.25,2.55,LLA,2021-02-05,1.0
 1.0,Pacers,0.38,1.7,NBA,2021-02-05,0.0
-3.0,Nets,0.52,1.51,NBA,2021-02-05,0.0
 0.0,Fortuna Sittard,0.19,2.85,NPL,2021-02-05,0.0
 1.0,Draw Marítimo v Sporting,0.07,4.1,PPL,2021-02-05,0.0
 0.0,Portsmouth,0.46,1.74,ELO,2021-02-06,0.0
@@ -279,7 +274,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 5.0,Thunder,0.41,1.98,NBA,2021-02-06,1.0
 6.0,Rockets,0.41,1.83,NBA,2021-02-06,0.0
 7.0,Hawks,0.49,3.15,NBA,2021-02-06,1.0
-8.0,Mavericks,0.53,1.6,NBA,2021-02-06,1.0
 0.0,Draw Emmen v AZ Alkmaar,0.06,4.9,NPL,2021-02-06,0.0
 1.0,Heerenveen,0.14,3.5,NPL,2021-02-06,1.0
 2.0,PSV,0.53,1.38,NPL,2021-02-06,1.0
@@ -317,10 +311,7 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Atlético Madrid,0.46,1.61,LLA,2021-02-08,1.0
 0.0,Guadalajara,0.1,4.1,MLM,2021-02-08,1.0
 0.0,Hornets,0.24,2.08,NBA,2021-02-08,1.0
-1.0,Grizzlies,0.23,2.22,NBA,2021-02-08,0.0
 2.0,Bulls,0.51,1.77,NBA,2021-02-08,0.0
-4.0,Suns,0.67,1.34,NBA,2021-02-08,1.0
-5.0,Nuggets,0.45,2.48,NBA,2021-02-08,0.0
 0.0,Farense,0.26,2.25,PPL,2021-02-08,0.0
 1.0,Marítimo,0.18,2.45,PPL,2021-02-08,0.0
 2.0,Belenenses,0.13,3.1,PPL,2021-02-08,0.0
@@ -344,14 +335,19 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Paços Ferreira,0.27,1.95,PPL,2021-02-09,0.0
 1.0,Boavista,0.24,2.2,PPL,2021-02-09,0.0
 2.0,Gil Vicente,0.04,7.0,PPL,2021-02-09,0.0
-0,Mavericks,0.46,1.56,NBA,2021-02-10
-1,Grizzlies,0.43,1.57,NBA,2021-02-10
-2,Nets,0.36,1.77,NBA,2021-02-10
-3,Timberwolves,0.23,4.2,NBA,2021-02-10
-4,Nuggets,0.82,1.22,NBA,2021-02-10
-5,Suns,0.35,2.44,NBA,2021-02-10
-0,Internacional,0.56,1.34,BPL,2021-02-10
-1,Fortaleza,0.25,2.1,BPL,2021-02-10
-2,Ceará,0.05,5.0,BPL,2021-02-10
-3,Fluminense,0.15,3.5,BPL,2021-02-10
-4,Atlético-PR,0.12,3.6,BPL,2021-02-10
+0.0,Internacional,0.56,1.34,BPL,2021-02-10,0.0
+1.0,Fortaleza,0.25,2.1,BPL,2021-02-10,1.0
+2.0,Ceará,0.05,5.0,BPL,2021-02-10,0.0
+3.0,Fluminense,0.15,3.5,BPL,2021-02-10,0.0
+4.0,Atlético-PR,0.12,3.6,BPL,2021-02-10,0.0
+0.0,Mavericks,0.46,1.56,NBA,2021-02-10,1.0
+1.0,Grizzlies,0.43,1.57,NBA,2021-02-10,1.0
+2.0,Nets,0.36,1.77,NBA,2021-02-10,1.0
+3.0,Timberwolves,0.23,4.2,NBA,2021-02-10,0.0
+4.0,Nuggets,0.82,1.22,NBA,2021-02-10,1.0
+5.0,Suns,0.35,2.44,NBA,2021-02-10,1.0
+0,Rockets,0.25,2.24,NBA,2021-02-11
+1,Celtics,0.39,1.64,NBA,2021-02-11
+2,Pistons,0.33,2.24,NBA,2021-02-11
+3,Warriors,0.53,1.48,NBA,2021-02-11
+4,Trail Blazers,0.21,2.94,NBA,2021-02-11
