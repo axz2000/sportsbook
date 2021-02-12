@@ -86,13 +86,14 @@ def build(oddsDataFrame,dataInput): #NEEDS WORK !!!!!!!
   
 def getOdds(listing):
   bets = []
-  #print(len(listing))
+  print(len(listing))
   for game in listing:
   	for i in game['eventmarketgroups'][0]['markets']:
-  		#print(i['name'])
+  		print(i['name'])
   		betName = [game['externaldescription'], i['name']]
   		if i['name'] == 'Moneyline':
   			for i in i['selections']:
+  				print([i['name'], 1+(i['currentpriceup']/i['currentpricedown'])])
   				betName+=[[i['name'], 1+(i['currentpriceup']/i['currentpricedown'])]] #, i['currenthandicap']
   		bets += [betName]
   return bets
@@ -102,21 +103,21 @@ def searchingForGame(jsonData):
 	alpha = jsonData['events'][0]
 	gameday = alpha['tsstart'][:10]
 	today = str(date.today())
-	#print(today, gameday)
+	print(today, gameday)
 	return today == gameday
 
 def gameToday():
-	jsonData_fanduel_epl = requests.get('https://sportsbook.fanduel.com/cache/psmg/UK/64165.3.json').json()
+	jsonData_fanduel_epl = requests.get('https://sportsbook.fanduel.com/cache/psmg/UK/63747.3.json').json()
 	boolean = searchingForGame(jsonData_fanduel_epl)
 	return boolean
 
 def fetch():
   try:
-  	jsonData_fanduel_nba = requests.get('https://sportsbook.fanduel.com/cache/psmg/UK/64165.3.json').json() #gives the game id
+  	jsonData_fanduel_nba = requests.get('https://sportsbook.fanduel.com/cache/psmg/UK/63747.3.json').json() #gives the game id
   except:
   	print('Not a problem, the XHR has been changed for the NBA, go ahead and fix that then run again')
   epl = parse_data(jsonData_fanduel_nba)
-  #print(epl)
+  print(epl)
   EPL = pd.DataFrame(epl)[['eventname','tsstart','idfoevent.markets']]
   EPL.columns = ['Teams','Date','EventID']
   listing = []
@@ -125,7 +126,7 @@ def fetch():
   df = (pd.DataFrame(getOdds(listing)))
   df.columns = ['GameName', 'Type', 'HomeTeamandOdds', 'AwayTeamandOdds']
   df = df[df.Type=='Moneyline']
-  print(df.sort_values(['GameName']))
+  #print(df.sort_values(['GameName']))
   probabilities = fetchName()
   
   
@@ -135,7 +136,6 @@ def fetch():
   for i in np.unique(probabilities.gameNum.values):
   	newdf = probabilities[probabilities.gameNum == i]
   	valued += [newdf.ID.values[1][:]]
-  	print(valued)
   sorting = np.sort(valued)
   indices, counterArray, soughtGameArray = [], [], []
   counter = 0
@@ -143,15 +143,27 @@ def fetch():
   
   print((len(df.GameName.values), len(sorting)))
   for i in (df.GameName.values):
-  	i = i.split(' ')[-1]
+  	i = i.split(' ')
+  	i = i[i.index('At')+1:]
+  	print(i, " -------------------------- ")
+  	if len(i)<=2:
+  		i = i[-1]
+  	else:
+  		i = str(i[-2])+str(i[-1])
   	temp = []
   	for j in np.unique(sorting):
+  		j = j.split(' ')
+  		if len(j)<=2:
+  			j = j[-1]
+  		else:
+  			j = str(j[-2])+str(j[-1])
   		print(i,j)
   		temp += [tryMatch(i,j)]
   	print(temp)
   	sought = (sorting[temp.index(np.max(temp))])
   	print(i, sought, "this")
   	soughtgameNum = probabilities[probabilities.ID == sought].gameNum.values[0]
+  	#print(probabilities[probabilities.ID == sought].Probabilities.values[0])
   	counterArray += [counter]
   	soughtGameArray += [soughtgameNum]
   	counter += 1
@@ -170,7 +182,7 @@ def fetch():
   
   array ,counter = [], 0
   for i in probabilities.gameNum.values:
-  	print(counter)
+  	#print(counter)
   	if counter%2 == 0:
   		indexed = probabilities.gameNum.values[counter]
   		print(df.HomeTeamandOdds.values[indexed][-1])
@@ -189,7 +201,7 @@ def fetch():
   print(array, probabilities.ID.values,probabilities )
   Result = pd.DataFrame({'Team':probabilities.ID.values, 'Probability': probabilities.Probabilities.values, 'Odds':array, 'EV':EV})
   print(Result)
-  Bet = Result[Result.EV >1]
+  Bet = Result[Result.EV >1.07]
   kelly = [Kelly(Bet.Odds.values[i], Bet.Probability.values[i]) for i in range(len(Bet.Probability.values))]
   #print(len(Bet.Team.values), len(kelly),  len(Bet.Odds.values))
   Betting = pd.DataFrame({'Bet State Chosen':Bet.Team.values, 'Kelly Criterion Suggestion': kelly, 'Payouts (per Dollar)':Bet.Odds.values})
@@ -200,7 +212,7 @@ def fetchName():
 
   jsonData_fanduel_nba = requests.get('https://sportsbook.fanduel.com/cache/psmg/UK/64165.3.json').json() #gives the game id
   url = 'https://projects.fivethirtyeight.com/2021-nba-predictions/games/?ex_cid=rrpromo'
-  #print('hello')
+  print('hello')
   page_response = requests.get(url, timeout=10, headers = {
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
     'accept-encoding': 'gzip, deflate, br',
