@@ -289,7 +289,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 2.0,76ers,0.46,1.86,NBA,2021-02-06,1.0
 3.0,Cavaliers,0.07,5.1,NBA,2021-02-06,0.0
 4.0,Thunder,0.41,1.98,NBA,2021-02-06,1.0
-5.0,Rockets,0.41,1.83,NBA,2021-02-06,0.0
 6.0,Hawks,0.49,3.15,NBA,2021-02-06,1.0
 7.0,Mavericks,0.53,1.6,NBA,2021-02-06,1.0
 0.0,Heerenveen,0.14,3.5,NPL,2021-02-06,1.0
@@ -321,11 +320,9 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 3.0,Wigan,0.14,3.1,ELO,2021-02-09,1.0
 4.0,Rochdale,0.17,3.9,ELO,2021-02-09,0.0
 5.0,Doncaster,0.22,2.55,ELO,2021-02-09,0.0
-0.0,Pistons,0.27,4.2,NBA,2021-02-09,1.0
 1.0,Pelicans,0.62,1.58,NBA,2021-02-09,1.0
 2.0,Spurs,0.49,1.83,NBA,2021-02-09,0.0
 3.0,Jazz,0.56,1.57,NBA,2021-02-09,1.0
-4.0,Trail Blazers,0.52,1.51,NBA,2021-02-09,1.0
 5.0,Kings,0.18,2.62,NBA,2021-02-09,0.0
 0.0,Gil Vicente,0.04,7.0,PPL,2021-02-09,0.0
 0.0,Fluminense,0.15,3.5,BPL,2021-02-10,0.0
@@ -333,6 +330,17 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Timberwolves,0.23,4.2,NBA,2021-02-10,0.0
 1.0,Nuggets,0.82,1.22,NBA,2021-02-10,1.0
 2.0,Suns,0.35,2.44,NBA,2021-02-10,1.0
-0,Rockets,0.25,2.24,NBA,2021-02-11
-1,Pistons,0.33,2.24,NBA,2021-02-11
-2,Trail Blazers,0.21,2.94,NBA,2021-02-11
+0.0,Rockets,0.25,2.24,NBA,2021-02-11,0.0
+1.0,Pistons,0.33,2.24,NBA,2021-02-11,0.0
+2.0,Trail Blazers,0.21,2.94,NBA,2021-02-11,1.0
+0,Wizards,0.36,2.36,NBA,2021-02-12
+1,Mavericks,0.44,1.77,NBA,2021-02-12
+2,Hawks,0.42,1.77,NBA,2021-02-12
+3,Jazz,0.52,1.86,NBA,2021-02-12
+4,Lakers,0.72,1.53,NBA,2021-02-12
+0,Rizespor,0.29,2.2,TSL,2021-02-12
+0,Benevento,0.1,4.4,ISA,2021-02-12
+0,Elche,0.05,7.5,LLA,2021-02-12
+0,RKC,0.32,2.05,NPL,2021-02-12
+0,Famalicão,0.25,2.4,PPL,2021-02-12
+0,San Luis,0.19,2.9,MLM,2021-02-12
