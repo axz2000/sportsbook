@@ -13,8 +13,8 @@ def getPicks():
 	print(LLA.run())
 	print(NPL.run())
 	print(PPL.run())
-	print(NFL.run())
-	print(BPL.run())
+	'''print(NFL.run())
+	print(BPL.run())'''
 	print(ECL.run())
 	print(MLM.run())
 	print(UCL.run())
