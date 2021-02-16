@@ -80,7 +80,7 @@ def searchingForGame(jsonData):
 	alpha = jsonData['events'][0]
 	gameday = alpha['tsstart'][:10]
 	today = str(date.today())
-	print(today, gameday)
+	#print(today, gameday)
 	return today == gameday
 
 def gameToday():
@@ -120,7 +120,7 @@ def fetch():
   except:
   	print('Not a problem, the XHR has been changed for the EPL, go ahead and fix that then run again')
   epl = parse_data(jsonData_fanduel_epl)
-  print(epl)
+  #print(epl)
   EPL = pd.DataFrame(epl)[['eventname','tsstart','idfoevent.markets']]
   EPL.columns = ['Teams','Date','EventID']
   listing = []
@@ -131,7 +131,7 @@ def fetch():
   df = df[df.Type=='Moneyline']
   #df = df[df.GameName != 'Rotherham v Derby County']
   probabilities = fetchName()
-  print(probabilities)
+  #print(probabilities)
   
   #check if all of them are there
   valued = []
@@ -139,13 +139,13 @@ def fetch():
   for i in np.unique(probabilities.gameNum.values):
   	newdf = probabilities[probabilities.gameNum == i]
   	valued += [newdf.ID.values[1][:]]
-  	print(valued)
+  	#print(valued)
   sorting = np.sort(valued)
   indices, counterArray, soughtGameArray = [], [], []
   counter = 0
   gamed = []
   
-  print((len(df.GameName.values), len(sorting)))
+  #print((len(df.GameName.values), len(sorting)))
   for i in (df.GameName.values):
   	temp = []
   	for j in np.unique(sorting):
@@ -194,7 +194,7 @@ def fetch():
   	EV += [probabilities.Probabilities.values[i]*array[i]]
   #print(array, probabilities.ID.values,probabilities )
   Result = pd.DataFrame({'Team':probabilities.ID.values, 'Probability': probabilities.Probabilities.values, 'Odds':array, 'EV':EV})
-  print(Result)
+  #print(Result)
   Bet = Result[Result.EV >1.07]
   kelly = [Kelly(Bet.Odds.values[i], Bet.Probability.values[i]) for i in range(len(Bet.Probability.values))]
   #print(len(Bet.Team.values), len(kelly),  len(Bet.Odds.values))
@@ -224,7 +224,7 @@ def fetchName():
   	  away = i.findAll('td', class_ = "team")[1]['data-str']
   	  teams += [home, 'Draw ' + str(home)+ ' v ' +str(away),away]
   	  prob +=[float(j.text[:-1])/100 for j in i.findAll('td', class_="prob")]
-  print(teams)
+  #print(teams)
   indexed = []
   for i in range(int(len(teams)/3)):
   	indexed += [i]*3

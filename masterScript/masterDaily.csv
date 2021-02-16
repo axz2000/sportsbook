@@ -53,7 +53,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 6.0,Draw Lyon v Lens,0.05,4.9,FL1,2021-01-06,0.0
 8.0,Draw Reims v Dijon FCO,0.09,3.5,FL1,2021-01-06,1.0
 6.0,Draw Napoli v Spezia,0.04,7.0,ISA,2021-01-06,0.0
-3.0,Antalyaspor,0.19,2.4,TSL,2021-01-06,1.0
 4.0,severstal cherepovets,0.25,4.0,KHL,2021-01-07,0.0
 0.0,Clermont,0.21,2.3,FL2,2021-01-08,0.0
 5.0,AC Ajaccio,0.07,3.9,FL2,2021-01-08,0.0
@@ -131,7 +130,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Draw Guimarães v Nacional,0.08,4.0,PPL,2021-01-21,0.0
 0.0,Erzurumspor,0.06,4.5,TSL,2021-01-21,0.0
 0.0,Gladbach,0.11,3.2,GPL,2021-01-22,1.0
-2.0,Pacers,0.47,1.68,NBA,2021-01-22,1.0
 0.0,Willem II,0.23,2.35,NPL,2021-01-22,0.0
 0.0,Vasco da Gama,0.08,4.1,BPL,2021-01-23,1.0
 1.0,Sunderland,0.35,1.8,ELO,2021-01-23,1.0
@@ -211,7 +209,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 1.0,Draw Lorient v PSG,0.05,8.5,FL1,2021-01-31,0.0
 3.0,Draw Lille v Dijon FCO,0.07,4.9,FL1,2021-01-31,0.0
 1.0,Cagliari,0.15,3.1,ISA,2021-01-31,0.0
-0.0,Cádiz,0.03,8.0,LLA,2021-01-31,0.0
 0.0,ADO Den Haag,0.14,4.8,NPL,2021-01-31,0.0
 0.0,Sport Recife,0.04,6.5,BPL,2021-02-01,0.0
 0.0,Osasuna,0.1,4.3,LLA,2021-02-01,0.0
@@ -237,7 +234,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Draw Hertha BSC v Bayern Munich,0.04,6.0,GPL,2021-02-05,
 0.0,Fiorentina,0.04,6.5,ISA,2021-02-05,
 0.0,Alavés,0.25,2.55,LLA,2021-02-05,
-2.0,Nets,0.52,1.51,NBA,2021-02-05,
 0.0,Fortuna Sittard,0.19,2.85,NPL,2021-02-05,
 0.0,Marítimo,0.04,7.5,PPL,2021-02-05,
 0.0,Rotherham,0.14,3.1,ECL,2021-02-06,1.0
@@ -336,9 +332,17 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 1.0,Galatasaray,0.72,1.32,TSL,2021-02-14,1.0
 2.0,Göztepe,0.23,2.5,TSL,2021-02-14,1.0
 3.0,Hatayspor,0.17,2.75,TSL,2021-02-14,0.0
-0,Pacers,0.59,1.41,NBA,2021-02-15
-1,Nets,0.5,1.54,NBA,2021-02-15
-0,Draw Chelsea v Newcastle,0.04,6.5,EPL,2021-02-15
-0,Antalyaspor,0.23,2.5,TSL,2021-02-15
-0,Cádiz,0.18,4.1,LLA,2021-02-15
-0,Atlas,0.07,4.6,MLM,2021-02-15
+0.0,Draw Chelsea v Newcastle,0.04,6.5,EPL,2021-02-15,0.0
+0.0,Cádiz,0.18,4.1,LLA,2021-02-15,0.0
+0.0,Atlas,0.07,4.6,MLM,2021-02-15,1.0
+0.0,Pacers,0.59,1.41,NBA,2021-02-15,0.0
+1.0,Nets,0.5,1.54,NBA,2021-02-15,1.0
+0.0,Antalyaspor,0.23,2.5,TSL,2021-02-15,0.0
+0,Timberwolves,0.2,3.6,NBA,2021-02-16
+1,Thunder,0.34,3.65,NBA,2021-02-16
+2,Suns,0.55,1.65,NBA,2021-02-16
+0,Rochdale,0.11,5.8,ELO,2021-02-16
+0,Huddersfield,0.1,4.6,ECL,2021-02-16
+1,Wycombe,0.12,4.5,ECL,2021-02-16
+0,Barcelona,0.47,1.95,ELO,2021-02-16
+1,RB Leipzig,0.19,3.0,ELO,2021-02-16

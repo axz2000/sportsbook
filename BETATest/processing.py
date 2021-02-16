@@ -1,7 +1,7 @@
-import NBA
+import BPL
 
 def getPicks():
-	print(NBA.run())
+	print(BPL.run())
 	return 'Picks Completed'
 	
 print('All bets are moneyline bets.')

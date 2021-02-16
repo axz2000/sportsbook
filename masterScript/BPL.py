@@ -121,7 +121,7 @@ def fetch():
   except:
   	print('Not a problem, the XHR has been changed for the EPL, go ahead and fix that then run again')
   epl = parse_data(jsonData_fanduel_epl)
-  print(epl)
+  #print(epl)
   EPL = pd.DataFrame(epl)[['eventname','tsstart','idfoevent.markets']]
   EPL.columns = ['Teams','Date','EventID']
   listing = []
@@ -131,9 +131,9 @@ def fetch():
   df.columns = ['GameName', 'Type', 'HomeTeamandOdds', 'DrawOdds', 'AwayTeamandOdds']
   #df = df[df.GameName != 'Oeste v Parana']
   df = df[df.Type=='Moneyline']
-  print((df.sort_values(['GameName'])))
+  #print((df.sort_values(['GameName'])))
   probabilities = fetchName()
-  print(len(probabilities))
+  #print(len(probabilities))
   
   valued = []
   for i in np.unique(probabilities.gameNum.values):
@@ -150,7 +150,7 @@ def fetch():
   	for j in np.unique(sorting):
   		temp += [tryMatch(i,j)]
   	sought = (sorting[temp.index(np.max(temp))])
-  	print(i, sought, "this")
+  	#print(i, sought, "this")
   	soughtgameNum = probabilities[probabilities.ID == sought].gameNum.values[0]
   	counterArray += [counter]
   	soughtGameArray += [soughtgameNum]
@@ -210,7 +210,7 @@ def fetchName():
   page_content = BeautifulSoup(page_response.content, "html.parser")
   navigate = page_content.findAll('div', class_="games-container upcoming")[0]
   Today = navigate.findAll('tbody')
-  print(Today)
+  #print(Today)
   teams, prob = [], []
   for i in Today:
   	if (i.find('div').text == str(date.today().strftime("%-m/%-d"))):#this could fail in the beginning of january
@@ -219,7 +219,7 @@ def fetchName():
   	  away = i.findAll('td', class_ = "team")[1]['data-str']
   	  teams += [home, 'Draw ' +str(home)+ ' v ' +str(away),away]
   	  prob +=[float(j.text[:-1])/100 for j in i.findAll('td', class_="prob")]
-  print(teams, 'HERE ARE TEAMS')
+  #print(teams, 'HERE ARE TEAMS')
   indexed = []
   for i in range(int(len(teams)/3)):
   	indexed += [i]*3

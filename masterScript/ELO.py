@@ -139,7 +139,7 @@ def fetch():
   for i in np.unique(probabilities.gameNum.values):
   	newdf = probabilities[probabilities.gameNum == i]
   	valued += [newdf.ID.values[1][:]]
-  	print(valued)
+  	#print(valued)
   sorting = np.sort(valued)
   indices, counterArray, soughtGameArray = [], [], []
   counter = 0
@@ -194,7 +194,7 @@ def fetch():
   	EV += [probabilities.Probabilities.values[i]*array[i]]
   #print(array, probabilities.ID.values,probabilities )
   Result = pd.DataFrame({'Team':probabilities.ID.values, 'Probability': probabilities.Probabilities.values, 'Odds':array, 'EV':EV})
-  print(Result)
+  #print(Result)
   Bet = Result[Result.EV >1.07]
   kelly = [Kelly(Bet.Odds.values[i], Bet.Probability.values[i]) for i in range(len(Bet.Probability.values))]
   #print(len(Bet.Team.values), len(kelly),  len(Bet.Odds.values))
