@@ -164,7 +164,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Heracles,0.19,2.35,NPL,2021-01-30,1.0
 1.0,Draw Heracles v Groningen,0.11,3.2,NPL,2021-01-30,0.0
 3.0,Draw Vitesse v RKC,0.07,5.1,NPL,2021-01-30,1.0
-1.0,Tondela,0.17,2.5,PPL,2021-01-30,1.0
 0.0,Draw Chelsea v Burnley,0.06,5.2,EPL,2021-01-31,0.0
 0.0,St Étienne,0.12,3.2,FL1,2021-01-31,1.0
 2.0,Draw Lorient v PSG,0.05,8.5,FL1,2021-01-31,0.0
@@ -205,7 +204,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Alavés,0.25,2.55,LLA,2021-02-05,1.0
 0.0,Fortuna Sittard,0.19,2.85,NPL,2021-02-05,0.0
 1.0,Draw Marítimo v Sporting,0.07,4.1,PPL,2021-02-05,0.0
-0.0,Portsmouth,0.46,1.74,ELO,2021-02-06,0.0
 2.0,Ipswich Town,0.15,3.1,ELO,2021-02-06,1.0
 4.0,Swindon Town,0.15,3.2,ELO,2021-02-06,0.0
 0.0,Aston Villa,0.17,2.75,EPL,2021-02-06,1.0
@@ -263,8 +261,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,GFK,0.26,2.25,TSL,2021-02-08,1.0
 0.0,Stanley,0.27,2.2,ELO,2021-02-09,0.0
 4.0,Sunderland,0.23,2.1,ELO,2021-02-09,0.0
-5.0,Peterborough,0.23,2.1,ELO,2021-02-09,1.0
-6.0,Rochdale,0.17,3.9,ELO,2021-02-09,0.0
 0.0,Real Madrid,0.47,1.54,LLA,2021-02-09,1.0
 1.0,Pelicans,0.62,1.58,NBA,2021-02-09,1.0
 3.0,Spurs,0.49,1.83,NBA,2021-02-09,0.0
@@ -278,7 +274,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 4.0,Atlético-PR,0.12,3.6,BPL,2021-02-10,0.0
 0.0,Mavericks,0.46,1.56,NBA,2021-02-10,1.0
 1.0,Grizzlies,0.43,1.57,NBA,2021-02-10,1.0
-3.0,Timberwolves,0.23,4.2,NBA,2021-02-10,0.0
 0.0,Rockets,0.25,2.24,NBA,2021-02-11,0.0
 1.0,Celtics,0.39,1.64,NBA,2021-02-11,1.0
 0.0,Benevento,0.1,4.4,ISA,2021-02-12,0.0
@@ -312,7 +307,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Atlético Madrid,0.38,1.71,LLA,2021-02-13,1.0
 1.0,Sevilla,0.47,1.51,LLA,2021-02-13,1.0
 2.0,Barcelona,0.75,1.26,LLA,2021-02-13,1.0
-0.0,Suns,0.36,1.93,NBA,2021-02-13,1.0
 1.0,Hawks,0.31,2.02,NBA,2021-02-13,0.0
 2.0,Knicks,0.47,1.98,NBA,2021-02-13,1.0
 3.0,Warriors,0.23,2.46,NBA,2021-02-13,0.0
@@ -343,7 +337,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Pumas UNAM,0.15,3.5,MLM,2021-02-14,0.0
 1.0,Monterrey,0.21,2.45,MLM,2021-02-14,0.0
 0.0,Pistons,0.24,2.48,NBA,2021-02-14,1.0
-1.0,Thunder,0.18,5.6,NBA,2021-02-14,1.0
 2.0,Clippers,0.8,1.22,NBA,2021-02-14,1.0
 3.0,Nuggets,0.37,2.2,NBA,2021-02-14,1.0
 4.0,Kings,0.36,2.16,NBA,2021-02-14,0.0
@@ -363,16 +356,27 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Pacers,0.59,1.41,NBA,2021-02-15,0.0
 1.0,Nets,0.5,1.54,NBA,2021-02-15,1.0
 0.0,Antalyaspor,0.22,2.4,TSL,2021-02-15,0.0
-0,Timberwolves,0.2,3.6,NBA,2021-02-16
-1,Thunder,0.34,3.65,NBA,2021-02-16
-2,Suns,0.55,1.65,NBA,2021-02-16
-0,Peterborough,0.26,2.05,ELO,2021-02-16
-1,Rochdale,0.11,5.8,ELO,2021-02-16
-2,Portsmouth,0.4,1.71,ELO,2021-02-16
-0,Tondela,0.21,2.4,PPL,2021-02-16
-0,Barcelona,0.47,1.95,ELO,2021-02-16
-1,RB Leipzig,0.19,3.0,ELO,2021-02-16
-0,Huddersfield,0.1,4.6,ELO,2021-02-16
-1,Wycombe,0.12,4.5,ELO,2021-02-16
-0,Barcelona,0.47,1.95,ELO,2021-02-16
-1,RB Leipzig,0.19,3.0,ELO,2021-02-16
+0.0,Peterborough,0.26,2.05,ELO,2021-02-16,1.0
+1.0,Rochdale,0.11,5.8,ELO,2021-02-16,0.0
+2.0,Portsmouth,0.4,1.71,ELO,2021-02-16,0.0
+0.0,Barcelona,0.47,1.95,ELO,2021-02-16,0.0
+1.0,RB Leipzig,0.19,3.0,ELO,2021-02-16,0.0
+0.0,Timberwolves,0.2,3.6,NBA,2021-02-16,0.0
+1.0,Thunder,0.34,3.65,NBA,2021-02-16,0.0
+2.0,Suns,0.55,1.65,NBA,2021-02-16,0.0
+0.0,Tondela,0.21,2.4,PPL,2021-02-16,1.0
+0,Magic,0.41,2.46,NBA,2021-02-17
+1,Rockets,0.06,5.6,NBA,2021-02-17
+2,Timberwolves,0.28,3.15,NBA,2021-02-17
+3,Pelicans,0.44,1.68,NBA,2021-02-17
+4,Warriors,0.32,1.98,NBA,2021-02-17
+5,Clippers,0.39,2.08,NBA,2021-02-17
+0,Hull City,0.4,1.69,ELO,2021-02-17
+1,Doncaster,0.28,2.4,ELO,2021-02-17
+0,Burnley,0.18,2.9,EPL,2021-02-17
+0,Marseille,0.26,2.2,FL1,2021-02-17
+0,Atlético Madrid,0.33,1.8,LLA,2021-02-17
+0,Farense,0.06,4.2,PPL,2021-02-17
+0,Porto,0.1,4.3,ELO,2021-02-17
+0,Rotherham,0.08,4.8,ELO,2021-02-17
+0,Porto,0.1,4.3,ELO,2021-02-17
