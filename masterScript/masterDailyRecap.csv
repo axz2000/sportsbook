@@ -1,7 +1,7 @@
 ,Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),League,Date,Success,Allocation Dollars,Allocation Percentage
 338,0.0,Ipswich Town,0.15,3.4,ELO,2021-02-20,0.0,0.971,0.004
 339,1.0,Swindon Town,0.23,3.7,ELO,2021-02-20,1.0,2.282,0.009
-340,2.0,Peterborough,0.54,1.56,ELO,2021-02-20,0.0,12.579,0.052
+340,2.0,Peterborough,0.54,1.56,ELO,2021-02-20,1.0,12.579,0.052
 341,3.0,Rochdale,0.2,3.4,ELO,2021-02-20,0.0,1.726,0.007
 342,4.0,Sunderland,0.37,1.87,ELO,2021-02-20,1.0,5.906,0.024
 343,0.0,Burnley,0.36,2.05,EPL,2021-02-20,0.0,5.591,0.023

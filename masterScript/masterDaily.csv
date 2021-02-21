@@ -339,7 +339,7 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Trabzonspor,0.25,2.45,TSL,2021-02-19,1.0
 0.0,Ipswich Town,0.15,3.4,ELO,2021-02-20,0.0
 1.0,Swindon Town,0.23,3.7,ELO,2021-02-20,1.0
-2.0,Peterborough,0.54,1.56,ELO,2021-02-20,0.0
+2.0,Peterborough,0.54,1.56,ELO,2021-02-20,1.0
 3.0,Rochdale,0.2,3.4,ELO,2021-02-20,0.0
 4.0,Sunderland,0.37,1.87,ELO,2021-02-20,1.0
 0.0,Burnley,0.36,2.05,EPL,2021-02-20,0.0
@@ -356,12 +356,13 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Gil Vicente,0.23,2.5,PPL,2021-02-20,1.0
 0.0,Kasımpaşa,0.21,2.65,TSL,2021-02-20,1.0
 1.0,Galatasaray,0.28,2.4,TSL,2021-02-20,1.0
-0,Pelicans,0.33,2.18,NBA,2021-02-21
+0,Pelicans,0.34,2.26,NBA,2021-02-21
 1,Magic,0.48,1.77,NBA,2021-02-21
 2,Raptors,0.45,2.1,NBA,2021-02-21
-0,West Ham,0.21,2.95,EPL,2021-02-21
+0,West Ham,0.21,3.0,EPL,2021-02-21
 1,Aston Villa,0.13,3.2,EPL,2021-02-21
-2,Arsenal,0.07,6.5,EPL,2021-02-21
+2,Arsenal,0.06,6.0,EPL,2021-02-21
+3,Draw Arsenal v Man. City,0.07,4.5,EPL,2021-02-21
 0,Hertha BSC,0.08,5.4,GPL,2021-02-21
 1,Hoffenheim,0.31,2.25,GPL,2021-02-21
 0,Dijon FCO,0.04,7.0,FL1,2021-02-21
@@ -379,4 +380,4 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 1,Farense,0.05,7.0,PPL,2021-02-21
 0,Pumas UNAM,0.17,3.4,MLM,2021-02-21
 0,AGF Aarhus,0.39,1.8,DSL,2021-02-21
-1,Brøndby,0.54,1.71,DSL,2021-02-21
+1,Brøndby,0.54,1.69,DSL,2021-02-21
