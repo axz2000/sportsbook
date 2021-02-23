@@ -16,6 +16,7 @@ import os
 import tabulate
 import time
 import warnings
+import re
 
 warnings.filterwarnings("ignore") 
 
@@ -195,6 +196,79 @@ def fetch():
   #Betting.columns = ['Bet State Chosen', 'Kelly Criterion Suggestion', 'Probability Spread','Payouts (per Dollar)']
   return Betting
   
+def lookBackAnalysis():
+  url = 'https://www.mmabot.com/past-events'
+  
+  #print('hello')
+  page_response = requests.get(url, timeout=10, headers = {
+    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    'accept-encoding': 'gzip, deflate, br',
+    'accept-language': 'en-US,en;q=0.9,fr;q=0.8,ro;q=0.7,ru;q=0.6,la;q=0.5,pt;q=0.4,de;q=0.3',
+    'cache-control': 'max-age=0',
+    'upgrade-insecure-requests': '1',
+    'Cookies':'fbp=fb.1.1614007657803.38313793; _ga=GA1.2.1857830574.1614007658; _gid=GA1.2.234349248.1614007658; ac_enable_tracking=1; outbrain_cid_fetch=true; 12c5c06416db37186f39465beb5f7b67=c02040eadf89229fbe127d99379615f2; joomla_remember_me_bf2da9a3a077b14a5925756bbb5146ad=ZnAajc7TxrKwvxTP.O4B8LhCwKHs6M6KKIYhU; joomla_user_state=logged_in',
+    'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'})
+  page_content = BeautifulSoup(page_response.content, "html.parser")
+  navigate = page_content.findAll('div', class_="events-cat-event")
+  print(navigate)
+  teamsToday, probabilitiesToday, Odds,date,winners = [],[], [],[],[]
+  for j in navigate:
+  	extension = str(j).split("=")[2][1:-14]
+  	print(extension)
+  	urlExtension = str('https://www.mmabot.com' + extension)
+  	page_response_extended = requests.get(urlExtension, timeout=5, headers = { 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',    'accept-encoding': 'gzip, deflate, br','accept-language': 'en-US,en;q=0.9,fr;q=0.8,ro;q=0.7,ru;q=0.6,la;q=0.5,pt;q=0.4,de;q=0.3','cache-control': 'max-age=0','upgrade-insecure-requests': '1','Cookies':'fbp=fb.1.1614007657803.38313793; _ga=GA1.2.1857830574.1614007658; _gid=GA1.2.234349248.1614007658; ac_enable_tracking=1; outbrain_cid_fetch=true; 12c5c06416db37186f39465beb5f7b67=c02040eadf89229fbe127d99379615f2; joomla_remember_me_bf2da9a3a077b14a5925756bbb5146ad=ZnAajc7TxrKwvxTP.O4B8LhCwKHs6M6KKIYhU; joomla_user_state=logged_in', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'})
+  	fight_contents = BeautifulSoup(page_response_extended.content, "html.parser")
+  	try:
+  		for i in fight_contents.findAll('div', class_ = 'fight'):
+  			names = [k.find('strong').text for k in i.findAll('div', class_ = 'hasLink')]
+  			odds = [k.find('div').text for k in i.findAll('div', class_ = 'hasLink')]
+  			Date = '-'.join(extension.split('-')[-3:])
+  			winner = [k.text for k in i.findAll('div', class_ = 'fighter-label')]
+  			if len(i.findAll('div', class_ = "prediction-bar-prob fighter1"))==0:
+  				probFighter1 = float(i.findAll('div', class_ = "prediction-bar-prob fighter1 picked")[0].text.strip()[:-1])/100
+  				probFighter2 = float(i.findAll('div', class_ = "prediction-bar-prob fighter2")[0].text.strip()[:-1])/100
+  				name1 = names[0]
+  				name2 = names[1]
+  				odds1 = odds[0].split(' ')[0][-4:]
+  				odds2 = odds[1].split(' ')[0][-4:]
+  				winner1 = winner[0]
+  				winner2 = winner[1]
+  				
+  	
+  			else:
+  				probFighter1 = float(i.findAll('div', class_ = "prediction-bar-prob fighter1")[0].text.strip()[:-1])/100
+  				probFighter2 = float(i.findAll('div', class_ = "prediction-bar-prob fighter2 picked")[0].text.strip()[:-1])/100
+  				name1 = names[0]
+  				name2 = names[1]
+  				odds1 = odds[0].split(' ')[0][-4:]
+  				odds2 = odds[1].split(' ')[0][-4:]
+  				winner1 = winner[0]
+  				winner2 = winner[1]
+  				
+  		  
+  			teamsToday += [name1, name2]
+  			probabilitiesToday += [probFighter1, probFighter2]
+  			Odds += [odds1, odds2]
+  			date += [Date, Date]
+  			winners += [winner1,winner2]
+  			
+  	except:
+  		continue
+  		
+  indexed = []
+  for i in range(int(len(teamsToday)/2)):
+    indexed += [i]*2
+  
+  mma = pd.DataFrame({'ID':teamsToday, 'Probabilities':probabilitiesToday, 'Odds':Odds, 'Date':date , 'gameNum': indexed, 'Winner':winners})
+  print(mma)
+  mma.to_csv('./mmaLookbackValueSystem.csv')
+  return 'Done'	
+	
+	
+	
+	
+	
+	
 def fetchName(): 
   url = 'https://www.mmabot.com/upcoming-events'
   
@@ -205,10 +279,12 @@ def fetchName():
     'accept-language': 'en-US,en;q=0.9,fr;q=0.8,ro;q=0.7,ru;q=0.6,la;q=0.5,pt;q=0.4,de;q=0.3',
     'cache-control': 'max-age=0',
     'upgrade-insecure-requests': '1',
+    'Cookies':'fbp=fb.1.1614007657803.38313793; _ga=GA1.2.1857830574.1614007658; _gid=GA1.2.234349248.1614007658; ac_enable_tracking=1; outbrain_cid_fetch=true; 12c5c06416db37186f39465beb5f7b67=c02040eadf89229fbe127d99379615f2; joomla_remember_me_bf2da9a3a077b14a5925756bbb5146ad=ZnAajc7TxrKwvxTP.O4B8LhCwKHs6M6KKIYhU; joomla_user_state=logged_in',
     'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'})
   page_content = BeautifulSoup(page_response.content, "html.parser")
   navigate = page_content.findAll('div', class_="events-cat-event")
   extension = str(navigate).split("=")[2][1:-14]
+  print(len(navigate))
   urlExtension = str('https://www.mmabot.com' + extension)
   print(urlExtension)
   page_response_extended = requests.get(urlExtension, timeout=5, headers = {
@@ -217,28 +293,27 @@ def fetchName():
     'accept-language': 'en-US,en;q=0.9,fr;q=0.8,ro;q=0.7,ru;q=0.6,la;q=0.5,pt;q=0.4,de;q=0.3',
     'cache-control': 'max-age=0',
     'upgrade-insecure-requests': '1',
+    'Cookies':'fbp=fb.1.1614007657803.38313793; _ga=GA1.2.1857830574.1614007658; _gid=GA1.2.234349248.1614007658; ac_enable_tracking=1; outbrain_cid_fetch=true; 12c5c06416db37186f39465beb5f7b67=c02040eadf89229fbe127d99379615f2; joomla_remember_me_bf2da9a3a077b14a5925756bbb5146ad=ZnAajc7TxrKwvxTP.O4B8LhCwKHs6M6KKIYhU; joomla_user_state=logged_in',
     'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'})
   fight_contents = BeautifulSoup(page_response_extended.content, "html.parser")
-  print(len(fight_contents.findAll('div', class_ = 'fight')))
-  '''for i in fight_contents.findAll('div', class_ = 'fight'):
-  	print(i)
-  	#print(i.findAll('div', class_="prediction-bar-prob fighter1")[0].text.strip()[:-1])
-  	#print(i.findAll('div', class_="prediction-bar-prob fighter2")[0].text.strip()[:-1])
-  if len(fight_contents.findAll('div', class_ = "prediction-bar-prob fighter1"))==0:
-  	probFighter1 = float(fight_contents.findAll('div', class_ = "prediction-bar-prob fighter1 picked")[0].text.strip()[:-1])/100
-  	probFighter2 = float(fight_contents.findAll('div', class_ = "prediction-bar-prob fighter2")[0].text.strip()[:-1])/100
-  	name1 = extension.split('-')[-6]
-  	name2 = extension.split('-')[-4]
+
+  teamsToday, probabilitiesToday = [],[]
+  for i in fight_contents.findAll('div', class_ = 'fight'):
+  	names = [j.find('strong').text for j in i.findAll('div', class_ = 'hasLink')]
+  	if len(i.findAll('div', class_ = "prediction-bar-prob fighter1"))==0:
+  		probFighter1 = float(i.findAll('div', class_ = "prediction-bar-prob fighter1 picked")[0].text.strip()[:-1])/100
+  		probFighter2 = float(i.findAll('div', class_ = "prediction-bar-prob fighter2")[0].text.strip()[:-1])/100
+  		name1 = names[0]
+  		name2 = names[1]
   	
-  else:
-  	probFighter1 = float(fight_contents.findAll('div', class_ = "prediction-bar-prob fighter1")[0].text.strip()[:-1])/100
-  	probFighter2 = float(fight_contents.findAll('div', class_ = "prediction-bar-prob fighter2 picked")[0].text.strip()[:-1])/100
-  	name1 = extension.split('-')[-6]
-  	name2 = extension.split('-')[-4]
-  
-  '''
-  teamsToday = [name1, name2]
-  probabilitiesToday = [probFighter1, probFighter2]
+  	else:
+  		probFighter1 = float(i.findAll('div', class_ = "prediction-bar-prob fighter1")[0].text.strip()[:-1])/100
+  		probFighter2 = float(i.findAll('div', class_ = "prediction-bar-prob fighter2 picked")[0].text.strip()[:-1])/100
+  		name1 = names[0]
+  		name2 = names[1]
+  		  
+  	teamsToday += [name1, name2]
+  	probabilitiesToday += [probFighter1, probFighter2]
   indexed = []
   for i in range(int(len(teamsToday)/2)):
   	indexed += [i]*2
@@ -293,11 +368,13 @@ Notes:
 -- works 00:00 day of'''
 #Make a time function
 
+
 def run():
 	if gameToday():
-		return picks()
+		return None #picks()
 	else:
 		return 'No MMA fights today.'
 
 print(run())
+print(lookBackAnalysis())
 	
