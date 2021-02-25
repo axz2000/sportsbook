@@ -80,7 +80,7 @@ def searchingForGame(jsonData):
 	alpha = jsonData['events'][0]
 	gameday = alpha['tsstart'][:10]
 	today = str(date.today())
-	#print(today, gameday)
+	print(today, gameday)
 	return today == gameday
 
 def gameToday():
@@ -120,7 +120,7 @@ def fetch():
   except:
   	print('Not a problem, the XHR has been changed for the EPL, go ahead and fix that then run again')
   epl = parse_data(jsonData_fanduel_epl)
-  #print(epl)
+  print(epl)
   EPL = pd.DataFrame(epl)[['eventname','tsstart','idfoevent.markets']]
   EPL.columns = ['Teams','Date','EventID']
   listing = []
@@ -129,13 +129,13 @@ def fetch():
   df = (pd.DataFrame(getOdds(listing)))
   df.columns = ['GameName', 'Type', 'HomeTeamandOdds', 'DrawOdds', 'AwayTeamandOdds']
   df = df[df.Type=='Moneyline']
-  #print(df.sort_values(['GameName']))
+  print(df.sort_values(['GameName']))
   probabilities = fetchName()
-  #print(probabilities)
+  print(probabilities)
   
   #check if all of them are there
   valued = []
-  #print(probabilities.gameNum.values)
+  print(probabilities.gameNum.values)
   for i in np.unique(probabilities.gameNum.values):
   	newdf = probabilities[probabilities.gameNum == i]
   	valued += [newdf.ID.values[1][:]]
@@ -145,12 +145,12 @@ def fetch():
   counter = 0
   gamed = []
   
-  #print((len(df.GameName.values), len(sorting)))
+  print((len(df.GameName.values), len(sorting)))
   for i in (df.GameName.values):
   	temp = []
   	for j in np.unique(sorting):
   		temp += [tryMatch(i,j)]
-  	#print(temp)
+  	print(temp)
   	sought = (sorting[temp.index(np.max(temp))])
   	soughtgameNum = probabilities[probabilities.ID == sought].gameNum.values[0]
   	counterArray += [counter]
@@ -158,16 +158,16 @@ def fetch():
   	counter += 1
   	
   fixed = pd.DataFrame({'sought':soughtGameArray, 'linked':counterArray}).sort_values(['sought'])
-  #print(fixed)
+  print(fixed)
   linker = []
   
   for i in fixed.linked.values:
   	linker += [i]
   	linker += [i]
   	linker += [i]
-  #print(len(probabilities['gameNum']), len(linker))
+  print(len(probabilities['gameNum']), len(linker))
   probabilities['gameNum'] = linker
-  #print(probabilities)
+  print(probabilities)
   
   array ,counter = [], 0
   for i in probabilities.gameNum.values:
@@ -192,19 +192,19 @@ def fetch():
   EV = []
   for i in range(len(array)):
   	EV += [probabilities.Probabilities.values[i]*array[i]]
-  #print(array, probabilities.ID.values,probabilities )
+  print(array, probabilities.ID.values,probabilities )
   Result = pd.DataFrame({'Team':probabilities.ID.values, 'Probability': probabilities.Probabilities.values, 'Odds':array, 'EV':EV})
   print(Result)
   Bet = Result[Result.EV >1.07]
   kelly = [Kelly(Bet.Odds.values[i], Bet.Probability.values[i]) for i in range(len(Bet.Probability.values))]
-  #print(len(Bet.Team.values), len(kelly),  len(Bet.Odds.values))
+  print(len(Bet.Team.values), len(kelly),  len(Bet.Odds.values))
   Betting = pd.DataFrame({'Bet State Chosen':Bet.Team.values, 'Kelly Criterion Suggestion': kelly, 'Payouts (per Dollar)':Bet.Odds.values})
   #Betting.columns = ['Bet State Chosen', 'Kelly Criterion Suggestion', 'Probability Spread','Payouts (per Dollar)']
   return Betting
   
 def fetchName(): 
   url = 'https://projects.fivethirtyeight.com/soccer-predictions/la-liga/'
-  #print('hello')
+  print('hello')
   page_response = requests.get(url, timeout=10, headers = {
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
     'accept-encoding': 'gzip, deflate, br',
@@ -217,7 +217,7 @@ def fetchName():
   Today = navigate.findAll('tbody')
   teams, prob = [], []
   for i in Today:
-  	#print(i.find('div').text)
+  	print(i.find('div').text)
   	if (i.find('div').text == str(date.today().strftime("%-m/%-d"))): #this is to be changed
   	  #(date.today()).strftime("%m/%d"))
   	  home = i.findAll('td', class_ = "team")[0]['data-str']
@@ -280,6 +280,7 @@ Notes:
 #Make a time function
 
 def run():
+	print(gameToday())
 	if gameToday():
 		return picks()
 	else:

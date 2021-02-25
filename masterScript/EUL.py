@@ -283,7 +283,7 @@ def run():
 	if gameToday():
 		return picks()
 	else:
-		return 'No ELO games today.'
+		return 'No EUL games today.'
 
 #print(run())
 	
