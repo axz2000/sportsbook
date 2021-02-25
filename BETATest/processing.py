@@ -1,7 +1,7 @@
-import EUL
+import BPL
 
 def getPicks():
-	print(EUL.run())
+	print(BPL.run())
 	return 'Picks Completed'
 	
 print('All bets are moneyline bets.')

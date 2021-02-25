@@ -114,7 +114,7 @@ def dailyReturn():
 		bet = powerLaw(portfolioAmt, portfolioTracking).round(3)
 		bet.to_csv(os.getcwd() + '/masterDailyRecap.csv')
 		
-		tomorrow = str(date.today())
+		tomorrow = str(date.today()- timedelta(1))
 		portfolioTrackingTom = portfolioTracked[portfolioTracked.Date == tomorrow]
 		bettor = powerLaw(portfolioAmt, portfolioTrackingTom).round(5)
 		bettor.to_csv(os.getcwd() + '/masterUpcoming.csv')
