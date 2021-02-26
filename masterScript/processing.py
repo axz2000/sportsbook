@@ -1,7 +1,7 @@
-import MMA
+import AAL
 
 def getPicks():
-	print(MMA.run())
+	print(AAL.run())
 	return 'Picks Completed'
 	
 print('All bets are moneyline bets.')

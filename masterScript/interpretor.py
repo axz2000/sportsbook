@@ -1,10 +1,14 @@
 import iterations
+import subprocess
 
 def dailyReturn():
 	iterations.run()
+	pushing()
 	return 'Update finished'
-	
-	
+
+def pushing():
+	subprocess.Popen("git add --all; git commit -m 'Update'; git push", shell = True)
+	return 'Git Push Done'		
 
 '''
 To do:
