@@ -80,8 +80,7 @@ def searchingForGame(jsonData):
 	results_df = pd.DataFrame()
 	alpha = jsonData['events'][0]
 	gameday = alpha['tsstart'][:10]
-	print(gameday)
-	today = str(date.today()+ timedelta(2))
+	today = str(date.today())
 	print(today, gameday)
 	return today == gameday
 
@@ -197,7 +196,7 @@ def fetch():
   return Betting
   
 def lookBackAnalysis():
-  url = 'https://www.mmabot.com/past-events'
+  url = 'https://www.mmabot.com/upcoming-events'
   
   #print('hello')
   page_response = requests.get(url, timeout=10, headers = {
