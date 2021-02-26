@@ -240,9 +240,9 @@ def fetchName():
   	indexed += [i]*2
   nba = pd.DataFrame({'ID':teamsToday, 'Probabilities':probabilitiesToday, 'gameNum':indexed })
   '''nba = nba[nba.ID != 'Pistons']
-  nba = nba[nba.ID != 'Bulls']
-  nba = nba[nba.ID != 'Thunder']
-  nba = nba[nba.ID != 'Grizzlies']'''
+  nba = nba[nba.ID != 'Bulls']'''
+  nba = nba[nba.ID != 'Clippers']
+  nba = nba[nba.ID != 'Grizzlies']
   indexer = []
   for i in range(int(len(nba.ID)/2)):
   	indexer += [i]*2
