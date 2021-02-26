@@ -1,4 +1,4 @@
-import ELO, EPL, FL1, GPL, TSL, ISA, LLA, NBA, NPL, PPL, NFL, BPL, ECL, MLM, UCL, DSL, EUL
+import ELO, EPL, FL1, GPL, TSL, ISA, LLA, NBA, NPL, PPL, NFL, BPL, ECL, MLM, UCL, DSL, EUL, AAL
 
 
 def getPicks():
@@ -19,6 +19,7 @@ def getPicks():
 	print(UCL.run())
 	print(DSL.run())
 	print(EUL.run())
+	print(AAL.run())
 	return 'Picks Completed'
 	
 print('All bets are moneyline bets.')

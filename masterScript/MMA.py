@@ -30,27 +30,6 @@ def matching(arrayStrOne,arrayStrTwo):
 
 def tryMatch(i,j):
 	return fuzz.token_sort_ratio(str(i), str(j))
-	
-def to_dataframe(listing):
-  home, away, scoreH, scoreA = [], [], [], []
-  for i in range(len(listing)):
-      #print(i%3, listing[i])
-      if i%3 ==0:
-        home.append(listing[i].lower())
-      elif i%3 == 1:
-        away.append(listing[i].lower())
-      else:
-        score = listing[i].split('-')
-        #print(score)
-        if len(score) ==2:
-          scoreH.append(int(score[0].strip()))
-          scoreA.append(int(score[1].strip()))
-        else:
-          scoreH.append(np.NaN)
-          scoreA.append(np.NaN)
-  gameLog = pd.DataFrame({'gameDate':[i for i in range(len(home))],'Home':home, 'Away':away,'HomeGoals':scoreH,'AwayGoals':scoreA})
-  #print(gameLog)
-  return gameLog.dropna()
 
 def parse_data(jsonData):
     results_df = pd.DataFrame()
@@ -81,7 +60,6 @@ def searchingForGame(jsonData):
 	alpha = jsonData['events'][0]
 	gameday = alpha['tsstart'][:10]
 	today = str(date.today())
-	print(today, gameday)
 	return today == gameday
 
 def gameToday():
@@ -259,19 +237,11 @@ def lookBackAnalysis():
     indexed += [i]*2
   
   mma = pd.DataFrame({'ID':teamsToday, 'Probabilities':probabilitiesToday, 'Odds':Odds, 'Date':date , 'gameNum': indexed, 'Winner':winners})
-  print(mma)
-  mma.to_csv('./mmaLookbackValueSystem.csv')
+  #mma.to_csv('./mmaLookbackValueSystem.csv')
   return 'Done'	
-	
-	
-	
-	
-	
 	
 def fetchName(): 
   url = 'https://www.mmabot.com/upcoming-events'
-  
-  #print('hello')
   page_response = requests.get(url, timeout=10, headers = {
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
     'accept-encoding': 'gzip, deflate, br',
@@ -370,7 +340,7 @@ Notes:
 
 def run():
 	if gameToday():
-		return None #picks()
+		return picks()
 	else:
 		return 'No MMA fights today.'
 
