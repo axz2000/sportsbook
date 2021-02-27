@@ -1,7 +1,7 @@
-import BPL
+import AAL
 
 def getPicks():
-	print(BPL.run())
+	print(AAL.run())
 	return 'Picks Completed'
 	
 print('All bets are moneyline bets.')

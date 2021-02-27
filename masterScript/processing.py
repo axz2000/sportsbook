@@ -1,7 +1,7 @@
-import AAL
+import FDA
 
 def getPicks():
-	print(AAL.run())
+	print(FDA.run())
 	return 'Picks Completed'
 	
 print('All bets are moneyline bets.')
