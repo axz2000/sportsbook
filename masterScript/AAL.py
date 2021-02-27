@@ -226,11 +226,14 @@ def fetchName():
   	  prob +=[float(j.text[:-1])/100 for j in i.findAll('td', class_="prob")]
   #print(teams)
   indexed = []
-  for i in range(int(len(teams)/3)):
+  epl = pd.DataFrame({'ID':teams, 'Probabilities':prob})
+  epi = epl.drop_duplicates()
+  print(epi)
+  for i in range(int(len(epi)/3)):
   	indexed += [i]*3
-  epl = pd.DataFrame({'ID':teams, 'Probabilities':prob, 'gameNum':indexed })
-  #print(epl)
-  return epl
+  epi['gameNum'] = indexed
+  print(epi)
+  return epi
 
 def oddstoPayout(odds,dollarsIn):
   if odds<0:

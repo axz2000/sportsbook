@@ -20,11 +20,11 @@ def getPicks():
 	print(UCL.run())
 	print(DSL.run())
 	print(EUL.run())
-	print(AAL.run())
+	'''print(AAL.run())
 	print(FDA.run())
 	#print(BPL.run())
 	
-	#print(MMA.run())
+	#print(MMA.run())'''
 	return 'Picks Completed'
 	
 print('All bets are moneyline bets.')

@@ -1,7 +1,7 @@
-import NBA
+import AAL
 
 def getPicks():
-	print(NBA.run())
+	print(AAL.run())
 	return 'Picks Completed'
 	
 print('All bets are moneyline bets.')
