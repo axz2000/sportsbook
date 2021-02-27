@@ -3,7 +3,7 @@ import subprocess
 
 def dailyReturn():
 	iterations.run()
-	pushing()
+	#pushing()
 	return 'Update finished'
 
 def pushing():
