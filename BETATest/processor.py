@@ -3,7 +3,7 @@ import ELO, EPL, FL1, GPL, TSL, ISA, LLA, NBA, NPL, PPL, NFL, BPL, ECL, MLM, UCL
 
 def getPicks():
 	print(NBA.run())
-	
+	'''
 	#print(NFL.run())
 	
 	print(ELO.run())
@@ -24,7 +24,7 @@ def getPicks():
 	print(FDA.run())
 	#print(BPL.run())
 	
-	print(MMA.run())
+	print(MMA.run())'''
 	return 'Picks Completed'
 	
 print('All bets are moneyline bets.')
