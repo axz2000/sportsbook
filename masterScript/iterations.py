@@ -47,7 +47,7 @@ def powerLaw(portfolioAmt,df):
   amount = 1/np.prod(probs) #test portfolio constraints
   kelly = df['Kelly Criterion Suggestion'].values
   #spread = df['Probability Spread'].values
-  allocation1 = [np.minimum((portfolioAmt*np.mean(kelly))*(i/np.sum(kelly)), 0.3*portfolioAmt) for i in kelly] #RISK TOLERANCE ESTABLISHED HERE 
+  allocation1 = [np.minimum((portfolioAmt*np.median(kelly))*(i/np.sum(kelly)), 0.3*portfolioAmt) for i in kelly] #RISK TOLERANCE ESTABLISHED HERE 
   df['Allocation Dollars'] = allocation1
   #print('Total Allocated', np.sum(allocation1).round(decimals=2), 'out of', portfolioAmt)
   df['Allocation Percentage'] = [(i/portfolioAmt) for i in allocation1]
