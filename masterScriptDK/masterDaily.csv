@@ -208,6 +208,7 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 5.0,Sevilla,0.43,1.69,LLA,2021-02-06,1.0
 7.0,Mavericks,0.53,1.6,NBA,2021-02-06,1.0
 0.0,Heerenveen,0.14,3.5,NPL,2021-02-06,1.0
+1.0,SønderjyskE,0.32,2.2,DSL,2021-02-07,0.0
 2.0,Horsens,0.04,6.5,DSL,2021-02-07,0.0
 0.0,Tottenham,0.55,1.48,EPL,2021-02-07,1.0
 0.0,Buccaneers          ,0.25,2.44,NFL,2021-02-07,1.0
@@ -227,6 +228,7 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Wolfsburg,0.25,2.45,GPL,2021-02-14,0.0
 1.0,Monterrey,0.21,2.45,MLM,2021-02-14,0.0
 0.0,Portimonense,0.25,2.4,PPL,2021-02-14,1.0
+1.0,Moreirense,0.03,8.5,PPL,2021-02-14,0.0
 0.0,Konyaspor,0.34,1.91,TSL,2021-02-14,1.0
 2.0,Göztepe,0.23,2.5,TSL,2021-02-14,1.0
 3.0,Hatayspor,0.17,2.75,TSL,2021-02-14,0.0
@@ -277,6 +279,7 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 1.0,AC Milan,0.1,3.8,ISA,2021-02-21,0.0
 2.0,Napoli,0.09,4.1,ISA,2021-02-21,0.0
 0.0,Villarreal,0.15,3.0,LLA,2021-02-21,0.0
+0.0,Pelicans,0.34,2.26,NBA,2021-02-21,1.0
 0.0,RKC,0.15,3.1,NPL,2021-02-21,1.0
 0.0,Paços Ferreira,0.25,2.6,PPL,2021-02-21,1.0
 1.0,Farense,0.05,7.0,PPL,2021-02-21,0.0
@@ -291,6 +294,7 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 4.0,Burton Albion,0.08,4.7,ELO,2021-02-23,1.0
 0.0,Atlético Madrid,0.17,2.75,ELO,2021-02-23,0.0
 0.0,Leeds United,0.23,2.35,EPL,2021-02-23,1.0
+0.0,Cavaliers,0.12,3.25,NBA,2021-02-23,1.0
 3.0,Clippers,0.82,1.2,NBA,2021-02-23,1.0
 0.0,Pacers,0.51,1.83,NBA,2021-02-24,0.0
 0.0,Real Madrid,0.19,3.0,UCL,2021-02-24,1.0
@@ -351,6 +355,8 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 8.0,Maxim Grishin,0.21,2.58,MMA,2021-02-27,0.0
 0.0,76ers,0.8,1.2,NBA,2021-02-27,0.0
 1.0,Knicks,0.34,1.98,NBA,2021-02-27,1.0
+2.0,Spurs,0.44,2.48,NBA,2021-02-27,1.0
+3.0,Magic,0.15,5.1,NBA,2021-02-27,0.0
 4.0,Nets,0.49,1.72,NBA,2021-02-27,0.0
 0.0,ADO Den Haag,0.17,3.4,NPL,2021-02-27,0.0
 0.0,Rizespor,0.16,2.95,TSL,2021-02-27,0.0
@@ -381,21 +387,9 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Tondela,0.22,2.85,PPL,2021-02-28,1.0
 1.0,Nacional,0.06,5.6,PPL,2021-02-28,0.0
 0.0,Trabzonspor,0.23,2.65,TSL,2021-02-28,0.0
-0.0,SønderjyskE,0.4,1.95,DSL,2021-03-01,0.0
-0.0,Magic,0.24,3.2,NBA,2021-03-01,0.0
-1.0,Pelicans,0.19,3.25,NBA,2021-03-01,1.0
-2.0,Spurs,0.36,2.34,NBA,2021-03-01,0.0
-3.0,Cavaliers,0.16,3.2,NBA,2021-03-01,1.0
-0.0,Moreirense,0.19,2.65,PPL,2021-03-01,0.0
-0,Heat,0.52,1.65,NBA,2021-03-02
-1,Spurs,0.45,1.65,NBA,2021-03-02
-0,Wigan,0.12,3.4,ELO,2021-03-02
-1,Blackpool,0.35,2.25,ELO,2021-03-02
-2,Plymouth Argyle,0.22,2.5,ELO,2021-03-02
-3,Shrewsbury,0.32,1.95,ELO,2021-03-02
-4,Peterborough,0.24,2.6,ELO,2021-03-02
-5,Burton Albion,0.22,2.4,ELO,2021-03-02
-0,GFK,0.42,1.74,TSL,2021-03-02
-0,Torino,0.09,7.5,ISA,2021-03-02
-0,Coventry City,0.16,2.95,ECL,2021-03-02
-1,Cardiff City,0.28,2.1,ECL,2021-03-02
+0,Magic,0.24,3.2,NBA,2021-03-01
+1,Pelicans,0.19,3.25,NBA,2021-03-01
+2,Spurs,0.36,2.34,NBA,2021-03-01
+3,Cavaliers,0.16,3.2,NBA,2021-03-01
+0,Moreirense,0.19,2.65,PPL,2021-03-01
+0,SønderjyskE,0.4,1.95,DSL,2021-03-01
