@@ -20,8 +20,8 @@ def getPicks():
 	print(UCL.run())
 	print(DSL.run())
 	print(EUL.run())
-	'''print(AAL.run())
-	print(FDA.run())
+	print(AAL.run())
+	'''print(FDA.run())
 	#print(BPL.run())
 	
 	#print(MMA.run())'''
