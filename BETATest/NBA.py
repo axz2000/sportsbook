@@ -224,7 +224,7 @@ def fetchName():
   if datetime.today().hour >=3:
   	Today = page_content.findAll('section', class_="day")[0] #not sure what the issue is here
   else: 
-  	Today = page_content.findAll('section', class_="day")[0] #not sure what the issue is here
+  	Today = page_content.findAll('section', class_="day")[1] #not sure what the issue is here
   print(Today)
   teams = [i['data-team'] for i in Today.findAll('tr', class_ = "tr team")]
   teamsToday = []
