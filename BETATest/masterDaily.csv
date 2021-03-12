@@ -246,7 +246,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Gillingham,0.24,2.6,ELO,2021-02-23,0.0
 0.0,Atlético Madrid,0.17,2.75,ELO,2021-02-23,0.0
 0.0,Leeds United,0.23,2.35,EPL,2021-02-23,1.0
-3.0,Clippers,0.82,1.2,NBA,2021-02-23,1.0
 0.0,Pacers,0.51,1.83,NBA,2021-02-24,0.0
 0.0,Real Madrid,0.19,3.0,UCL,2021-02-24,1.0
 1.0,Draw Gladbach v Man. City,0.05,5.9,UCL,2021-02-24,0.0
@@ -264,15 +263,11 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 1.0,Lille,0.11,3.6,EUL,2021-02-25,0.0
 2.0,RB Salzburg,0.15,3.2,EUL,2021-02-25,0.0
 3.0,Draw Hoffenheim v Molde,0.04,6.0,EUL,2021-02-25,0.0
-4.0,Molde,0.09,8.5,EUL,2021-02-25,1.0
 5.0,Club Brugge,0.38,2.1,EUL,2021-02-25,0.0
 6.0,Roma,0.45,1.62,EUL,2021-02-25,1.0
-7.0,Olympiacos,0.22,3.5,EUL,2021-02-25,0.0
 0.0,Perth Glory,0.27,2.15,AAL,2021-02-26,1.0
 0.0,Levante,0.16,3.2,LLA,2021-02-26,0.0
 0.0,Querétaro,0.15,3.1,MLM,2021-02-26,0.0
-0.0,Raptors,0.72,1.33,NBA,2021-02-26,1.0
-2.0,Thunder,0.29,2.76,NBA,2021-02-26,1.0
 0.0,Beşiktaş,0.75,1.29,TSL,2021-02-26,1.0
 0.0,Adelaide United,0.12,4.8,AAL,2021-02-27,1.0
 0.0,Gladbach,0.05,5.5,GPL,2021-02-27,0.0
@@ -288,9 +283,7 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 6.0,Alexis Davis,0.23,2.8,MMA,2021-02-27,1.0
 7.0,Vince Cachero,0.23,2.38,MMA,2021-02-27,0.0
 8.0,Maxim Grishin,0.21,2.58,MMA,2021-02-27,0.0
-0.0,76ers,0.8,1.2,NBA,2021-02-27,0.0
 1.0,Knicks,0.34,1.98,NBA,2021-02-27,1.0
-4.0,Nets,0.49,1.72,NBA,2021-02-27,0.0
 0.0,ADO Den Haag,0.17,3.4,NPL,2021-02-27,0.0
 0.0,Rizespor,0.16,2.95,TSL,2021-02-27,0.0
 1.0,Antalyaspor,0.19,2.55,TSL,2021-02-27,0.0
@@ -331,13 +324,10 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 2.0,Timberwolves,0.4,1.98,NBA,2021-03-03,0.0
 3.0,Pelicans,0.59,1.43,NBA,2021-03-03,0.0
 5.0,Trail Blazers,0.4,1.98,NBA,2021-03-03,1.0
-6.0,Kings,0.23,2.46,NBA,2021-03-03,1.0
 0.0,Fulham,0.14,4.0,EPL,2021-03-04,0.0
 0.0,Celtics,0.75,1.3,NBA,2021-03-04,1.0
 1.0,Nuggets,0.45,1.63,NBA,2021-03-04,1.0
-3.0,Heat,0.29,2.36,NBA,2021-03-04,1.0
 4.0,Spurs,0.59,1.41,NBA,2021-03-04,0.0
-5.0,Suns,0.71,1.43,NBA,2021-03-04,1.0
 0.0,Valencia,0.13,3.8,LLA,2021-03-05,0.0
 0.0,Melbourne Vic,0.15,4.4,AAL,2021-03-06,0.0
 0.0,Swansea City,0.23,2.55,ECL,2021-03-06,1.0
@@ -408,17 +398,31 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Monterrey,0.34,2.0,MLM,2021-03-10,0.0
 0.0,Grizzlies,0.57,1.66,NBA,2021-03-10,1.0
 1.0,Mavericks,0.47,1.51,NBA,2021-03-10,1.0
-0,Raptors,0.54,2.02,NBA,2021-03-11
-1,Nets,0.47,1.68,NBA,2021-03-11
-2,Heat,0.6,1.38,NBA,2021-03-11
-3,76ers,0.23,2.18,NBA,2021-03-11
-4,Thunder,0.25,3.2,NBA,2021-03-11
-5,Clippers,0.67,1.34,NBA,2021-03-11
-6,Kings,0.52,1.51,NBA,2021-03-11
-7,Suns,0.4,1.74,NBA,2021-03-11
-0,Young Boys,0.07,5.3,EUL,2021-03-11
-1,Draw Tottenham v Dinamo Zagreb,0.06,4.9,EUL,2021-03-11
-2,Dinamo Zagreb,0.08,8.0,EUL,2021-03-11
-3,Shakhtar,0.11,5.5,EUL,2021-03-11
-4,Molde,0.16,6.5,EUL,2021-03-11
-5,Olympiacos,0.11,4.2,EUL,2021-03-11
+0.0,Young Boys,0.07,5.3,EUL,2021-03-11,0.0
+1.0,Draw Tottenham v Dinamo Zagreb,0.06,4.9,EUL,2021-03-11,0.0
+2.0,Dinamo Zagreb,0.08,8.0,EUL,2021-03-11,0.0
+3.0,Shakhtar,0.11,5.5,EUL,2021-03-11,0.0
+4.0,Molde,0.16,6.5,EUL,2021-03-11,0.0
+5.0,Olympiacos,0.11,4.2,EUL,2021-03-11,0.0
+0.0,Raptors,0.54,2.02,NBA,2021-03-11,0.0
+1.0,Nets,0.47,1.68,NBA,2021-03-11,1.0
+2.0,Heat,0.6,1.38,NBA,2021-03-11,1.0
+3.0,76ers,0.23,2.18,NBA,2021-03-11,1.0
+4.0,Thunder,0.25,3.2,NBA,2021-03-11,1.0
+5.0,Clippers,0.67,1.34,NBA,2021-03-11,1.0
+6.0,Kings,0.52,1.51,NBA,2021-03-11,1.0
+7.0,Suns,0.4,1.74,NBA,2021-03-11,1.0
+0,Wizards,0.23,2.8,NBA,2021-03-12
+1,Bulls,0.21,2.18,NBA,2021-03-12
+2,Spurs,0.56,1.34,NBA,2021-03-12
+3,Jazz,0.9,1.06,NBA,2021-03-12
+0,Newcastle,0.16,3.9,EPL,2021-03-12
+0,FC Augsburg,0.08,4.2,GPL,2021-03-12
+0,Reims,0.05,7.0,FL1,2021-03-12
+1,Draw Reims v Lyon,0.07,4.4,FL1,2021-03-12
+0,Beşiktaş,0.38,1.8,TSL,2021-03-12
+0,Draw Lazio v Crotone,0.03,6.0,ISA,2021-03-12
+1,Atalanta,0.66,1.27,ISA,2021-03-12
+0,Valencia,0.1,3.3,LLA,2021-03-12
+0,Nacional,0.24,2.65,PPL,2021-03-12
+0,Nordsjælland,0.22,2.75,DSL,2021-03-12
