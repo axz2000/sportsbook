@@ -19,15 +19,22 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Monterrey,0.34,2.0,MLM,2021-03-10,0.0
 0.0,Grizzlies,0.57,1.65,NBA,2021-03-10,1.0
 0.0,Liverpool,0.27,2.45,UCL,2021-03-10,1.0
-0,Raptors,0.54,2.02,NBA,2021-03-11
-1,Nets,0.47,1.68,NBA,2021-03-11
-2,Thunder,0.25,3.2,NBA,2021-03-11
-3,Clippers,0.67,1.34,NBA,2021-03-11
-4,Kings,0.52,1.51,NBA,2021-03-11
-5,Suns,0.4,1.74,NBA,2021-03-11
-0,Young Boys,0.07,5.3,EUL,2021-03-11
-1,Draw Tottenham v Dinamo Zagreb,0.06,4.9,EUL,2021-03-11
-2,Dinamo Zagreb,0.08,8.0,EUL,2021-03-11
-3,Shakhtar,0.11,5.5,EUL,2021-03-11
-4,Molde,0.16,6.5,EUL,2021-03-11
-5,Olympiacos,0.11,4.2,EUL,2021-03-11
+0.0,Young Boys,0.07,5.3,EUL,2021-03-11,0.0
+1.0,Draw Tottenham v Dinamo Zagreb,0.06,4.9,EUL,2021-03-11,0.0
+2.0,Dinamo Zagreb,0.08,8.0,EUL,2021-03-11,0.0
+3.0,Shakhtar,0.11,5.5,EUL,2021-03-11,0.0
+4.0,Molde,0.16,6.5,EUL,2021-03-11,0.0
+5.0,Olympiacos,0.11,4.2,EUL,2021-03-11,0.0
+0.0,Raptors,0.54,2.02,NBA,2021-03-11,0.0
+1.0,Nets,0.47,1.68,NBA,2021-03-11,1.0
+2.0,Thunder,0.25,3.2,NBA,2021-03-11,1.0
+3.0,Clippers,0.67,1.34,NBA,2021-03-11,1.0
+4.0,Kings,0.52,1.51,NBA,2021-03-11,1.0
+5.0,Suns,0.4,1.74,NBA,2021-03-11,1.0
+0,Wizards,0.23,2.8,NBA,2021-03-12
+0,Newcastle,0.15,3.8,EPL,2021-03-12
+0,FC Augsburg,0.08,4.2,GPL,2021-03-12
+0,Reims,0.04,6.5,FL1,2021-03-12
+0,Beşiktaş,0.38,1.8,TSL,2021-03-12
+0,Nacional,0.23,2.55,PPL,2021-03-12
+0,Nordsjælland,0.23,2.85,DSL,2021-03-12
