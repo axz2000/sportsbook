@@ -1,3 +1,8 @@
 ,Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),League,Date,Success,Allocation Dollars,Allocation Percentage
-101,0.0,Magic,0.16,3.4,NBA,2021-03-18,,5.82887,0.0256
-102,0.0,Pachuca,0.15,3.0,MLM,2021-03-18,,5.12303,0.0225
+101,0.0,Magic,0.16,3.4,NBA,2021-03-18,,4.98522,0.02189
+102,0.0,Pachuca,0.15,3.0,MLM,2021-03-18,,4.67364,0.02053
+103,0.0,Dinamo Zagreb,0.1,3.9,EUL,2021-03-18,,3.11576,0.01368
+104,1.0,Draw Arsenal v Olympiacos,0.1,4.9,EUL,2021-03-18,,3.11576,0.01368
+105,2.0,Olympiacos,0.06,8.0,EUL,2021-03-18,,1.86946,0.00821
+106,3.0,Molde,0.13,3.2,EUL,2021-03-18,,4.05049,0.01779
+107,4.0,Rangers,0.25,2.3,EUL,2021-03-18,,7.78941,0.03421

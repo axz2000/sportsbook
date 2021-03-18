@@ -1,7 +1,7 @@
-import MMA
+import EUL
 
 def getPicks():
-	print(MMA.run())
+	print(EUL.run())
 	return 'Picks Completed'
 	
 print('All bets are moneyline bets.')
