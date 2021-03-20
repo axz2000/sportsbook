@@ -1,7 +1,7 @@
-import NCAA
+import EUL
 
 def getPicks():
-	print(NCAA.run())
+	print(EUL.run())
 	return 'Picks Completed'
 	
 print('All bets are moneyline bets.')
