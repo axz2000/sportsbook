@@ -181,7 +181,7 @@ def picks():
 	result = fetch().round(decimals=2)
 	print(result.to_markdown())
 	resulting = result[['Bet State Chosen', 'Kelly Criterion Suggestion','Payouts (per Dollar)']]
-	resulting['League'] = ['NBA']*len(resulting['Bet State Chosen'])
+	resulting['League'] = ['NCAA']*len(resulting['Bet State Chosen'])
 	resulting['Date'] = [str(date.today())]*len(resulting['Bet State Chosen'])
 	resulting.to_csv(os.getcwd() + '/masterDaily.csv', mode='a', header=False)
 	return 'NBA Done'
@@ -198,7 +198,7 @@ Notes:
 '''
 def run():
 	if gameToday():
-		return fetch()
+		return picks()
 	else:
 		return ('No NBA games today.')
 
