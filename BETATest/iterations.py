@@ -17,9 +17,15 @@ import tabulate
 import time
 import warnings
 import re
+import subprocess
+import Popen
 
 warnings.filterwarnings("ignore") 
 
+def pushing():
+	subprocess.Popen("git add --all; git commit -m 'Daily Update'; git push", shell = True)
+	return 'Done'
+	
 def matching(arrayStrOne,arrayStrTwo):
 	matches = []
 	for i in arrayStrOne:
@@ -47,7 +53,7 @@ def powerLaw(portfolioAmt,df):
   amount = 1/np.prod(probs) #test portfolio constraints
   kelly = df['Kelly Criterion Suggestion'].values
   #spread = df['Probability Spread'].values
-  allocation1 = [np.minimum((portfolioAmt*np.median(kelly))*(i/np.sum(kelly)), 0.3*portfolioAmt) for i in kelly] #RISK TOLERANCE ESTABLISHED HERE 
+  allocation1 = [np.minimum((portfolioAmt*np.median(kelly))*(i/np.sum(kelly)), portfolioAmt) for i in kelly] #RISK TOLERANCE ESTABLISHED HERE 
   df['Allocation Dollars'] = allocation1
   #print('Total Allocated', np.sum(allocation1).round(decimals=2), 'out of', portfolioAmt)
   df['Allocation Percentage'] = [(i/portfolioAmt) for i in allocation1]
@@ -65,7 +71,6 @@ def dailyReturn():
 		port = pd.read_csv(os.getcwd() + '/masterPortfolio.csv')
 		portfolioAmt = port.Portfolio.values[-1]
 		array = [int(item) for item in input("Enter the list items : ").split()] #this shhould come from gamBet
-		print(len(array))
 		today = str(date.today() - timedelta(1)) #works until 00:00 same day
 		print(today)
 		portfolioTrack = pd.read_csv(os.getcwd() + '/masterDaily.csv')
@@ -107,13 +112,12 @@ def dailyReturn():
 	
 	else: 
 		port = pd.read_csv(os.getcwd() + '/masterPortfolio.csv')
-		portfolioAmt = port.Portfolio.values[-2]
+		portfolioAmt = port.Portfolio.values[-2] #CHECK THIS
 		portfolioTracked = pd.read_csv(os.getcwd() + '/masterDaily.csv')
 		today = str(date.today() - timedelta(1))
 		portfolioTracking = portfolioTracked[portfolioTracked.Date == today]
 		bet = powerLaw(portfolioAmt, portfolioTracking).round(3)
 		bet.to_csv(os.getcwd() + '/masterDailyRecap.csv')
-		
 		tomorrow = str(date.today())
 		portfolioTrackingTom = portfolioTracked[portfolioTracked.Date == tomorrow]
 		bettor = powerLaw(portfolioAmt, portfolioTrackingTom).round(5)
@@ -134,6 +138,7 @@ def dailyReturn():
 		updates = [returns[0]]
 		change = [returns[2]/returns[1]]
 		print('With a total portfiolio of now ',returns[0].round(2), ' we bet ', returns[1].round(2), ' which became ',returns[2].round(2), ' for an ROE of ', ((change[0]-1)*100).round(2), '%')
+		pushing()
 		return 'Done'
 	
 	

@@ -17,9 +17,14 @@ import tabulate
 import time
 import warnings
 import re
+import subprocess
 
 warnings.filterwarnings("ignore") 
 
+def pushing():
+	subprocess.Popen("git add --all; git commit -m 'Daily Update'; git push", shell = True)
+	return 'Done'
+	
 def matching(arrayStrOne,arrayStrTwo):
 	matches = []
 	for i in arrayStrOne:
@@ -132,6 +137,7 @@ def dailyReturn():
 		updates = [returns[0]]
 		change = [returns[2]/returns[1]]
 		print('With a total portfiolio of now ',returns[0].round(2), ' we bet ', returns[1].round(2), ' which became ',returns[2].round(2), ' for an ROE of ', ((change[0]-1)*100).round(2), '%')
+		pushing()
 		return 'Done'
 	
 	
