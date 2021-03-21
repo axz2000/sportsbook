@@ -1,10 +1,11 @@
 import iterations
+import decisiontree
 import subprocess
 
 def dailyReturn():
 	iterations.run()
-	#pushing()
-	return 'Update finished'
+	decisiontree.run()
+	return 'Update finished and classification completed'
 
 def pushing():
 	subprocess.Popen("git add --all; git commit -m 'Update'; git push", shell = True)
