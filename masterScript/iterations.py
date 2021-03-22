@@ -127,11 +127,11 @@ def dailyReturn():
 		bettors['American Odds'] = [reverseOdds(i) for i in bettors['Payouts (per Dollar)']]
 		bettors['Update Time (EST)'] = [str(datetime.now().strftime("%H:%M:%S")) for i in range(len(bettors))]
 		bettors = bettors[bettors['Allocation Percentage'] > 0.001]
+		bettors = bettors[['Bet State Chosen', 'Kelly Criterion Suggestion', 'Allocation Percentage', 'League', 'Payouts (per Dollar)', 'Date', 'American Odds', 'Update Time (EST)']]
 		bettors.to_csv(os.getcwd() + '/masterPush.csv')
 		parlay = bettors
 		parlay['Bet State Chosen'] = [re.sub(r'\W+', '', i) for i in parlay['Bet State Chosen'].values]
 		parlay.to_csv(os.getcwd() + '/parlayTable.csv')
-		
 		returns = gainsLosses(bet['Allocation Dollars'].values,bet['Success'].values, portfolioTracking, portfolioAmt)
 		print(portfolioAmt, ' portfolio amount of the day.')
 		updates = [returns[0]]
