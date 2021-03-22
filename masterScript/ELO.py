@@ -120,7 +120,7 @@ def fetch():
   except:
   	print('Not a problem, the XHR has been changed for the EPL, go ahead and fix that then run again')
   epl = parse_data(jsonData_fanduel_epl)
-  #print(epl)
+  print(epl)
   EPL = pd.DataFrame(epl)[['eventname','tsstart','idfoevent.markets']]
   EPL.columns = ['Teams','Date','EventID']
   listing = []

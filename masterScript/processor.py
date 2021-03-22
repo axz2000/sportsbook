@@ -2,7 +2,7 @@ import ELO, EPL, FL1, GPL, TSL, ISA, LLA, NBA, NPL, PPL, NFL, BPL, ECL, MLM, UCL
 
 
 def getPicks():
-	'''print(NBA.run())
+	#print(NBA.run())
 	
 	#print(NFL.run())
 	
@@ -14,7 +14,7 @@ def getPicks():
 	print(ISA.run())
 	print(LLA.run())
 	print(NPL.run())
-	print(PPL.run())'''
+	print(PPL.run())
 	print(ECL.run())
 	print(MLM.run())
 	print(UCL.run())
