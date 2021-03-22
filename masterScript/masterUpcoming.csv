@@ -1,20 +1,2 @@
-,Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),League,Date,Success,Allocation Dollars,Allocation Percentage
-121,0.0,Nuggets,0.7,1.45,NBA,2021-03-21,,9.63617,0.03169
-122,1.0,Pistons,0.39,2.2,NBA,2021-03-21,,5.36872,0.01765
-123,2.0,Trail Blazers,0.3,2.02,NBA,2021-03-21,,4.12979,0.01358
-124,3.0,Lakers,0.09,4.1,NBA,2021-03-21,,1.23894,0.00407
-125,0.0,West Ham,0.19,3.0,EPL,2021-03-21,,2.61553,0.0086
-126,0.0,Strasbourg,0.23,2.8,FL1,2021-03-21,,3.16617,0.01041
-127,1.0,Brest,0.22,2.6,FL1,2021-03-21,,3.02851,0.00996
-128,2.0,Dijon FCO,0.11,3.5,FL1,2021-03-21,,1.51426,0.00498
-129,3.0,Lyon,0.15,3.0,FL1,2021-03-21,,2.06489,0.00679
-130,0.0,Denizlispor,0.12,3.6,TSL,2021-03-21,,1.65191,0.00543
-131,1.0,Beşiktaş,0.32,2.05,TSL,2021-03-21,,4.40511,0.01449
-132,0.0,AC Milan,0.28,2.15,ISA,2021-03-21,,3.85447,0.01267
-133,1.0,Roma,0.21,2.55,ISA,2021-03-21,,2.89085,0.00951
-134,0.0,Cádiz,0.03,8.5,LLA,2021-03-21,,0.41298,0.00136
-135,0.0,Marítimo,0.22,2.75,PPL,2021-03-21,,3.02851,0.00996
-136,0.0,Midtjylland,0.59,1.42,DSL,2021-03-21,,8.12191,0.02671
-137,1.0,Nordsjælland,0.3,2.2,DSL,2021-03-21,,4.12979,0.01358
-138,2.0,Randers,0.14,3.5,DSL,2021-03-21,,1.92723,0.00634
-139,0.0,W. Phoenix,0.27,2.5,AAL,2021-03-21,,3.71681,0.01222
+,Unnamed: 0,Unnamed: 0.1,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),League,Date,Success,Allocation Dollars,Allocation Percentage
+2,130,2.0,Bucks,0.68,1.41,NBA,2021-03-22,,64.48051,0.22525

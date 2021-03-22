@@ -30,7 +30,7 @@ def run():
 	picks = pd.read_csv('./masterUpcoming.csv')
 	todaysPicks = pd.DataFrame({'Feature01':picks['Payouts (per Dollar)'].values, 'Feature02':picks['Kelly Criterion Suggestion'].values})
 	today = classifier.predict(todaysPicks) == 1
-	(picks[today]).to_csv('./classifiedUpcoming.csv')
+	(picks[today]).to_csv('./masterUpcoming.csv')
 	return 'Classification Done'
 
 print(run())

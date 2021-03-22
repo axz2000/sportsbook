@@ -13,8 +13,8 @@ def getPicks():
 	print(TSL.run())
 	print(ISA.run())
 	print(LLA.run())
-	print(NPL.run())'''
-	print(PPL.run())
+	print(NPL.run())
+	print(PPL.run())'''
 	print(ECL.run())
 	print(MLM.run())
 	print(UCL.run())
