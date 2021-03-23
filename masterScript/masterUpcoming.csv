@@ -1,2 +1,7 @@
-,Unnamed: 0,Unnamed: 0.1,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),League,Date,Success,Allocation Dollars,Allocation Percentage
-3,136,3.0,Warriors,0.35,2.26,NBA,2021-03-23,,3.95968,0.01542
+,Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),League,Date,Success,Allocation Dollars,Allocation Percentage
+133,0.0,Magic,0.12,3.6,NBA,2021-03-23,,0.46546,0.00181
+134,1.0,Lakers,0.17,3.15,NBA,2021-03-23,,0.93416,0.00364
+135,2.0,Knicks,0.48,1.75,NBA,2021-03-23,,7.44743,0.029
+136,3.0,Warriors,0.35,2.26,NBA,2021-03-23,,3.95968,0.01542
+137,0.0,Swindon Town,0.2,3.6,ELO,2021-03-23,,1.29296,0.00503
+138,1.0,Shrewsbury,0.15,3.3,ELO,2021-03-23,,0.72729,0.00283
