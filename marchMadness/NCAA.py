@@ -200,6 +200,5 @@ def run():
 	if gameToday():
 		return picks()
 	else:
-		return ('No NBA games today.')
+		return ('No NCAA games today.')
 
-print(run())
