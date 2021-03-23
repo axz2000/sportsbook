@@ -45,7 +45,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Celta Vigo,0.17,2.75,LLA,2021-03-14,0.0
 2.0,Sevilla,0.31,2.0,LLA,2021-03-14,1.0
 2.0,Hawks,0.62,1.39,NBA,2021-03-14,1.0
-4.0,Timberwolves,0.32,2.8,NBA,2021-03-14,1.0
 5.0,Pelicans,0.18,2.94,NBA,2021-03-14,1.0
 0.0,VVV-Venlo,0.2,3.2,NPL,2021-03-14,0.0
 1.0,PEC Zwolle,0.03,10.5,NPL,2021-03-14,0.0
@@ -66,7 +65,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 1.0,76ers,0.24,3.15,NBA,2021-03-17,0.0
 2.0,Kings,0.28,2.26,NBA,2021-03-17,1.0
 4.0,Rockets,0.21,5.8,NBA,2021-03-17,0.0
-7.0,Grizzlies,0.39,2.1,NBA,2021-03-17,1.0
 8.0,Mavericks,0.3,2.18,NBA,2021-03-17,1.0
 0.0,Chelsea,0.31,2.3,UCL,2021-03-17,1.0
 0.0,Dinamo Zagreb,0.1,3.9,EUL,2021-03-18,1.0
@@ -127,10 +125,12 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Marítimo,0.22,2.75,PPL,2021-03-21,0.0
 0.0,Denizlispor,0.12,3.6,TSL,2021-03-21,0.0
 1.0,Beşiktaş,0.32,2.05,TSL,2021-03-21,0.0
-0,Timberwolves,0.53,1.77,NBA,2021-03-22
-1,Grizzlies,0.39,1.89,NBA,2021-03-22
-2,Bucks,0.68,1.41,NBA,2021-03-22
-0,iowa,0.58,1.45,NCAA,2021-03-22
-1,kansas,0.37,2.0,NCAA,2021-03-22
-2,creighton,0.66,1.43,NCAA,2021-03-22
-3,ucla,0.59,1.5,NCAA,2021-03-22
+0.0,Timberwolves,0.53,1.77,NBA,2021-03-22,0.0
+1.0,Grizzlies,0.39,1.89,NBA,2021-03-22,1.0
+2.0,Bucks,0.68,1.41,NBA,2021-03-22,1.0
+0.0,iowa,0.58,1.45,NCAA,2021-03-22,0.0
+1.0,kansas,0.37,2.0,NCAA,2021-03-22,0.0
+2.0,creighton,0.66,1.43,NCAA,2021-03-22,1.0
+3.0,ucla,0.59,1.5,NCAA,2021-03-22,1.0
+0,Swindon Town,0.2,3.6,ELO,2021-03-23
+1,Shrewsbury,0.15,3.3,ELO,2021-03-23

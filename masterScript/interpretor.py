@@ -1,10 +1,10 @@
 import iterations
-import decisiontree
+#import decisiontree
 import subprocess
 
 def dailyReturn():
 	iterations.run()
-	decisiontree.run()
+	#decisiontree.run()
 	return 'Update finished and classification completed'
 
 def pushing():
