@@ -1,5 +1,5 @@
 import iterations
-#import decisiontree
+import decisiontree
 import subprocess
 
 def dailyReturn():
