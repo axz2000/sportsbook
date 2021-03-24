@@ -3,6 +3,7 @@ import numpy as np
 import math
 import sympy
 from sympy.abc import n
+import pandas as pd
 
 
 def switching(p,b):
@@ -17,8 +18,14 @@ def binary(o,b):
 	else:
 		return o
 
-array = [0.669, 0.549, 0.373, 0.347, 0.1, 0.1, 0.1, 0.2, 0.3]
-arrayP = [1.75, 2.25, 3.6, 3.3, 1.1, 10.1, 111.1, 1.2, 300]
+def reverseKelly(payout, kelly):
+	return( ((kelly * payout) + 1)/(payout + 1) )
+
+csv = pd.read_csv('./sportsbook/masterScript/masterUpcoming.csv')
+array = [reverseKelly(csv['Payouts (per Dollar)'].values[i],csv['Kelly Criterion Suggestion'].values[i]) for i in range(len(csv))] #probability that the stock will go up
+arrayP = [i - 1 for i in csv['Payouts (per Dollar)'].values]
+
+print(array, arrayP)
 k = len(array) - 1
 
 maximum = 2**len(array)
@@ -79,10 +86,14 @@ import numpy as np
 from scipy.optimize import fmin
 import math
 
+counter = 0
 for i in range(10):
 	try:
+		counter += 1
 		print(fmin(fx,[i/10]*len(array)))
-		break
+		
+		if counter == 2:
+			break
 	except:
 		print('None found')
 
