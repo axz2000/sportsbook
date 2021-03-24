@@ -39,5 +39,4 @@ def run():
 	picksP[todayP][['Bet State Chosen', 'Kelly Criterion Suggestion', 'Allocation Percentage', 'League', 'Payouts (per Dollar)', 'Date', 'American Odds', 'Update Time (EST)']]
 	return 'Classification Done'
 
-print(run())
 

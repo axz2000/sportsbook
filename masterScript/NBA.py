@@ -124,87 +124,33 @@ def fetch():
   for i in np.unique(EPL.EventID.values): 
     listing.append((fullSet(i)))
   df = (pd.DataFrame(getOdds(listing)))
+  
   df.columns = ['GameName', 'Type', 'HomeTeamandOdds', 'AwayTeamandOdds']
   df = df[df.Type=='Moneyline']
-  #print(df.sort_values(['GameName']))
+  print(df.sort_values(['GameName']))
   probabilities = fetchName()
-  
-  
-  #check if all of them are there
-  valued = []
-  print(probabilities.gameNum.values)
-  for i in np.unique(probabilities.gameNum.values):
-  	newdf = probabilities[probabilities.gameNum == i]
-  	valued += [newdf.ID.values[1][:]]
-  sorting = np.sort(valued)
-  indices, counterArray, soughtGameArray = [], [], []
-  counter = 0
-  gamed = []
-  
-  print((len(df.GameName.values), len(sorting)))
-  for i in (df.GameName.values):
-  	i = i.split(' ')
-  	i = i[i.index('At')+1:]
-  	print(i, " -------------------------- ")
-  	if len(i)<=2:
-  		i = i[-1]
-  	else:
-  		i = str(i[-2])+str(i[-1])
-  	temp = []
-  	for j in np.unique(sorting):
-  		j = j.split(' ')
-  		if len(j)<=2:
-  			j = j[-1]
-  		else:
-  			j = str(j[-2])+str(j[-1])
-  		print(i,j)
-  		temp += [tryMatch(i,j)]
-  	print(temp)
-  	sought = (sorting[temp.index(np.max(temp))])
-  	print(i, sought, "this")
-  	soughtgameNum = probabilities[probabilities.ID == sought].gameNum.values[0]
-  	#print(probabilities[probabilities.ID == sought].Probabilities.values[0])
-  	counterArray += [counter]
-  	soughtGameArray += [soughtgameNum]
-  	counter += 1
-  	
-  fixed = pd.DataFrame({'sought':soughtGameArray, 'linked':counterArray}).sort_values(['sought'])
-  print(fixed)
-  linker = []
-  
-  for i in fixed.linked.values:
-  	linker += [i]
-  	linker += [i]
-  print(len(probabilities['gameNum']), len(linker))
-  probabilities['gameNum'] = linker
-  print(probabilities)
-  
-  
-  array ,counter = [], 0
-  for i in probabilities.gameNum.values:
-  	#print(counter)
-  	if counter%2 == 0:
-  		indexed = probabilities.gameNum.values[counter]
-  		print(df.HomeTeamandOdds.values[indexed][-1])
-  		valued = df.HomeTeamandOdds.values[i][-1]
-  		array+= [valued]
-  		counter = counter+1
-  	else:
-  		indexed = probabilities.gameNum.values[counter]
-  		print(df.HomeTeamandOdds.values[indexed][-1])
-  		valued = df.AwayTeamandOdds.values[i][-1]
-  		array+= [valued]
-  		counter = counter+1
-  EV = []
-  for i in range(len(array)):
-  	EV += [probabilities.Probabilities.values[i]*array[i]]
-  print(array, probabilities.ID.values,probabilities )
-  Result = pd.DataFrame({'Team':probabilities.ID.values, 'Probability': probabilities.Probabilities.values, 'Odds':array, 'EV':EV})
-  print(Result)
+  print(probabilities, df)
+  fighter, odds = [], []
+  name, odds = [], []
+  for i in range(len(df)):
+  	name += [df.HomeTeamandOdds.values[i][0].split(' ')[-1]]
+  	name += [df.AwayTeamandOdds.values[i][0].split(' ')[-1]]
+  	odds += [df.HomeTeamandOdds.values[i][1]]
+  	odds += [df.AwayTeamandOdds.values[i][1]]
+  newest = pd.DataFrame({'ID':name,'Odds':odds})
+  print(newest, probabilities)
+  result = pd.merge(newest, probabilities, on = 'ID')
+  Result = (probabilities.set_index('ID').join(newest.set_index('ID'))).reset_index()
+  Result['EV'] = [Result.Probabilities.values[i] * Result.Odds.values[i] for i in range(len(Result))]
+  Result['Team'] = Result.ID.values
+  Result['Probability'] = Result.Probabilities.values
+  Result = Result[['Team','Probability','Odds','EV']]
+  print(Result.dropna().to_markdown())
   Bet = Result[Result.EV >1.07]
   kelly = [Kelly(Bet.Odds.values[i], Bet.Probability.values[i]) for i in range(len(Bet.Probability.values))]
   #print(len(Bet.Team.values), len(kelly),  len(Bet.Odds.values))
   Betting = pd.DataFrame({'Bet State Chosen':Bet.Team.values, 'Kelly Criterion Suggestion': kelly, 'Payouts (per Dollar)':Bet.Odds.values})
+  print(Betting.dropna().to_markdown())
   #Betting.columns = ['Bet State Chosen', 'Kelly Criterion Suggestion', 'Probability Spread','Payouts (per Dollar)']
   return Betting
   
@@ -240,9 +186,9 @@ def fetchName():
   	indexed += [i]*2
   nba = pd.DataFrame({'ID':teamsToday, 'Probabilities':probabilitiesToday, 'gameNum':indexed })
   '''nba = nba[nba.ID != 'Raptors']
-  nba = nba[nba.ID != 'Bulls']'''
+  nba = nba[nba.ID != 'Bulls']
   nba = nba[nba.ID != 'Nets']
-  nba = nba[nba.ID != 'Trail Blazers']
+  nba = nba[nba.ID != 'Trail Blazers']'''
   indexer = []
   for i in range(int(len(nba.ID)/2)):
   	indexer += [i]*2
