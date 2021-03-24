@@ -1,10 +1,12 @@
 import iterations
 import decisiontree
+import simultaneousKelly
 import subprocess
 
 def dailyReturn():
 	iterations.run()
 	decisiontree.run()
+	simultaneousKelly.run()
 	return 'Update finished and classification completed'
 
 def pushing():
