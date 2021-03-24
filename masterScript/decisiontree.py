@@ -30,12 +30,12 @@ def run():
 	picks = pd.read_csv('./masterUpcoming.csv')
 	todaysPicks = pd.DataFrame({'Feature01':picks['Payouts (per Dollar)'].values, 'Feature02':picks['Kelly Criterion Suggestion'].values})
 	today = classifier.predict(todaysPicks) == 1
-	(picks[today]).to_csv('./masterUpcoming.csv')
+	(picks[today][['Bet State Chosen', 'Kelly Criterion Suggestion', 'Allocation Percentage', 'League', 'Payouts (per Dollar)', 'Date', 'American Odds', 'Update Time (EST)']]).to_csv('./masterUpcoming.csv')
 	
 	picksP = pd.read_csv('./masterPush.csv')
 	todaysPicks = pd.DataFrame({'Feature01':picksP['Payouts (per Dollar)'].values, 'Feature02':picksP['Kelly Criterion Suggestion'].values})
 	todayP = classifier.predict(todaysPicks) == 1
-	(picksP[todayP]).to_csv('./masterPush.csv')
+	(picksP[todayP][['Bet State Chosen', 'Kelly Criterion Suggestion', 'Allocation Percentage', 'League', 'Payouts (per Dollar)', 'Date', 'American Odds', 'Update Time (EST)']]).to_csv('./masterPush.csv')
 	picksP[todayP][['Bet State Chosen', 'Kelly Criterion Suggestion', 'Allocation Percentage', 'League', 'Payouts (per Dollar)', 'Date', 'American Odds', 'Update Time (EST)']]
 	return 'Classification Done'
 
