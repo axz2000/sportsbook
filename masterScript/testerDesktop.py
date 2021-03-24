@@ -21,7 +21,7 @@ def binary(o,b):
 def reverseKelly(payout, kelly):
 	return( ((kelly * payout) + 1)/(payout + 1) )
 
-csv = pd.read_csv('./sportsbook/masterScript/masterUpcoming.csv')
+csv = pd.read_csv('./masterUpcoming.csv')
 array = [reverseKelly(csv['Payouts (per Dollar)'].values[i],csv['Kelly Criterion Suggestion'].values[i]) for i in range(len(csv))] #probability that the stock will go up
 arrayP = [i - 1 for i in csv['Payouts (per Dollar)'].values]
 
