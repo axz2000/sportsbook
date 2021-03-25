@@ -59,12 +59,9 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 1.0,Gillingham,0.11,4.0,ELO,2021-03-16,1.0
 3.0,Bristol Rovers,0.09,4.1,ELO,2021-03-16,0.0
 0.0,Celtics,0.32,2.56,NBA,2021-03-16,0.0
-3.0,Thunder,0.16,3.0,NBA,2021-03-16,0.0
 0.0,Real Madrid,0.29,2.1,UCL,2021-03-16,1.0
-0.0,Pacers,0.26,2.32,NBA,2021-03-17,0.0
 1.0,76ers,0.24,3.15,NBA,2021-03-17,0.0
 2.0,Kings,0.28,2.26,NBA,2021-03-17,1.0
-4.0,Rockets,0.21,5.8,NBA,2021-03-17,0.0
 8.0,Mavericks,0.3,2.18,NBA,2021-03-17,1.0
 0.0,Chelsea,0.31,2.3,UCL,2021-03-17,1.0
 0.0,Dinamo Zagreb,0.1,3.9,EUL,2021-03-18,1.0
@@ -78,7 +75,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 1.0,Draw Arminia v RB Leipzig,0.09,5.1,GPL,2021-03-19,0.0
 0.0,Spurs,0.52,1.83,NBA,2021-03-19,1.0
 1.0,Magic,0.1,3.75,NBA,2021-03-19,1.0
-3.0,Raptors,0.46,2.8,NBA,2021-03-19,0.0
 0.0,Wycombe,0.09,5.4,ECL,2021-03-20,0.0
 1.0,Rotherham,0.28,2.95,ECL,2021-03-20,1.0
 2.0,Draw Norwich v Blackburn,0.08,4.3,ECL,2021-03-20,1.0
@@ -126,20 +122,18 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 1.0,Beşiktaş,0.32,2.05,TSL,2021-03-21,0.0
 0.0,Timberwolves,0.53,1.77,NBA,2021-03-22,0.0
 1.0,Grizzlies,0.39,1.89,NBA,2021-03-22,1.0
-2.0,Bucks,0.68,1.41,NBA,2021-03-22,1.0
 0.0,iowa,0.58,1.45,NCAA,2021-03-22,0.0
 1.0,kansas,0.37,2.0,NCAA,2021-03-22,0.0
 2.0,creighton,0.66,1.43,NCAA,2021-03-22,1.0
 3.0,ucla,0.59,1.5,NCAA,2021-03-22,1.0
 2.0,Knicks,0.48,1.75,NBA,2021-03-23,1.0
 3.0,Warriors,0.35,2.26,NBA,2021-03-23,0.0
-0,Pacers,0.59,1.42,NBA,2021-03-24
-1,Bucks,0.44,1.65,NBA,2021-03-24
-2,Raptors,0.37,1.96,NBA,2021-03-24
-3,Rockets,0.34,2.3,NBA,2021-03-24
-4,Timberwolves,0.2,3.75,NBA,2021-03-24
-5,Thunder,0.27,2.9,NBA,2021-03-24
-6,Magic,0.11,3.65,NBA,2021-03-24
-7,Spurs,0.24,3.15,NBA,2021-03-24
-8,Jazz,0.71,1.4,NBA,2021-03-24
-0,Melbourne Vic,0.09,4.7,AAL,2021-03-24
+0.0,Pacers,0.59,1.42,NBA,2021-03-24,1.0
+1.0,Bucks,0.44,1.65,NBA,2021-03-24,1.0
+2.0,Raptors,0.37,1.96,NBA,2021-03-24,1.0
+3.0,Rockets,0.34,2.3,NBA,2021-03-24,0.0
+5.0,Thunder,0.27,2.9,NBA,2021-03-24,0.0
+8.0,Jazz,0.71,1.4,NBA,2021-03-24,1.0
+0,Knicks,0.49,1.66,NBA,2021-03-25
+1,Spurs,0.17,3.0,NBA,2021-03-25
+2,Lakers,0.25,2.62,NBA,2021-03-25

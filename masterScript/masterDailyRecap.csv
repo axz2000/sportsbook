@@ -1,3 +1,7 @@
 ,Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),League,Date,Success,Allocation Dollars,Allocation Percentage
-132,2.0,Knicks,0.48,1.75,NBA,2021-03-23,1.0,29.282,0.115
-133,3.0,Warriors,0.35,2.26,NBA,2021-03-23,0.0,15.569,0.061
+129,0.0,Pacers,0.59,1.42,NBA,2021-03-24,1.0,13.506,0.052
+130,1.0,Bucks,0.44,1.65,NBA,2021-03-24,1.0,7.511,0.029
+131,2.0,Raptors,0.37,1.96,NBA,2021-03-24,1.0,5.312,0.02
+132,3.0,Rockets,0.34,2.3,NBA,2021-03-24,0.0,4.485,0.017
+133,5.0,Thunder,0.27,2.9,NBA,2021-03-24,0.0,2.828,0.011
+134,8.0,Jazz,0.71,1.4,NBA,2021-03-24,1.0,19.559,0.075
