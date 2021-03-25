@@ -29,6 +29,8 @@ def run():
 	arrayP = [i - 1 for i in csvs['Payouts (per Dollar)'].values]
 	print(array, arrayP, 'Check your inputs')
 	k = len(array) - 1
+	if k ==0:
+		return csvs['Kelly Criterion Suggestion'].values * 1/3
 
 	maximum = 2**len(array)
 	length = len(list(str(bin(maximum))[2:])) - 1
@@ -89,7 +91,7 @@ def run():
 			finished = (fmin(fx,[i/10]*len(array)))
 		
 			if counter == 2:
-				csvs['Allocation Percentage'] = finished
+				csvs['Allocation Percentage'] = finished*1/3
 				#csvs.to_csv('./newKellyFraction.csv')
 				return finished
 		except:
