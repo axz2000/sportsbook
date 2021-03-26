@@ -5,7 +5,7 @@ import subprocess
 
 def dailyReturn():
 	iterations.run()
-	decisiontree.run()
+	#decisiontree.run()
 	simultaneousKelly.run()
 	return 'Update finished and classification completed'
 
