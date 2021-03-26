@@ -65,8 +65,8 @@ def gainsLosses(allocation,successes, df, portfolio):
   return [portfolio+(now-prev), prev, now]
 
 		
-def dailyReturn():
-	if (input("Are you here to update? ").lower() == 'yes'):
+def dailyReturn(inputs):
+	if (inputs == 'yes'):
 		port = pd.read_csv(os.getcwd() + '/masterPortfolio.csv')
 		portfolioAmt = port.Portfolio.values[-1]
 		array = [int(item) for item in input("Enter the list items : ").split()] #this shhould come from gamBet
@@ -104,7 +104,6 @@ def dailyReturn():
 		updates = [returns[0]]
 		change = [returns[2]/returns[1]]
 		print('With a total portfiolio of now ',returns[0].round(2), ' we bet ', returns[1].round(2), ' which became ',returns[2].round(2), ' for an ROE of ', ((change[0]-1)*100).round(2), '%')
-		
 		resulting = pd.DataFrame({'Day':[port.Day.values[-1]+1],'Portfolio':updates, 'Change':change})
 		resulting.to_csv(os.getcwd() + '/masterPortfolio.csv', mode='a', header=False, index = False)
 		return 'Done'
@@ -121,6 +120,7 @@ def dailyReturn():
 		portfolioTrackingTom = portfolioTracked[portfolioTracked.Date == tomorrow]
 		bettor = powerLaw(portfolioAmt, portfolioTrackingTom).round(5)
 		bettor.to_csv(os.getcwd() + '/masterUpcoming.csv')
+		bettor.to_csv(os.getcwd() + '/masterUpcomingNoClassification.csv')
 		bettors = bettor[['Bet State Chosen', 'Kelly Criterion Suggestion', 'Allocation Percentage', 'League', 'Payouts (per Dollar)', 'Date']]
 		bettors['Allocation Percentage'] = [i*100 for i in bettors['Allocation Percentage']]
 		bettors = bettors.round(4)
@@ -137,27 +137,12 @@ def dailyReturn():
 		updates = [returns[0]]
 		change = [returns[2]/returns[1]]
 		print('With a total portfiolio of now ',returns[0].round(2), ' we bet ', returns[1].round(2), ' which became ',returns[2].round(2), ' for an ROE of ', ((change[0]-1)*100).round(2), '%')
-		pushing()
+		#pushing()
 		return 'Done'
 	
-	
-	
-	
 
-'''
-To do:
--- comment some more stuff and figure out hwo to implement NHl in this exact framework, maybe jsut replace the XHR, but the bettting is different, run seperately?
--- add over under, period bets, make the names for tie more clear if possible
--- make tree structure easy to implement
-
-Notes:
--- this will force people to make a directory or maybe to have a folder called data in place, thinking of possible easy of application
-'''
-
-#Make a time function
-
-def run():
-	return (dailyReturn())
+def run(inputs):
+	return (dailyReturn(inputs))
 
 
 	
