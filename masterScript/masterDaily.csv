@@ -116,7 +116,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Nuggets,0.7,1.45,NBA,2021-03-21,0.0
 1.0,Pistons,0.39,2.2,NBA,2021-03-21,0.0
 2.0,Trail Blazers,0.3,2.02,NBA,2021-03-21,0.0
-3.0,Lakers,0.09,4.1,NBA,2021-03-21,0.0
 0.0,Marítimo,0.22,2.75,PPL,2021-03-21,0.0
 0.0,Denizlispor,0.12,3.6,TSL,2021-03-21,0.0
 1.0,Beşiktaş,0.32,2.05,TSL,2021-03-21,0.0
@@ -134,6 +133,7 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 3.0,Rockets,0.34,2.3,NBA,2021-03-24,0.0
 5.0,Thunder,0.27,2.9,NBA,2021-03-24,0.0
 8.0,Jazz,0.71,1.4,NBA,2021-03-24,1.0
-0,Knicks,0.49,1.66,NBA,2021-03-25
-1,Spurs,0.17,3.0,NBA,2021-03-25
-2,Lakers,0.25,2.62,NBA,2021-03-25
+2.0,Lakers,0.25,2.62,NBA,2021-03-25,0.0
+0,Raptors,0.34,2.66,NBA,2021-03-26
+1,Hornets,0.29,2.26,NBA,2021-03-26
+2,Magic,0.31,5.9,NBA,2021-03-26
