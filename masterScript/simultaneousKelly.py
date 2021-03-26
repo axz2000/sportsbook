@@ -92,7 +92,7 @@ def run():
 		
 			if counter == 2:
 				csvs['Allocation Percentage'] = finished*1/3
-				#csvs.to_csv('./newKellyFraction.csv')
+				csvs.to_csv('./newKellyFraction.csv')
 				return finished
 		except:
 			print('None found')
