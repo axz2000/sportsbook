@@ -145,7 +145,7 @@ def fetchName():
   jsonData_538 = requests.get('https://projects.fivethirtyeight.com/march-madness-api/2021/madness.json').json()
   mens = jsonData_538['forecasts']['mens']['current_run']['teams']
   teamsToday = [i['team_name'].lower() for i in mens]
-  probabilitiesToday = [i['rd3_win'] for i in mens]
+  probabilitiesToday = [i['rd4_win'] for i in mens]
   nba = pd.DataFrame({'ID':teamsToday, 'Probabilities':probabilitiesToday})
   return nba
 

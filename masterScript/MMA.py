@@ -158,7 +158,7 @@ def fetchName():
     'accept-language': 'en-US,en;q=0.9,fr;q=0.8,ro;q=0.7,ru;q=0.6,la;q=0.5,pt;q=0.4,de;q=0.3',
     'cache-control': 'max-age=0',
     'upgrade-insecure-requests': '1',
-    'Cookie':'_fbp=fb.1.1615025582974.1554242686; _ga=GA1.2.132781175.1615025583; _gid=GA1.2.1735542848.1615025583; ac_enable_tracking=1; 12c5c06416db37186f39465beb5f7b67=f44a1c7d10834bae43968b205cbbe8d9; joomla_remember_me_bf2da9a3a077b14a5925756bbb5146ad=BIqKJ91Obvly7crp.gUO9xvfpO8OFEE8050JU; joomla_user_state=logged_in; outbrain_cid_fetch=true',
+    'Cookie':'_fbp=fb.1.1616828158524.491711347; _ga=GA1.2.1242760464.1616828158; _gid=GA1.2.508057464.1616828158; ac_enable_tracking=1; 12c5c06416db37186f39465beb5f7b67=aa88adb4005d3b9465d909db0574aad8; joomla_remember_me_bf2da9a3a077b14a5925756bbb5146ad=5SBkPSoV9LP8Nsyh.fEQwWaeUrbfrkcrtqHFn; joomla_user_state=logged_in; outbrain_cid_fetch=true; _gat_UA-141091297-1=1',
     'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'})
   page_content = BeautifulSoup(page_response.content, "html.parser")
   navigate = page_content.findAll('div', class_="events-cat-event")
@@ -171,7 +171,7 @@ def fetchName():
     'accept-language': 'en-US,en;q=0.9,fr;q=0.8,ro;q=0.7,ru;q=0.6,la;q=0.5,pt;q=0.4,de;q=0.3',
     'cache-control': 'max-age=0',
     'upgrade-insecure-requests': '1',
-    'Cookie':'_fbp=fb.1.1615025582974.1554242686; _ga=GA1.2.132781175.1615025583; _gid=GA1.2.1735542848.1615025583; ac_enable_tracking=1; 12c5c06416db37186f39465beb5f7b67=f44a1c7d10834bae43968b205cbbe8d9; joomla_remember_me_bf2da9a3a077b14a5925756bbb5146ad=BIqKJ91Obvly7crp.gUO9xvfpO8OFEE8050JU; joomla_user_state=logged_in; outbrain_cid_fetch=true',
+    'Cookie':'_fbp=fb.1.1616828158524.491711347; _ga=GA1.2.1242760464.1616828158; _gid=GA1.2.508057464.1616828158; ac_enable_tracking=1; 12c5c06416db37186f39465beb5f7b67=aa88adb4005d3b9465d909db0574aad8; joomla_remember_me_bf2da9a3a077b14a5925756bbb5146ad=5SBkPSoV9LP8Nsyh.fEQwWaeUrbfrkcrtqHFn; joomla_user_state=logged_in; outbrain_cid_fetch=true; _gat_UA-141091297-1=1',
     'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'})
   fight_contents = BeautifulSoup(fight_contents.content, "html.parser")
   teamsToday, probabilitiesToday = [],[]
