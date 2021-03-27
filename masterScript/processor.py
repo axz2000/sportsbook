@@ -2,12 +2,12 @@ import ELO, EPL, FL1, GPL, TSL, ISA, LLA, NBA, NPL, PPL, NFL, BPL, ECL, MLM, UCL
 
 
 def getPicks():
-	NBA.run()
-	NCAA.run()
+	#NBA.run()
+	#NCAA.run()
 	
 	#print(NFL.run())
 	
-	ELO.run()
+	#ELO.run()
 	EPL.run()
 	GPL.run()
 	FL1.run()
@@ -22,7 +22,7 @@ def getPicks():
 	#print(DSL.run())
 	EUL.run()
 	LLT.run()
-	AAL.run()
+	#AAL.run()
 	FDA.run()
 	#print(BPL.run())
 	
