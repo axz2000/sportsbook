@@ -1,7 +1,5 @@
 ,Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),League,Date,Success,Allocation Dollars,Allocation Percentage
-135,0.0,Wizards,0.5,1.68,NBA,2021-03-27,,12.43377,0.04792
-136,1.0,Spurs,0.47,1.68,NBA,2021-03-27,,10.98648,0.04235
-137,2.0,Thunder,0.23,4.9,NBA,2021-03-27,,2.63099,0.01014
-138,3.0,Kings,0.7,1.33,NBA,2021-03-27,,24.37019,0.09393
-139,4.0,Clippers,0.51,1.62,NBA,2021-03-27,,12.9361,0.04986
-140,0.0,Ponferradina,0.12,4.4,LLT,2021-03-27,,0.71619,0.00276
+136,0.0,creighton,0.1,8.0,NCAA,2021-03-28,,0.54083,0.00221
+137,1.0,ucla,0.15,3.25,NCAA,2021-03-28,,1.21687,0.00497
+138,0.0,Raptors,0.42,1.86,NBA,2021-03-28,,9.54029,0.03897
+139,1.0,Nuggets,0.62,1.53,NBA,2021-03-28,,20.7896,0.08493

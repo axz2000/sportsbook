@@ -61,7 +61,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Celtics,0.32,2.56,NBA,2021-03-16,0.0
 0.0,Real Madrid,0.29,2.1,UCL,2021-03-16,1.0
 1.0,76ers,0.24,3.15,NBA,2021-03-17,0.0
-2.0,Kings,0.28,2.26,NBA,2021-03-17,1.0
 0.0,Chelsea,0.31,2.3,UCL,2021-03-17,1.0
 0.0,Dinamo Zagreb,0.1,3.9,EUL,2021-03-18,1.0
 1.0,Draw Arsenal v Olympiacos,0.1,4.9,EUL,2021-03-18,0.0
@@ -72,7 +71,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Fulham,0.24,2.6,EPL,2021-03-19,0.0
 0.0,Arminia,0.07,8.5,GPL,2021-03-19,0.0
 1.0,Draw Arminia v RB Leipzig,0.09,5.1,GPL,2021-03-19,0.0
-0.0,Spurs,0.52,1.83,NBA,2021-03-19,1.0
 1.0,Magic,0.1,3.75,NBA,2021-03-19,1.0
 0.0,Wycombe,0.09,5.4,ECL,2021-03-20,0.0
 1.0,Rotherham,0.28,2.95,ECL,2021-03-20,1.0
@@ -134,10 +132,10 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 1.0,Raptors,0.33,2.48,NBA,2021-03-26,0.0
 4.0,Mavericks,0.51,1.56,NBA,2021-03-26,0.0
 5.0,Lakers,0.55,1.61,NBA,2021-03-26,1.0
-0,Wizards,0.5,1.68,NBA,2021-03-27
-1,Spurs,0.47,1.68,NBA,2021-03-27
-2,Thunder,0.23,4.9,NBA,2021-03-27
-3,Kings,0.7,1.33,NBA,2021-03-27
-4,Clippers,0.51,1.62,NBA,2021-03-27
-0,Ponferradina,0.12,4.4,LLT,2021-03-27
-0,Tyron Woodley,0.25,3.1,MMA,2021-03-27
+0.0,Ponferradina,0.12,4.4,LLT,2021-03-27,0.0
+1.0,Spurs,0.47,1.68,NBA,2021-03-27,1.0
+3.0,Kings,0.7,1.33,NBA,2021-03-27,1.0
+0,creighton,0.1,8.0,NCAA,2021-03-28
+1,ucla,0.15,3.25,NCAA,2021-03-28
+0,Raptors,0.42,1.86,NBA,2021-03-28
+1,Nuggets,0.62,1.53,NBA,2021-03-28
