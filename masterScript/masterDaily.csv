@@ -119,7 +119,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 1.0,Grizzlies,0.39,1.89,NBA,2021-03-22,1.0
 0.0,iowa,0.58,1.45,NCAA,2021-03-22,0.0
 1.0,kansas,0.37,2.0,NCAA,2021-03-22,0.0
-2.0,creighton,0.66,1.43,NCAA,2021-03-22,1.0
 3.0,ucla,0.59,1.5,NCAA,2021-03-22,1.0
 2.0,Knicks,0.48,1.75,NBA,2021-03-23,1.0
 3.0,Warriors,0.35,2.26,NBA,2021-03-23,0.0
@@ -135,7 +134,12 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Ponferradina,0.12,4.4,LLT,2021-03-27,0.0
 1.0,Spurs,0.47,1.68,NBA,2021-03-27,1.0
 3.0,Kings,0.7,1.33,NBA,2021-03-27,1.0
-0,creighton,0.1,8.0,NCAA,2021-03-28
-1,ucla,0.15,3.25,NCAA,2021-03-28
-0,Raptors,0.42,1.86,NBA,2021-03-28
-1,Nuggets,0.62,1.53,NBA,2021-03-28
+0.0,creighton,0.1,8.0,NCAA,2021-03-28,0.0
+
+0,Celtics,0.56,1.57,NBA,2021-03-29
+1,Thunder,0.1,4.85,NBA,2021-03-29
+2,Rockets,0.23,2.8,NBA,2021-03-29
+3,Spurs,0.4,1.74,NBA,2021-03-29
+4,Warriors,0.31,2.64,NBA,2021-03-29
+5,Clippers,0.48,1.86,NBA,2021-03-29
+0,Mallorca,0.24,2.4,LLT,2021-03-29
