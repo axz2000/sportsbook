@@ -58,7 +58,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Famalicão,0.08,5.4,PPL,2021-03-15,0.0
 1.0,Gillingham,0.11,4.0,ELO,2021-03-16,1.0
 3.0,Bristol Rovers,0.09,4.1,ELO,2021-03-16,0.0
-0.0,Celtics,0.32,2.56,NBA,2021-03-16,0.0
 0.0,Real Madrid,0.29,2.1,UCL,2021-03-16,1.0
 1.0,76ers,0.24,3.15,NBA,2021-03-17,0.0
 0.0,Chelsea,0.31,2.3,UCL,2021-03-17,1.0
@@ -125,7 +124,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Pacers,0.59,1.42,NBA,2021-03-24,1.0
 1.0,Bucks,0.44,1.65,NBA,2021-03-24,1.0
 3.0,Rockets,0.34,2.3,NBA,2021-03-24,0.0
-5.0,Thunder,0.27,2.9,NBA,2021-03-24,0.0
 8.0,Jazz,0.71,1.4,NBA,2021-03-24,1.0
 0.0,Pistons,0.15,3.0,NBA,2021-03-26,0.0
 1.0,Raptors,0.33,2.48,NBA,2021-03-26,0.0
@@ -135,11 +133,9 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 1.0,Spurs,0.47,1.68,NBA,2021-03-27,1.0
 3.0,Kings,0.7,1.33,NBA,2021-03-27,1.0
 0.0,creighton,0.1,8.0,NCAA,2021-03-28,0.0
-
-0,Celtics,0.56,1.57,NBA,2021-03-29
-1,Thunder,0.1,4.85,NBA,2021-03-29
-2,Rockets,0.23,2.8,NBA,2021-03-29
-3,Spurs,0.4,1.74,NBA,2021-03-29
-4,Warriors,0.31,2.64,NBA,2021-03-29
-5,Clippers,0.48,1.86,NBA,2021-03-29
-0,Mallorca,0.24,2.4,LLT,2021-03-29
+0.0,Celtics,0.56,1.57,NBA,2021-03-29,0.0
+1.0,Thunder,0.1,4.85,NBA,2021-03-29,0.0
+0,ucla,0.2,3.4,NCAA,2021-03-30
+0,Nuggets,0.62,1.51,NBA,2021-03-30
+0,ucla,0.2,3.4,NCAA,2021-03-30
+0,Alcorcón,0.19,3.1,LLT,2021-03-30

@@ -1,13 +1,14 @@
-import ELO, EPL, FL1, GPL, TSL, ISA, LLA, NBA, NPL, PPL, NFL, BPL, ECL, MLM, UCL, DSL, EUL, AAL, FDA, LLT, MMA, NCAA
+import ELO, EPL, FL1, GPL, TSL, ISA, LLA, NBA, NPL, PPL, NFL, BPL, ECL, MLM, UCL, DSL, EUL, AAL, FDA, LLT, MMA, NCAA, NHL
 
 
 def getPicks():
 	NBA.run()
-	#NCAA.run()
+	NCAA.run()
+    #NHL.run()
 	
-	#print(NFL.run())
+	#NFL.run()
 	
-	#ELO.run()
+	ELO.run()
 	EPL.run()
 	GPL.run()
 	FL1.run()
@@ -15,18 +16,18 @@ def getPicks():
 	ISA.run()
 	LLA.run()
 	NPL.run()
-	#print(PPL.run())
+	#PPL.run()
 	ECL.run()
-	#print(MLM.run())
+	#MLM.run()
 	UCL.run()
-	#print(DSL.run())
+	#DSL.run()
 	EUL.run()
 	LLT.run()
 	#AAL.run()
 	FDA.run()
-	#print(BPL.run())
+	#BPL.run()
 	
-	print(MMA.run())
+	MMA.run()
 	return 'Picks Completed'
 	
 print('All bets are moneyline bets.')
