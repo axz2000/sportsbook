@@ -27,7 +27,10 @@ except ImportError:
 
 def tryMatch(i,j):
     return fuzz.token_sort_ratio(str(i), str(j))
-
+    
+def Kelly(oddsDecimal, probability):
+  return (oddsDecimal*probability - (1-probability))/oddsDecimal
+  
 def matching(arrayStrOne,arrayStrTwo):
     matches = []
     for i in arrayStrOne:
