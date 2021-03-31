@@ -109,7 +109,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,AC Milan,0.28,2.15,ISA,2021-03-21,1.0
 1.0,Roma,0.21,2.55,ISA,2021-03-21,0.0
 0.0,Cádiz,0.03,8.5,LLA,2021-03-21,0.0
-0.0,Nuggets,0.7,1.45,NBA,2021-03-21,0.0
 2.0,Trail Blazers,0.3,2.02,NBA,2021-03-21,0.0
 0.0,Marítimo,0.22,2.75,PPL,2021-03-21,0.0
 0.0,Denizlispor,0.12,3.6,TSL,2021-03-21,0.0
@@ -135,8 +134,12 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,creighton,0.1,8.0,NCAA,2021-03-28,0.0
 0.0,Celtics,0.56,1.57,NBA,2021-03-29,0.0
 1.0,Thunder,0.1,4.85,NBA,2021-03-29,0.0
-0,Nuggets,0.62,1.51,NBA,2021-03-30
-0,ucla,0.2,3.4,NCAA,2021-03-30
-0,Alcorcón,0.19,3.1,LLT,2021-03-30
-0,chicago blackhawks,0.22,2.42,NHL,2021-03-30
-1,nashville predators,0.35,2.02,NHL,2021-03-30
+0.0,Nuggets,0.62,1.51,NBA,2021-03-30,1.0
+0,Pacers,0.33,2.08,NBA,2021-03-31
+1,Pistons,0.13,3.3,NBA,2021-03-31
+2,Celtics,0.41,1.98,NBA,2021-03-31
+3,Rockets,0.05,8.5,NBA,2021-03-31
+4,Timberwolves,0.39,2.4,NBA,2021-03-31
+5,Suns,0.66,1.4,NBA,2021-03-31
+6,Lakers,0.27,4.1,NBA,2021-03-31
+0,Gillingham,0.31,2.0,ELO,2021-03-31
