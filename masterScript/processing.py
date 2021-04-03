@@ -1,7 +1,7 @@
-import NHL
+import NCAA
 
 def getPicks():
-	print(NHL.run())
+	print(NCAA.run())
 	return 'Picks Completed'
 	
 print('All bets are moneyline bets.')
