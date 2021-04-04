@@ -140,24 +140,33 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 2.0,Sunderland,0.38,1.95,ELO,2021-04-02,1.0
 0.0,Almería,0.31,2.3,LLT,2021-04-02,0.0
 0.0,Astros,0.33,2.36,MLB,2021-04-02,0.0
-0,Wizards,0.17,3.35,NBA,2021-04-03
-1,Pistons,0.45,2.24,NBA,2021-04-03
-2,Magic,0.04,11.4,NBA,2021-04-03
-3,Kings,0.2,3.45,NBA,2021-04-03
-0,Chelsea,0.77,1.24,EPL,2021-04-03
-1,Sheffield Utd,0.06,6.0,EPL,2021-04-03
-2,Leicester,0.09,5.9,EPL,2021-04-03
-0,Eintracht,0.1,4.2,GPL,2021-04-03
-0,Lille,0.07,5.5,FL1,2021-04-03
-0,Rizespor,0.22,2.85,TSL,2021-04-03
-0,Spezia,0.04,7.0,ISA,2021-04-03
-1,Cagliari,0.2,2.6,ISA,2021-04-03
-2,Sassuolo,0.08,4.8,ISA,2021-04-03
-0,Draw Real Madrid v Eibar,0.06,5.3,LLA,2021-04-03
-1,Osasuna,0.2,2.65,LLA,2021-04-03
-0,VVV-Venlo,0.2,3.5,NPL,2021-04-03
-0,Logroñés,0.15,3.8,LLT,2021-04-03
-1,Castellón,0.28,4.1,LLT,2021-04-03
-0,houston,0.2,2.8,NCAA,2021-04-03
-1,ucla,0.07,8.5,NCAA,2021-04-03
-0,Rays,0.38,1.85,MLB,2021-04-03
+0.0,Chelsea,0.77,1.24,EPL,2021-04-03,0.0
+1.0,Castellón,0.28,4.1,LLT,2021-04-03,1.0
+0.0,Rizespor,0.22,2.85,TSL,2021-04-03,0.0
+0,Bulls,0.3,2.2,NBA,2021-04-04
+1,Lakers,0.16,5.8,NBA,2021-04-04
+2,76ers,0.57,1.68,NBA,2021-04-04
+3,Hawks,0.56,2.08,NBA,2021-04-04
+4,Rockets,0.31,2.8,NBA,2021-04-04
+0,Burnley,0.09,4.0,EPL,2021-04-04
+1,Newcastle,0.06,5.4,EPL,2021-04-04
+0,VfB Stuttgart,0.3,2.05,GPL,2021-04-04
+0,Reims,0.14,3.8,FL1,2021-04-04
+1,Nantes,0.24,2.45,FL1,2021-04-04
+2,Nîmes,0.2,3.2,FL1,2021-04-04
+3,Draw Marseille v Dijon FCO,0.12,4.1,FL1,2021-04-04
+4,Dijon FCO,0.12,6.5,FL1,2021-04-04
+0,Konyaspor,0.15,3.3,TSL,2021-04-04
+1,Ankaragücü,0.24,2.35,TSL,2021-04-04
+2,Y. Malatyaspor,0.07,4.7,TSL,2021-04-04
+3,Beşiktaş,0.42,1.77,TSL,2021-04-04
+0,Alavés,0.19,3.0,LLA,2021-04-04
+1,Elche,0.11,4.8,LLA,2021-04-04
+2,Cádiz,0.17,3.2,LLA,2021-04-04
+0,Draw Feyenoord v Fortuna Sittard,0.07,4.5,NPL,2021-04-04
+1,ADO Den Haag,0.08,9.0,NPL,2021-04-04
+2,Draw ADO Den Haag v Utrecht,0.1,5.8,NPL,2021-04-04
+0,Lugo,0.18,2.75,LLT,2021-04-04
+1,Sabadell,0.06,5.8,LLT,2021-04-04
+2,Mallorca,0.23,2.5,LLT,2021-04-04
+0,Diamondbacks,0.17,2.94,MLB,2021-04-04
