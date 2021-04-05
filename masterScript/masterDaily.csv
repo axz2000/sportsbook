@@ -48,7 +48,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,VVV-Venlo,0.2,3.2,NPL,2021-03-14,0.0
 1.0,PEC Zwolle,0.03,10.5,NPL,2021-03-14,0.0
 0.0,Moreirense,0.17,2.9,PPL,2021-03-14,0.0
-0.0,Ankaragücü,0.18,2.9,TSL,2021-03-14,1.0
 0.0,AGF Aarhus,0.37,1.83,DSL,2021-03-15,0.0
 0.0,Necaxa,0.06,5.3,MLM,2021-03-15,0.0
 0.0,Wizards,0.07,4.6,NBA,2021-03-15,0.0
@@ -56,7 +55,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Famalicão,0.08,5.4,PPL,2021-03-15,0.0
 3.0,Bristol Rovers,0.09,4.1,ELO,2021-03-16,0.0
 0.0,Real Madrid,0.29,2.1,UCL,2021-03-16,1.0
-1.0,76ers,0.24,3.15,NBA,2021-03-17,0.0
 0.0,Chelsea,0.31,2.3,UCL,2021-03-17,1.0
 0.0,Dinamo Zagreb,0.1,3.9,EUL,2021-03-18,1.0
 1.0,Draw Arsenal v Olympiacos,0.1,4.9,EUL,2021-03-18,0.0
@@ -117,7 +115,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 2.0,Knicks,0.48,1.75,NBA,2021-03-23,1.0
 3.0,Warriors,0.35,2.26,NBA,2021-03-23,0.0
 1.0,Bucks,0.44,1.65,NBA,2021-03-24,1.0
-3.0,Rockets,0.34,2.3,NBA,2021-03-24,0.0
 8.0,Jazz,0.71,1.4,NBA,2021-03-24,1.0
 0.0,Pistons,0.15,3.0,NBA,2021-03-26,0.0
 1.0,Raptors,0.33,2.48,NBA,2021-03-26,0.0
@@ -143,30 +140,21 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Chelsea,0.77,1.24,EPL,2021-04-03,0.0
 1.0,Castellón,0.28,4.1,LLT,2021-04-03,1.0
 0.0,Rizespor,0.22,2.85,TSL,2021-04-03,0.0
-0,Bulls,0.3,2.2,NBA,2021-04-04
-1,Lakers,0.16,5.8,NBA,2021-04-04
-2,76ers,0.57,1.68,NBA,2021-04-04
-3,Hawks,0.56,2.08,NBA,2021-04-04
-4,Rockets,0.31,2.8,NBA,2021-04-04
-0,Burnley,0.09,4.0,EPL,2021-04-04
-1,Newcastle,0.06,5.4,EPL,2021-04-04
-0,VfB Stuttgart,0.3,2.05,GPL,2021-04-04
-0,Reims,0.14,3.8,FL1,2021-04-04
-1,Nantes,0.24,2.45,FL1,2021-04-04
-2,Nîmes,0.2,3.2,FL1,2021-04-04
-3,Draw Marseille v Dijon FCO,0.12,4.1,FL1,2021-04-04
-4,Dijon FCO,0.12,6.5,FL1,2021-04-04
-0,Konyaspor,0.15,3.3,TSL,2021-04-04
-1,Ankaragücü,0.24,2.35,TSL,2021-04-04
-2,Y. Malatyaspor,0.07,4.7,TSL,2021-04-04
-3,Beşiktaş,0.42,1.77,TSL,2021-04-04
-0,Alavés,0.19,3.0,LLA,2021-04-04
-1,Elche,0.11,4.8,LLA,2021-04-04
-2,Cádiz,0.17,3.2,LLA,2021-04-04
-0,Draw Feyenoord v Fortuna Sittard,0.07,4.5,NPL,2021-04-04
-1,ADO Den Haag,0.08,9.0,NPL,2021-04-04
-2,Draw ADO Den Haag v Utrecht,0.1,5.8,NPL,2021-04-04
-0,Lugo,0.18,2.75,LLT,2021-04-04
-1,Sabadell,0.06,5.8,LLT,2021-04-04
-2,Mallorca,0.23,2.5,LLT,2021-04-04
-0,Diamondbacks,0.17,2.94,MLB,2021-04-04
+1.0,Elche,0.11,4.8,LLA,2021-04-04,0.0
+2.0,Mallorca,0.23,2.5,LLT,2021-04-04,0.0
+2.0,76ers,0.57,1.68,NBA,2021-04-04,0.0
+4.0,Rockets,0.31,2.8,NBA,2021-04-04,0.0
+1.0,Ankaragücü,0.24,2.35,TSL,2021-04-04,1.0
+0,gonzaga,1.0,1.5,NCAA,2021-04-05
+1,baylor,1.0,2.68,NCAA,2021-04-05
+0,Timberwolves,0.28,2.1,NBA,2021-04-05
+1,Mavericks,0.28,2.98,NBA,2021-04-05
+2,Raptors,0.63,1.48,NBA,2021-04-05
+0,gonzaga,1.0,1.5,NCAA,2021-04-05
+1,baylor,1.0,2.68,NCAA,2021-04-05
+0,Wigan,0.11,4.3,ELO,2021-04-05
+1,Hull City,0.54,1.53,ELO,2021-04-05
+2,Doncaster,0.25,2.6,ELO,2021-04-05
+3,Rochdale,0.1,3.7,ELO,2021-04-05
+4,Swindon Town,0.13,3.6,ELO,2021-04-05
+0,West Ham,0.21,2.65,EPL,2021-04-05
