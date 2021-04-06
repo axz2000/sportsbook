@@ -1,9 +1,8 @@
-import ELO, EPL, FL1, GPL, TSL, ISA, LLA, NBA, NPL, PPL, NFL, BPL, ECL, MLM, UCL, DSL, EUL, AAL, FDA, LLT, MMA, NCAA, NHL, MLB
+import ELO, EPL, FL1, GPL, TSL, ISA, LLA, NBA, NPL, PPL, NFL, BPL, ECL, MLM, UCL, DSL, EUL, AAL, FDA, LLT, MMA, NHL, MLB
 
 
 def getPicks():
-	NBA.run()
-	NCAA.run()
+	#NBA.run()
     #NHL.run()
     
     #MLB.run()
