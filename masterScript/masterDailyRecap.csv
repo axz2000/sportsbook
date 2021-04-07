@@ -1,10 +1,2 @@
 ,Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),League,Date,Success,Allocation Dollars,Allocation Percentage
-140,0.0,Wigan,0.11,4.3,ELO,2021-04-05,0.0,0.301,0.001
-141,2.0,Doncaster,0.25,2.6,ELO,2021-04-05,0.0,1.554,0.007
-142,3.0,Rochdale,0.1,3.7,ELO,2021-04-05,0.0,0.249,0.001
-143,0.0,West Ham,0.21,2.65,EPL,2021-04-05,1.0,1.096,0.005
-144,1.0,Mariners,0.3,2.08,MLB,2021-04-05,0.0,2.237,0.01
-145,2.0,Phillies,0.18,2.94,MLB,2021-04-05,0.0,0.805,0.003
-146,3.0,Rangers,0.27,2.42,MLB,2021-04-05,0.0,1.812,0.008
-147,1.0,Mavericks,0.28,2.98,NBA,2021-04-05,1.0,1.949,0.008
-148,2.0,Raptors,0.63,1.48,NBA,2021-04-05,1.0,9.866,0.043
+148,2.0,Celtics,0.41,1.98,NBA,2021-04-06,0.0,39.523,0.168
