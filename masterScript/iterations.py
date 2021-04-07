@@ -64,6 +64,7 @@ def gainsLosses(allocation,successes, df, portfolio):
   now = np.sum(np.dot([allocation[i]*payouts[i] for i in range(len(payouts))], successes))
   return [portfolio+(now-prev), prev, now]
 
+#rewrite this
 		
 def dailyReturn(inputs):
 	if (inputs == 'yes'):
