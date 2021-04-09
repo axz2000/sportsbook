@@ -86,7 +86,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 1.0,RKC,0.16,3.0,NPL,2021-03-20,1.0
 0.0,Tondela,0.08,5.2,PPL,2021-03-20,0.0
 1.0,Portimonense,0.07,7.5,PPL,2021-03-20,0.0
-0.0,GFK,0.14,3.1,TSL,2021-03-20,0.0
 0.0,W. Phoenix,0.27,2.5,AAL,2021-03-21,0.0
 0.0,Midtjylland,0.59,1.42,DSL,2021-03-21,1.0
 1.0,Nordsjælland,0.3,2.2,DSL,2021-03-21,1.0
@@ -150,11 +149,15 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 2.0,Pelicans,0.07,5.2,NBA,2021-04-07,0.0
 1.0,Beşiktaş,0.48,1.74,TSL,2021-04-07,1.0
 0.0,Bayern Munich,0.36,1.95,UCL,2021-04-07,0.0
-0,Lakers,0.17,3.7,NBA,2021-04-08
-1,Thunder,0.28,2.24,NBA,2021-04-08
-0,Diamondbacks,0.31,2.1,MLB,2021-04-08
-0,GFK,0.28,2.75,TSL,2021-04-08
-1,Y. Malatyaspor,0.06,4.9,TSL,2021-04-08
-0,Dinamo Zagreb,0.11,4.2,EUL,2021-04-08
-1,Slavia Prague,0.04,6.5,EUL,2021-04-08
-2,Ajax,0.31,2.0,EUL,2021-04-08
+2.0,Ajax,0.31,2.0,EUL,2021-04-08,0.0
+0.0,GFK,0.28,2.75,TSL,2021-04-08,1.0
+0,Magic,0.21,2.6,NBA,2021-04-09
+1,Hawks,0.62,1.77,NBA,2021-04-09
+2,Pelicans,0.23,3.6,NBA,2021-04-09
+3,Nuggets,0.76,1.34,NBA,2021-04-09
+0,Nationals,0.13,3.5,MLB,2021-04-09
+1,Diamondbacks,0.27,2.2,MLB,2021-04-09
+0,Fulham,0.2,2.5,EPL,2021-04-09
+0,Arminia,0.17,3.0,GPL,2021-04-09
+0,Huesca,0.3,2.05,LLA,2021-04-09
+0,Sporting Gijón,0.12,3.4,LLT,2021-04-09
