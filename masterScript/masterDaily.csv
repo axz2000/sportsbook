@@ -47,7 +47,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,AGF Aarhus,0.37,1.83,DSL,2021-03-15,0.0
 0.0,Necaxa,0.06,5.3,MLM,2021-03-15,0.0
 0.0,Wizards,0.07,4.6,NBA,2021-03-15,0.0
-1.0,Hornets,0.43,1.7,NBA,2021-03-15,1.0
 0.0,Famalicão,0.08,5.4,PPL,2021-03-15,0.0
 3.0,Bristol Rovers,0.09,4.1,ELO,2021-03-16,0.0
 0.0,Real Madrid,0.29,2.1,UCL,2021-03-16,1.0
@@ -103,7 +102,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,iowa,0.58,1.45,NCAA,2021-03-22,0.0
 1.0,kansas,0.37,2.0,NCAA,2021-03-22,0.0
 3.0,ucla,0.59,1.5,NCAA,2021-03-22,1.0
-2.0,Knicks,0.48,1.75,NBA,2021-03-23,1.0
 3.0,Warriors,0.35,2.26,NBA,2021-03-23,0.0
 1.0,Bucks,0.44,1.65,NBA,2021-03-24,1.0
 8.0,Jazz,0.71,1.4,NBA,2021-03-24,1.0
@@ -118,9 +116,7 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Pacers,0.33,2.08,NBA,2021-03-31,0.0
 5.0,Suns,0.66,1.4,NBA,2021-03-31,1.0
 6.0,Lakers,0.27,4.1,NBA,2021-03-31,0.0
-0.0,Espanyol,0.48,1.77,LLT,2021-04-01,1.0
 2.0,Heat,0.47,1.77,NBA,2021-04-01,1.0
-4.0,Clippers,0.4,2.02,NBA,2021-04-01,0.0
 0.0,Cardiff City,0.3,2.2,ECL,2021-04-02,0.0
 0.0,Almería,0.31,2.3,LLT,2021-04-02,0.0
 0.0,Astros,0.33,2.36,MLB,2021-04-02,0.0
@@ -137,7 +133,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 3.0,Rochdale,0.1,3.7,ELO,2021-04-05,0.0
 0.0,West Ham,0.21,2.65,EPL,2021-04-05,1.0
 2.0,Phillies,0.18,2.94,MLB,2021-04-05,0.0
-3.0,Rangers,0.27,2.42,MLB,2021-04-05,0.0
 1.0,Mavericks,0.28,2.98,NBA,2021-04-05,1.0
 2.0,Raptors,0.63,1.48,NBA,2021-04-05,1.0
 2.0,Celtics,0.41,1.98,NBA,2021-04-06,0.0
@@ -153,21 +148,20 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Sunderland,0.52,1.87,ELO,2021-04-10,0.0
 0.0,Liverpool,0.53,1.5,EPL,2021-04-10,1.0
 3.0,Bayern Munich,0.65,1.48,GPL,2021-04-10,0.0
-0,Hornets,0.29,2.18,NBA,2021-04-11
-1,Magic,0.22,4.0,NBA,2021-04-11
-2,Cavaliers,0.16,3.4,NBA,2021-04-11
-3,Timberwolves,0.35,2.62,NBA,2021-04-11
-4,Grizzlies,0.41,1.83,NBA,2021-04-11
-5,Mavericks,0.64,1.39,NBA,2021-04-11
-6,Knicks,0.37,1.89,NBA,2021-04-11
-7,Clippers,0.83,1.18,NBA,2021-04-11
-0,Rays,0.25,2.38,MLB,2021-04-11
-1,Rangers,0.23,2.52,MLB,2021-04-11
-0,West Ham,0.23,3.2,EPL,2021-04-11
-1,Sheffield Utd,0.06,6.0,EPL,2021-04-11
-0,1. FC Köln,0.16,3.0,GPL,2021-04-11
-0,Nantes,0.09,4.6,FL1,2021-04-11
-0,Kayserispor,0.24,2.6,TSL,2021-04-11
-1,Beşiktaş,0.53,1.77,TSL,2021-04-11
-0,VVV-Venlo,0.03,11.0,NPL,2021-04-11
-0,Espanyol,0.46,1.71,LLT,2021-04-11
+0.0,Espanyol,0.46,1.71,LLT,2021-04-11,1.0
+1.0,Rangers,0.23,2.52,MLB,2021-04-11,0.0
+0.0,Hornets,0.29,2.18,NBA,2021-04-11,0.0
+6.0,Knicks,0.37,1.89,NBA,2021-04-11,1.0
+7.0,Clippers,0.83,1.18,NBA,2021-04-11,1.0
+0,Lakers,0.41,2.22,NBA,2021-04-12
+1,Mavericks,0.27,2.16,NBA,2021-04-12
+2,Timberwolves,0.4,4.3,NBA,2021-04-12
+3,Magic,0.27,3.1,NBA,2021-04-12
+4,Grizzlies,0.49,1.72,NBA,2021-04-12
+0,Indians,0.33,2.22,MLB,2021-04-12
+1,Nationals,0.3,2.08,MLB,2021-04-12
+0,West Brom,0.13,3.5,EPL,2021-04-12
+1,Brighton,0.26,2.25,EPL,2021-04-12
+0,Hoffenheim,0.19,2.9,GPL,2021-04-12
+0,Celta Vigo,0.12,3.7,LLA,2021-04-12
+0,Castellón,0.1,4.0,LLT,2021-04-12
