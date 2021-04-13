@@ -115,7 +115,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Gillingham,0.31,2.0,ELO,2021-03-31,1.0
 0.0,Pacers,0.33,2.08,NBA,2021-03-31,0.0
 5.0,Suns,0.66,1.4,NBA,2021-03-31,1.0
-6.0,Lakers,0.27,4.1,NBA,2021-03-31,0.0
 2.0,Heat,0.47,1.77,NBA,2021-04-01,1.0
 0.0,Cardiff City,0.3,2.2,ECL,2021-04-02,0.0
 0.0,Almería,0.31,2.3,LLT,2021-04-02,0.0
@@ -143,7 +142,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Bayern Munich,0.36,1.95,UCL,2021-04-07,0.0
 2.0,Ajax,0.31,2.0,EUL,2021-04-08,0.0
 0.0,GFK,0.28,2.75,TSL,2021-04-08,1.0
-0.0,Magic,0.21,2.6,NBA,2021-04-09,0.0
 1.0,Hawks,0.62,1.77,NBA,2021-04-09,1.0
 0.0,Sunderland,0.52,1.87,ELO,2021-04-10,0.0
 0.0,Liverpool,0.53,1.5,EPL,2021-04-10,1.0
@@ -153,20 +151,16 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Hornets,0.29,2.18,NBA,2021-04-11,0.0
 6.0,Knicks,0.37,1.89,NBA,2021-04-11,1.0
 7.0,Clippers,0.83,1.18,NBA,2021-04-11,1.0
-0,Lakers,0.41,2.22,NBA,2021-04-12
-1,Mavericks,0.27,2.16,NBA,2021-04-12
-2,Timberwolves,0.4,4.3,NBA,2021-04-12
-3,Magic,0.27,3.1,NBA,2021-04-12
-4,Grizzlies,0.49,1.72,NBA,2021-04-12
-0,Indians,0.33,2.22,MLB,2021-04-12
-1,Nationals,0.3,2.08,MLB,2021-04-12
-0,West Brom,0.13,3.5,EPL,2021-04-12
-1,Brighton,0.26,2.25,EPL,2021-04-12
-0,Hoffenheim,0.19,2.9,GPL,2021-04-12
-0,Celta Vigo,0.12,3.7,LLA,2021-04-12
-0,Castellón,0.1,4.0,LLT,2021-04-12
-0,columbus blue jackets,0.29,2.18,NHL,2021-04-12
-1,montreal canadiens,0.3,2.32,NHL,2021-04-12
-2,ottawa senators,0.2,2.66,NHL,2021-04-12
-3,arizona coyotes,0.11,4.15,NHL,2021-04-12
-4,los angeles kings,0.21,2.54,NHL,2021-04-12
+0.0,Lakers,0.41,2.22,NBA,2021-04-12,0.0
+3.0,Magic,0.27,3.1,NBA,2021-04-12,0.0
+1.0,montreal canadiens,0.3,2.32,NHL,2021-04-12,1.0
+4.0,los angeles kings,0.21,2.54,NHL,2021-04-12,0.0
+0,Pacers,0.29,2.1,NBA,2021-04-13
+1,Hornets,0.37,1.89,NBA,2021-04-13
+2,Suns,0.51,1.62,NBA,2021-04-13
+0,Diamondbacks,0.35,2.08,MLB,2021-04-13
+0,Blackpool,0.54,2.55,ELO,2021-04-13
+1,MK Dons,0.15,5.5,ELO,2021-04-13
+0,Sheffield Wed.,0.17,2.9,ECL,2021-04-13
+1,Rotherham,0.24,2.6,ECL,2021-04-13
+0,Chelsea,0.47,1.83,UCL,2021-04-13

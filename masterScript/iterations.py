@@ -22,7 +22,7 @@ import subprocess
 warnings.filterwarnings("ignore") 
 
 def pushing():
-	subprocess.Popen("git add --all; git commit -m 'Daily Update'; git push", shell = True)
+	subprocess.Popen("git add --all; git commit -m 'Daily Update'; git push;", shell = True)
 	return 'Done'
 	
 def matching(arrayStrOne,arrayStrTwo):
