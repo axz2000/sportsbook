@@ -114,7 +114,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Nuggets,0.62,1.51,NBA,2021-03-30,1.0
 0.0,Gillingham,0.31,2.0,ELO,2021-03-31,1.0
 0.0,Pacers,0.33,2.08,NBA,2021-03-31,0.0
-5.0,Suns,0.66,1.4,NBA,2021-03-31,1.0
 2.0,Heat,0.47,1.77,NBA,2021-04-01,1.0
 0.0,Cardiff City,0.3,2.2,ECL,2021-04-02,0.0
 0.0,Almería,0.31,2.3,LLT,2021-04-02,0.0
@@ -148,19 +147,21 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 3.0,Bayern Munich,0.65,1.48,GPL,2021-04-10,0.0
 0.0,Espanyol,0.46,1.71,LLT,2021-04-11,1.0
 1.0,Rangers,0.23,2.52,MLB,2021-04-11,0.0
-0.0,Hornets,0.29,2.18,NBA,2021-04-11,0.0
 6.0,Knicks,0.37,1.89,NBA,2021-04-11,1.0
 7.0,Clippers,0.83,1.18,NBA,2021-04-11,1.0
 0.0,Lakers,0.41,2.22,NBA,2021-04-12,0.0
 3.0,Magic,0.27,3.1,NBA,2021-04-12,0.0
 1.0,montreal canadiens,0.3,2.32,NHL,2021-04-12,1.0
 4.0,los angeles kings,0.21,2.54,NHL,2021-04-12,0.0
-0,Pacers,0.29,2.1,NBA,2021-04-13
-1,Hornets,0.37,1.89,NBA,2021-04-13
-2,Suns,0.51,1.62,NBA,2021-04-13
-0,Diamondbacks,0.35,2.08,MLB,2021-04-13
-0,Blackpool,0.54,2.55,ELO,2021-04-13
-1,MK Dons,0.15,5.5,ELO,2021-04-13
-0,Sheffield Wed.,0.17,2.9,ECL,2021-04-13
-1,Rotherham,0.24,2.6,ECL,2021-04-13
-0,Chelsea,0.47,1.83,UCL,2021-04-13
+1.0,Hornets,0.37,1.89,NBA,2021-04-13,0.0
+2.0,Suns,0.51,1.62,NBA,2021-04-13,1.0
+0,Timberwolves,0.13,4.2,NBA,2021-04-14
+1,76ers,0.59,1.42,NBA,2021-04-14
+2,Pistons,0.22,5.3,NBA,2021-04-14
+3,Pelicans,0.43,1.72,NBA,2021-04-14
+4,Magic,0.08,4.5,NBA,2021-04-14
+5,Thunder,0.12,5.8,NBA,2021-04-14
+6,Rockets,0.31,2.98,NBA,2021-04-14
+7,Nuggets,0.66,1.57,NBA,2021-04-14
+8,Kings,0.45,2.02,NBA,2021-04-14
+0,Dortmund,0.08,5.0,UCL,2021-04-14
