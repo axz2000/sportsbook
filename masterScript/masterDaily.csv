@@ -108,7 +108,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Pistons,0.15,3.0,NBA,2021-03-26,0.0
 0.0,Ponferradina,0.12,4.4,LLT,2021-03-27,0.0
 1.0,Spurs,0.47,1.68,NBA,2021-03-27,1.0
-3.0,Kings,0.7,1.33,NBA,2021-03-27,1.0
 0.0,creighton,0.1,8.0,NCAA,2021-03-28,0.0
 1.0,Thunder,0.1,4.85,NBA,2021-03-29,0.0
 0.0,Nuggets,0.62,1.51,NBA,2021-03-30,1.0
@@ -123,7 +122,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Rizespor,0.22,2.85,TSL,2021-04-03,0.0
 1.0,Elche,0.11,4.8,LLA,2021-04-04,0.0
 2.0,Mallorca,0.23,2.5,LLT,2021-04-04,0.0
-2.0,76ers,0.57,1.68,NBA,2021-04-04,0.0
 4.0,Rockets,0.31,2.8,NBA,2021-04-04,0.0
 1.0,Ankaragücü,0.24,2.35,TSL,2021-04-04,1.0
 0.0,Wigan,0.11,4.3,ELO,2021-04-05,0.0
@@ -155,15 +153,13 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 4.0,los angeles kings,0.21,2.54,NHL,2021-04-12,0.0
 1.0,Hornets,0.37,1.89,NBA,2021-04-13,0.0
 2.0,Suns,0.51,1.62,NBA,2021-04-13,1.0
-0,Timberwolves,0.13,4.2,NBA,2021-04-14
-1,76ers,0.59,1.42,NBA,2021-04-14
-2,Pistons,0.22,5.3,NBA,2021-04-14
-3,Pelicans,0.43,1.72,NBA,2021-04-14
-4,Magic,0.08,4.5,NBA,2021-04-14
-5,Thunder,0.12,5.8,NBA,2021-04-14
-6,Rockets,0.31,2.98,NBA,2021-04-14
-7,Nuggets,0.66,1.57,NBA,2021-04-14
-8,Kings,0.45,2.02,NBA,2021-04-14
-0,Dortmund,0.08,5.0,UCL,2021-04-14
-0,ottawa senators,0.2,2.56,NHL,2021-04-14
-1,los angeles kings,0.19,2.84,NHL,2021-04-14
+1.0,76ers,0.59,1.42,NBA,2021-04-14,1.0
+8.0,Kings,0.45,2.02,NBA,2021-04-14,0.0
+0,Hawks,0.49,3.15,NBA,2021-04-15
+1,Cavaliers,0.23,3.75,NBA,2021-04-15
+2,Lakers,0.31,3.05,NBA,2021-04-15
+3,Suns,0.77,1.25,NBA,2021-04-15
+0,Rotherham,0.27,2.5,ECL,2021-04-15
+0,Man. United,0.56,1.45,EUL,2021-04-15
+1,Dinamo Zagreb,0.08,7.5,EUL,2021-04-15
+2,Slavia Prague,0.1,4.7,EUL,2021-04-15
