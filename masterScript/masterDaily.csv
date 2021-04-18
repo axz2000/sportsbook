@@ -117,7 +117,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Cardiff City,0.3,2.2,ECL,2021-04-02,0.0
 0.0,Almería,0.31,2.3,LLT,2021-04-02,0.0
 0.0,Chelsea,0.77,1.24,EPL,2021-04-03,0.0
-1.0,Castellón,0.28,4.1,LLT,2021-04-03,1.0
 0.0,Rizespor,0.22,2.85,TSL,2021-04-03,0.0
 1.0,Elche,0.11,4.8,LLA,2021-04-04,0.0
 2.0,Mallorca,0.23,2.5,LLT,2021-04-04,0.0
@@ -126,7 +125,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Wigan,0.11,4.3,ELO,2021-04-05,0.0
 2.0,Doncaster,0.25,2.6,ELO,2021-04-05,0.0
 3.0,Rochdale,0.1,3.7,ELO,2021-04-05,0.0
-0.0,West Ham,0.21,2.65,EPL,2021-04-05,1.0
 2.0,Phillies,0.18,2.94,MLB,2021-04-05,0.0
 2.0,Raptors,0.63,1.48,NBA,2021-04-05,1.0
 2.0,Celtics,0.41,1.98,NBA,2021-04-06,0.0
@@ -150,32 +148,32 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 1.0,montreal canadiens,0.3,2.32,NHL,2021-04-12,1.0
 4.0,los angeles kings,0.21,2.54,NHL,2021-04-12,0.0
 1.0,Hornets,0.37,1.89,NBA,2021-04-13,0.0
-2.0,Suns,0.51,1.62,NBA,2021-04-13,1.0
 8.0,Kings,0.45,2.02,NBA,2021-04-14,0.0
 0.0,Man. United,0.57,1.51,EUL,2021-04-15,1.0
 2.0,Astros,0.37,1.85,MLB,2021-04-16,0.0
 0.0,76ers,0.46,1.72,NBA,2021-04-16,1.0
-4.0,Bulls,0.28,2.48,NBA,2021-04-16,0.0
 6.0,Mavericks,0.62,1.49,NBA,2021-04-16,0.0
-0,Lakers,0.3,3.75,NBA,2021-04-17
-1,Bulls,0.41,1.79,NBA,2021-04-17
-2,Suns,0.75,1.26,NBA,2021-04-17
-0,Wigan,0.27,2.3,ELO,2021-04-17
-1,Lincoln City,0.26,2.2,ELO,2021-04-17
-2,Rochdale,0.21,2.6,ELO,2021-04-17
-3,Ipswich Town,0.09,4.1,ELO,2021-04-17
-4,Plymouth Argyle,0.12,3.6,ELO,2021-04-17
-5,Swindon Town,0.1,3.9,ELO,2021-04-17
-0,West Ham,0.28,2.15,EPL,2021-04-17
-1,Sheffield Utd,0.1,6.0,EPL,2021-04-17
-0,Schalke 04,0.09,5.1,GPL,2021-04-17
-1,1. FC Köln,0.08,5.2,GPL,2021-04-17
-0,Angers,0.16,3.9,FL1,2021-04-17
-0,Denizlispor,0.23,2.65,TSL,2021-04-17
-1,Y. Malatyaspor,0.15,3.1,TSL,2021-04-17
-0,Sassuolo,0.23,2.5,ISA,2021-04-17
-0,QPR,0.13,3.8,ECL,2021-04-17
-1,Draw Swansea City v Wycombe,0.1,3.9,ECL,2021-04-17
-2,Wycombe,0.07,7.5,ECL,2021-04-17
-0,Castellón,0.1,4.4,LLT,2021-04-17
-1,Sporting Gijón,0.25,2.3,LLT,2021-04-17
+1.0,Lincoln City,0.26,2.2,ELO,2021-04-17,1.0
+0.0,West Ham,0.28,2.15,EPL,2021-04-17,0.0
+1.0,Sheffield Utd,0.1,6.0,EPL,2021-04-17,0.0
+0.0,Sassuolo,0.23,2.5,ISA,2021-04-17,1.0
+0.0,Castellón,0.1,4.4,LLT,2021-04-17,1.0
+1.0,Bulls,0.41,1.79,NBA,2021-04-17,1.0
+2.0,Suns,0.75,1.26,NBA,2021-04-17,0.0
+0,Heat,0.36,2.98,NBA,2021-04-18
+1,Magic,0.35,1.98,NBA,2021-04-18
+2,Hornets,0.2,2.76,NBA,2021-04-18
+0,Athletics,0.43,1.7,MLB,2021-04-18
+1,Cubs,0.34,1.89,MLB,2021-04-18
+0,Dijon FCO,0.15,4.4,FL1,2021-04-18
+1,Nîmes,0.15,3.5,FL1,2021-04-18
+2,Nantes,0.06,6.0,FL1,2021-04-18
+0,GFK,0.31,2.3,TSL,2021-04-18
+0,Napoli,0.18,2.95,ISA,2021-04-18
+0,Real Sociedad,0.23,2.85,LLA,2021-04-18
+1,Draw Atlético Madrid v Eibar,0.08,4.2,LLA,2021-04-18
+2,Eibar,0.03,8.0,LLA,2021-04-18
+3,Cádiz,0.12,3.8,LLA,2021-04-18
+4,Levante,0.1,3.9,LLA,2021-04-18
+0,Rotherham,0.27,2.9,ECL,2021-04-18
+0,Cartagena,0.17,2.75,LLT,2021-04-18
