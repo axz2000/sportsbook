@@ -113,7 +113,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Nuggets,0.62,1.51,NBA,2021-03-30,1.0
 0.0,Gillingham,0.31,2.0,ELO,2021-03-31,1.0
 0.0,Pacers,0.33,2.08,NBA,2021-03-31,0.0
-2.0,Heat,0.47,1.77,NBA,2021-04-01,1.0
 0.0,Cardiff City,0.3,2.2,ECL,2021-04-02,0.0
 0.0,Almería,0.31,2.3,LLT,2021-04-02,0.0
 0.0,Chelsea,0.77,1.24,EPL,2021-04-03,0.0
@@ -134,7 +133,6 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 1.0,Beşiktaş,0.48,1.74,TSL,2021-04-07,1.0
 0.0,Bayern Munich,0.36,1.95,UCL,2021-04-07,0.0
 2.0,Ajax,0.31,2.0,EUL,2021-04-08,0.0
-0.0,GFK,0.28,2.75,TSL,2021-04-08,1.0
 1.0,Hawks,0.62,1.77,NBA,2021-04-09,1.0
 0.0,Sunderland,0.52,1.87,ELO,2021-04-10,0.0
 0.0,Liverpool,0.53,1.5,EPL,2021-04-10,1.0
@@ -160,20 +158,16 @@ Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),Leag
 0.0,Castellón,0.1,4.4,LLT,2021-04-17,1.0
 1.0,Bulls,0.41,1.79,NBA,2021-04-17,1.0
 2.0,Suns,0.75,1.26,NBA,2021-04-17,0.0
-0,Heat,0.36,2.98,NBA,2021-04-18
-1,Magic,0.35,1.98,NBA,2021-04-18
-2,Hornets,0.2,2.76,NBA,2021-04-18
-0,Athletics,0.43,1.7,MLB,2021-04-18
-1,Cubs,0.34,1.89,MLB,2021-04-18
-0,Dijon FCO,0.15,4.4,FL1,2021-04-18
-1,Nîmes,0.15,3.5,FL1,2021-04-18
-2,Nantes,0.06,6.0,FL1,2021-04-18
-0,GFK,0.31,2.3,TSL,2021-04-18
-0,Napoli,0.18,2.95,ISA,2021-04-18
-0,Real Sociedad,0.23,2.85,LLA,2021-04-18
-1,Draw Atlético Madrid v Eibar,0.08,4.2,LLA,2021-04-18
-2,Eibar,0.03,8.0,LLA,2021-04-18
-3,Cádiz,0.12,3.8,LLA,2021-04-18
-4,Levante,0.1,3.9,LLA,2021-04-18
-0,Rotherham,0.27,2.9,ECL,2021-04-18
-0,Cartagena,0.17,2.75,LLT,2021-04-18
+0.0,Real Sociedad,0.23,2.85,LLA,2021-04-18,0.0
+1.0,Draw Atlético Madrid v Eibar,0.08,4.2,LLA,2021-04-18,0.0
+0.0,Athletics,0.43,1.7,MLB,2021-04-18,1.0
+1.0,Cubs,0.34,1.89,MLB,2021-04-18,0.0
+0.0,Heat,0.36,2.98,NBA,2021-04-18,1.0
+0.0,GFK,0.31,2.3,TSL,2021-04-18,0.0
+0,Pistons,0.42,2.18,NBA,2021-04-19
+1,Celtics,0.67,1.4,NBA,2021-04-19
+2,Pacers,0.38,1.98,NBA,2021-04-19
+3,Lakers,0.23,2.9,NBA,2021-04-19
+0,Mariners,0.19,2.68,MLB,2021-04-19
+0,Liverpool,0.44,1.67,EPL,2021-04-19
+0,Espanyol,0.24,2.3,LLT,2021-04-19
