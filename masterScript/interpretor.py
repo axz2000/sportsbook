@@ -11,7 +11,7 @@ def dailyReturn():
 	else:
 		iterations.run(inputs)
 		decisiontree.run()
-		#simultaneousKelly.run()
+		simultaneousKelly.run()
 		pushing()
 		return 'Update finished and classification completed'
 
