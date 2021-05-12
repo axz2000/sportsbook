@@ -1,6 +1,7 @@
 ,Unnamed: 0,Bet State Chosen,Kelly Criterion Suggestion,Payouts (per Dollar),League,Date,Success,Allocation Dollars,Allocation Percentage
-300,0.0,Pacers,0.75,1.25,NBA,2021-05-10,,12.54392,0.08141
-301,1.0,Pelicans,0.1,4.6,NBA,2021-05-10,,0.223,0.00145
-302,2.0,Spurs,0.18,3.4,NBA,2021-05-10,,0.72253,0.00469
-303,0.0,Rangers,0.22,2.38,MLB,2021-05-10,,1.07933,0.00701
-304,0.0,los angeles kings,0.27,2.22,NHL,2021-05-10,,1.62569,0.01055
+305,0.0,Cavaliers,0.17,5.8,NBA,2021-05-12,,0.48837,0.00317
+306,1.0,Nets,0.49,1.56,NBA,2021-05-12,,4.05734,0.02633
+307,2.0,Pelicans,0.17,4.5,NBA,2021-05-12,,0.48837,0.00317
+308,3.0,Jazz,0.52,1.65,NBA,2021-05-12,,4.56936,0.02966
+309,0.0,Schalke 04,0.09,7.0,GPL,2021-05-12,,0.13688,0.00089
+310,1.0,Draw Schalke 04 v Hertha BSC,0.11,4.8,GPL,2021-05-12,,0.20447,0.00133
