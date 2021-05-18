@@ -15,6 +15,7 @@ from fuzzywuzzy import process
 import os
 import tabulate
 import time
+from datetime import datetime
 from selenium.webdriver.common.by import By
 
 try:
@@ -183,6 +184,7 @@ def runChrome(url):
     html = browser.page_source
     time.sleep(2)
     
+    
     # ~~~~~~~~~~~~~~~ functions  ~~~~~~~~~~~~~~~~~~~~~~
     teams = get_team_name(browser)
     probability = get_team_probability(browser)
@@ -192,7 +194,7 @@ def runChrome(url):
     return [teams, probability]
     
 def fetchName():
-  url = "http://moneypuck.com/index.html"
+  url = "http://moneypuck.com/index.html?date=" + str(datetime.today().strftime('%Y-%m-%d'))
   page_content = runChrome(url)
   nhl = pd.DataFrame({'ID':page_content[0], 'Probabilities':page_content[1]})
   return nhl
