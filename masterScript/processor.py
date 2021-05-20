@@ -7,12 +7,10 @@ def getPicks():
 		NBA.run()
 	except:
 		print('No NBA yet')
-	
 	try:
 		MLB.run()
 	except:
 		print('No MLB yet')
-	
 	try:
 		NHL.run()
 	except:
