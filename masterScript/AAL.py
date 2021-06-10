@@ -158,29 +158,23 @@ def fetch():
   	counter += 1
   	
   fixed = pd.DataFrame({'sought':soughtGameArray, 'linked':counterArray}).sort_values(['sought'])
-  #print(fixed)
-  linker = []
   
+  linker = []
   for i in fixed.linked.values:
   	linker += [i]
   	linker += [i]
   	linker += [i]
-  #print(len(probabilities['gameNum']), len(linker))
+
   probabilities['gameNum'] = linker
-  #print(probabilities)
-  
   array ,counter = [], 0
   for i in probabilities.gameNum.values:
-  	#print(counter)
   	if counter%3 == 0:
   		indexed = probabilities.gameNum.values[counter]
-  		#print(df.HomeTeamandOdds.values[indexed][-1])
   		valued = df.HomeTeamandOdds.values[i][-1]
   		array+= [valued]
   		counter = counter+1
   	elif counter%3 == 1:
   		indexed = probabilities.gameNum.values[counter]
-  		print(df.HomeTeamandOdds.values[indexed][-1])
   		valued = df.DrawOdds.values[i][-1]
   		array+= [valued]
   		counter = counter+1
@@ -192,19 +186,14 @@ def fetch():
   EV = []
   for i in range(len(array)):
   	EV += [probabilities.Probabilities.values[i]*array[i]]
-  #print(array, probabilities.ID.values,probabilities )
   Result = pd.DataFrame({'Team':probabilities.ID.values, 'Probability': probabilities.Probabilities.values, 'Odds':array, 'EV':EV})
-  #print(Result)
-  Bet = Result[Result.EV >1.07]
+  Bet = Result[Result.EV >1.00]
   kelly = [Kelly(Bet.Odds.values[i], Bet.Probability.values[i]) for i in range(len(Bet.Probability.values))]
-  #print(len(Bet.Team.values), len(kelly),  len(Bet.Odds.values))
   Betting = pd.DataFrame({'Bet State Chosen':Bet.Team.values, 'Kelly Criterion Suggestion': kelly, 'Payouts (per Dollar)':Bet.Odds.values})
-  #Betting.columns = ['Bet State Chosen', 'Kelly Criterion Suggestion', 'Probability Spread','Payouts (per Dollar)']
   return Betting
   
 def fetchName(): 
   url = 'https://projects.fivethirtyeight.com/soccer-predictions/a-league/'
-  #print('hello')
   page_response = requests.get(url, timeout=10, headers = {
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
     'accept-encoding': 'gzip, deflate, br',
@@ -217,22 +206,17 @@ def fetchName():
   Today = navigate.findAll('tbody')
   teams, prob = [], []
   for i in Today:
-  	#print(i.find('div').text)
   	if (i.find('div').text == str(date.today().strftime("%-m/%-d"))): #this is to be changed
-  	  #(date.today()).strftime("%m/%d"))
   	  home = i.findAll('td', class_ = "team")[0]['data-str']
   	  away = i.findAll('td', class_ = "team")[1]['data-str']
   	  teams += [home, 'Draw ' + str(home)+ ' v ' +str(away),away]
   	  prob +=[float(j.text[:-1])/100 for j in i.findAll('td', class_="prob")]
-  #print(teams)
   indexed = []
   epl = pd.DataFrame({'ID':teams, 'Probabilities':prob})
   epi = epl.drop_duplicates()
-  print(epi)
   for i in range(int(len(epi)/3)):
   	indexed += [i]*3
   epi['gameNum'] = indexed
-  print(epi)
   return epi
 
 def oddstoPayout(odds,dollarsIn):
@@ -245,23 +229,6 @@ def oddstoPayout(odds,dollarsIn):
 
 def Kelly(oddsDecimal, probability):
   return (oddsDecimal*probability - (1-probability))/oddsDecimal
-	
-def powerLaw(portfolioAmt,df):
-  probs = np.array([(1-(1/i)) for i in df['Payouts (per Dollar)'].values]) #can be used for higher risk tolerance though unused here
-  amount = 1/np.prod(probs) #test portfolio constraints
-  kelly = df['Kelly Criterion Suggestion'].values
-  #spread = df['Probability Spread'].values
-  allocation1 = [np.minimum((portfolioAmt*i)*(i/np.sum(kelly)), 0.3*portfolioAmt) for i in kelly] #RISK TOLERANCE ESTABLISHED HERE 
-  df['Allocation Dollars'] = allocation1
-  print('Total Allocated', np.sum(allocation1).round(decimals=2), 'out of', portfolioAmt)
-  df['Allocation Percentage'] = [(i/portfolioAmt) for i in allocation1]
-  return df
-
-def gainsLosses(allocation,successes, df, portfolio):
-  payouts = df['Payouts (per Dollar)'].values
-  prev = np.sum(allocation)
-  now = np.sum(np.dot([allocation[i]*payouts[i] for i in range(len(payouts))], successes))
-  return [portfolio+(now-prev), prev, now]
 
 def picks(): #this needs some work/checking
 	result = fetch().round(decimals=2)
@@ -269,24 +236,13 @@ def picks(): #this needs some work/checking
 	resulting = result[['Bet State Chosen', 'Kelly Criterion Suggestion','Payouts (per Dollar)']]
 	resulting['League'] = ['AAL']*len(resulting['Bet State Chosen'])
 	resulting['Date'] = [str(date.today())]*len(resulting['Bet State Chosen'])
-	resulting.to_csv(os.getcwd() + '/masterDaily.csv', mode='a', header=False)
-	return 'AAL Done'
+	return resulting
 	
-'''
-To do:
--- comment some more stuff and figure out hwo to implement NHl in this exact framework, maybe jsut replace the XHR, but the bettting is different, run seperately?
--- add over under, period bets, make the names for tie more clear if possible
--- make tree structure easy to implement
-
-Notes:
--- works 00:00 day of'''
-#Make a time function
-
 def run():
 	if gameToday():
 		return picks()
 	else:
 		return 'No AAL games today.'
 
-#print(run())
+print(run())
 	
